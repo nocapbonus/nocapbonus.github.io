@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Moyens de paiement — NoCapBonus</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #0a1222;
+    --bg-panel: #101c30;
+    --line: #1e3350;
+    --green: #4ade80;
+    --green-deep: #1f7a4d;
+    --amber: #f2c14e;
+    --text: #e8f0ea;
+    --text-dim: #8ea69a;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height:1.6;
+  }
+  a{color:inherit;text-decoration:none;}
+
+  header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:22px 48px;
+    border-bottom:1px solid var(--line);
+  }
+  .logo{
+    font-family:'Montserrat', sans-serif;
+    font-size:21px;
+    font-weight:800;
+    display:flex;
+    align-items:baseline;
+    gap:2px;
+  }
+  .logo .cap{color:var(--green);}
+  .back-link{
+    font-size:14.5px;
+    color:var(--text-dim);
+    display:flex;
+    align-items:center;
+    gap:6px;
+  }
+  .back-link:hover{color:var(--green);}
+
+  main{
+    max-width:760px;
+    margin:0 auto;
+    padding:56px 24px 90px;
+  }
+  .eyebrow{
+    color:var(--green);
+    font-size:13px;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.6px;
+    margin-bottom:10px;
+  }
+  h1{
+    font-family:'Montserrat', sans-serif;
+    font-weight:800;
+    text-transform:uppercase;
+    font-size:clamp(26px, 4vw, 38px);
+    line-height:1.2;
+    margin:0 0 22px;
+  }
+  h2{
+    font-family:'Montserrat', sans-serif;
+    font-weight:800;
+    font-size:20px;
+    margin:44px 0 14px;
+    color:var(--text);
+  }
+  p{
+    color:var(--text-dim);
+    font-size:15.5px;
+    margin:0 0 16px;
+  }
+  .lead{
+    color:var(--text);
+    font-size:17px;
+  }
+  .coin-card{
+    background:var(--bg-panel);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:20px 22px;
+    margin:14px 0;
+    display:flex;
+    gap:16px;
+    align-items:flex-start;
+  }
+  .coin-symbol{
+    font-size:24px;
+    font-weight:800;
+    width:38px;
+    height:38px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-shrink:0;
+    background:#141c19;
+    border:1px solid var(--line);
+  }
+  .coin-card h3{
+    font-family:'Montserrat', sans-serif;
+    font-size:16px;
+    margin:0 0 6px;
+    color:var(--text);
+  }
+  .coin-card p{margin:0;font-size:14.5px;}
+  .note{
+    border-left:3px solid var(--green);
+    background:var(--bg-panel);
+    padding:16px 20px;
+    border-radius:0 10px 10px 0;
+    margin:24px 0;
+  }
+  .note p{margin:0;color:var(--text);font-size:14.5px;}
+  .onramp-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr;
+    gap:14px;
+    margin:16px 0;
+  }
+  .onramp-item{
+    background:var(--bg-panel);
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:16px;
+    text-align:center;
+  }
+  .onramp-item h4{
+    font-family:'Montserrat', sans-serif;
+    font-size:15px;
+    margin:0;
+    color:var(--text);
+  }
+  @media (max-width:600px){
+    .onramp-grid{grid-template-columns:1fr;}
+  }
+  .method-card{
+    background:var(--bg-panel);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:20px 22px;
+    margin:14px 0;
+  }
+  .method-card h3{
+    font-family:'Montserrat', sans-serif;
+    font-size:16px;
+    margin:0 0 8px;
+    color:var(--green);
+  }
+  .method-card p{margin:0;font-size:14.5px;}
+  .cta{
+    display:inline-block;
+    margin-top:30px;
+    background:var(--green);
+    color:#06140c;
+    font-weight:700;
+    padding:13px 26px;
+    border-radius:10px;
+    font-size:14.5px;
+  }
+  .cta:hover{background:#5eeb95;}
+</style>
+</head>
+<body>
+
+  <header>
+    <div class="logo"><span class="cap">No</span>Cap<span style="color:#16a34a">Bonus</span></div>
+    <a class="back-link" href="nocapbonus.html">← Retour à l'accueil</a>
+  </header>
+
+  <main>
+    <div class="eyebrow">Guide NoCapBonus</div>
+    <h1>Les moyens de paiement</h1>
+
+    <p class="lead">Sur les casinos crypto, tu as plusieurs façons de déposer : directement en cryptomonnaie, ou en carte bancaire via une plateforme d'achat qui convertit ton argent en crypto. Voici un tour d'horizon des options.</p>
+
+    <h2>Les cryptomonnaies principales</h2>
+
+    <div class="coin-card">
+      <div class="coin-symbol" style="color:#f7931a;">₿</div>
+      <div>
+        <h3>Bitcoin (BTC)</h3>
+        <p>La première et la plus connue des cryptomonnaies. C'est la monnaie de référence, acceptée sur pratiquement tous les casinos crypto.</p>
+      </div>
+    </div>
+
+    <div class="coin-card">
+      <div class="coin-symbol" style="color:#8a92b2;">Ξ</div>
+      <div>
+        <h3>Ethereum (ETH)</h3>
+        <p>Deuxième plus grande cryptomonnaie, elle sert aussi de base à de nombreux autres tokens. Largement supportée sur les plateformes de jeu.</p>
+      </div>
+    </div>
+
+    <div class="coin-card">
+      <div class="coin-symbol" style="color:#a6a9aa;">Ł</div>
+      <div>
+        <h3>Litecoin (LTC)</h3>
+        <p>Souvent décrite comme la version "légère et rapide" du Bitcoin, avec des frais de transaction plus bas et des confirmations plus rapides.</p>
+      </div>
+    </div>
+
+    <div class="coin-card">
+      <div class="coin-symbol" style="color:#9945ff;">◎</div>
+      <div>
+        <h3>Solana (SOL)</h3>
+        <p>Une blockchain récente réputée pour sa rapidité et ses frais très faibles, ce qui la rend pratique pour les dépôts et retraits fréquents.</p>
+      </div>
+    </div>
+
+    <div class="coin-card">
+      <div class="coin-symbol" style="color:#23292f;">✕</div>
+      <div>
+        <h3>XRP (Ripple)</h3>
+        <p>Conçue à l'origine pour les transferts d'argent rapides entre institutions, elle offre des transactions quasi instantanées et peu coûteuses.</p>
+      </div>
+    </div>
+
+    <h2>Déposer en carte bancaire sur un casino crypto</h2>
+    <p>Tu n'as pas besoin de déjà posséder des cryptos pour jouer sur ces plateformes. Des services tiers, appelés "on-ramps", te permettent d'acheter de la crypto directement avec ta carte bancaire, puis de l'envoyer sur ton compte casino.</p>
+
+    <div class="onramp-grid">
+      <div class="onramp-item">
+        <h4>Kraken</h4>
+      </div>
+      <div class="onramp-item">
+        <h4>MoonPay</h4>
+      </div>
+      <div class="onramp-item">
+        <h4>Swapped</h4>
+      </div>
+    </div>
+
+    <div class="note">
+      <p>💡 Le principe est simple : tu paies en carte bancaire sur le service (Kraken, MoonPay, Swapped...), tu reçois l'équivalent en crypto, et tu l'envoies vers ton wallet ou directement vers le casino.</p>
+    </div>
+
+    <p>Ces mêmes plateformes fonctionnent aussi dans l'autre sens : tu peux retirer tes gains en crypto et les reconvertir en euros directement sur ton compte bancaire via Kraken, MoonPay ou Swapped.</p>
+
+    <h2>Les méthodes classiques</h2>
+    <p>Certains casinos partenaires acceptent aussi des moyens de paiement plus traditionnels, en complément ou à la place des cryptos.</p>
+
+    <div class="method-card">
+      <h3>💳 Carte bancaire (CB)</h3>
+      <p>Visa, Mastercard... le dépôt classique, rapide et simple à utiliser, sans passer par une étape de conversion.</p>
+    </div>
+
+    <div class="method-card">
+      <h3>🏦 Virement bancaire</h3>
+      <p>Plus lent qu'une carte, mais utile pour des montants plus importants ou si tu préfères ne pas utiliser de carte en ligne.</p>
+    </div>
+
+    <div class="method-card">
+      <h3>🎁 Carte cadeau</h3>
+      <p>Certaines plateformes acceptent des cartes prépayées ou cartes cadeaux comme méthode de dépôt alternative.</p>
+    </div>
+
+    <div class="method-card">
+      <h3>➕ Autres méthodes</h3>
+      <p>Selon le casino, tu peux aussi retrouver des portefeuilles électroniques ou d'autres solutions de paiement locales.</p>
+    </div>
+
+    <a class="cta" href="nocapbonus.html#board">Voir les casinos partenaires</a>
+  </main>
+
+</body>
+</html>

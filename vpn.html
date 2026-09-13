@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Qu'est-ce qu'un VPN ? — NoCapBonus</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #0a1222;
+    --bg-panel: #101c30;
+    --line: #1e3350;
+    --green: #4ade80;
+    --green-deep: #1f7a4d;
+    --amber: #f2c14e;
+    --text: #e8f0ea;
+    --text-dim: #8ea69a;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height:1.6;
+  }
+  a{color:inherit;text-decoration:none;}
+
+  header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:22px 48px;
+    border-bottom:1px solid var(--line);
+  }
+  .logo{
+    font-family:'Montserrat', sans-serif;
+    font-size:21px;
+    font-weight:800;
+    display:flex;
+    align-items:baseline;
+    gap:2px;
+  }
+  .logo .cap{color:var(--green);}
+  .back-link{
+    font-size:14.5px;
+    color:var(--text-dim);
+    display:flex;
+    align-items:center;
+    gap:6px;
+  }
+  .back-link:hover{color:var(--green);}
+
+  main{
+    max-width:760px;
+    margin:0 auto;
+    padding:56px 24px 90px;
+  }
+  .eyebrow{
+    color:var(--green);
+    font-size:13px;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.6px;
+    margin-bottom:10px;
+  }
+  h1{
+    font-family:'Montserrat', sans-serif;
+    font-weight:800;
+    text-transform:uppercase;
+    font-size:clamp(26px, 4vw, 38px);
+    line-height:1.2;
+    margin:0 0 22px;
+  }
+  h2{
+    font-family:'Montserrat', sans-serif;
+    font-weight:800;
+    font-size:20px;
+    margin:40px 0 14px;
+    color:var(--text);
+  }
+  p{
+    color:var(--text-dim);
+    font-size:15.5px;
+    margin:0 0 16px;
+  }
+  .lead{
+    color:var(--text);
+    font-size:17px;
+  }
+  .card-box{
+    background:var(--bg-panel);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:26px 28px;
+    margin:18px 0;
+  }
+  .card-box h3{
+    font-family:'Montserrat', sans-serif;
+    font-size:15px;
+    margin:0 0 10px;
+    color:var(--green);
+  }
+  table{
+    width:100%;
+    border-collapse:collapse;
+    margin:18px 0;
+    font-size:14.5px;
+  }
+  th, td{
+    text-align:left;
+    padding:11px 14px;
+    border-bottom:1px solid var(--line);
+    color:var(--text-dim);
+  }
+  th{color:var(--text);font-weight:700;font-size:13px;text-transform:uppercase;}
+  td.highlight{color:var(--green);font-weight:600;}
+  .note{
+    border-left:3px solid var(--green);
+    background:var(--bg-panel);
+    padding:16px 20px;
+    border-radius:0 10px 10px 0;
+    margin:24px 0;
+  }
+  .note p{margin:0;color:var(--text);font-size:14.5px;}
+  .vpn-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:16px;
+    margin:18px 0;
+  }
+  .vpn-item{
+    background:var(--bg-panel);
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:18px 20px;
+  }
+  .vpn-item .tag{
+    display:inline-block;
+    font-size:11.5px;
+    font-weight:700;
+    text-transform:uppercase;
+    padding:3px 10px;
+    border-radius:999px;
+    margin-bottom:10px;
+  }
+  .tag-free{background:#0c2616;color:#7de8a3;border:1px solid #1f4a2c;}
+  .tag-paid{background:#26200c;color:#f2c14e;border:1px solid #524820;}
+  .vpn-item h4{
+    font-family:'Montserrat', sans-serif;
+    font-size:16px;
+    margin:0 0 6px;
+    color:var(--text);
+  }
+  .vpn-item p{font-size:14px;margin:0;}
+  @media (max-width:600px){
+    .vpn-grid{grid-template-columns:1fr;}
+  }
+  .cta{
+    display:inline-block;
+    margin-top:30px;
+    background:var(--green);
+    color:#06140c;
+    font-weight:700;
+    padding:13px 26px;
+    border-radius:10px;
+    font-size:14.5px;
+  }
+  .cta:hover{background:#5eeb95;}
+</style>
+</head>
+<body>
+
+  <header>
+    <div class="logo"><span class="cap">No</span>Cap<span style="color:#16a34a">Bonus</span></div>
+    <a class="back-link" href="nocapbonus.html">← Retour à l'accueil</a>
+  </header>
+
+  <main>
+    <div class="eyebrow">Guide NoCapBonus</div>
+    <h1>Qu'est-ce qu'un VPN ?</h1>
+
+    <p class="lead">Un VPN (Virtual Private Network, ou "réseau privé virtuel") est un outil qui masque ta localisation réelle en faisant passer ta connexion internet par un serveur situé dans un autre pays. Il chiffre aussi ton trafic pour plus de confidentialité.</p>
+
+    <h2>Pourquoi l'utiliser pour les casinos en ligne ?</h2>
+    <p>Certaines plateformes ne sont pas accessibles depuis toutes les régions du monde, souvent pour des raisons de licence locale. Un VPN te permet de choisir un serveur dans un pays où la plateforme est disponible, pour pouvoir y accéder normalement.</p>
+
+    <div class="note">
+      <p>💡 Vérifie toujours les conditions d'utilisation de la plateforme sur laquelle tu joues : certains casinos autorisent explicitement l'usage d'un VPN, d'autres non. C'est pour ça qu'on l'indique via la pastille "VPN autorisé" sur nos cartes.</p>
+    </div>
+
+    <h2>VPN gratuits</h2>
+    <p>Pratiques pour tester rapidement, avec des limites de données ou de vitesse selon les offres.</p>
+
+    <div class="vpn-grid">
+      <div class="vpn-item">
+        <span class="tag tag-free">Gratuit</span>
+        <h4>Windscribe</h4>
+        <p>Bonne quantité de données gratuites chaque mois, simple à utiliser.</p>
+      </div>
+      <div class="vpn-item">
+        <span class="tag tag-free">Gratuit</span>
+        <h4>Urban VPN</h4>
+        <p>Installation rapide en extension ou application, sans configuration complexe.</p>
+      </div>
+      <div class="vpn-item">
+        <span class="tag tag-free">Gratuit</span>
+        <h4>Hide.me VPN</h4>
+        <p>Version gratuite honnête avec un choix de serveurs limité mais fonctionnel.</p>
+      </div>
+    </div>
+
+    <h2>VPN payants</h2>
+    <p>Plus stables, plus rapides et avec davantage de serveurs disponibles dans le monde.</p>
+
+    <div class="vpn-grid">
+      <div class="vpn-item">
+        <span class="tag tag-paid">Payant</span>
+        <h4>NordVPN</h4>
+        <p>L'un des plus connus, réputé pour sa vitesse et son large choix de serveurs.</p>
+      </div>
+      <div class="vpn-item">
+        <span class="tag tag-paid">Payant</span>
+        <h4>CyberGhost VPN</h4>
+        <p>Interface simple, bon rapport qualité-prix, adapté aux débutants.</p>
+      </div>
+    </div>
+
+    <a class="cta" href="nocapbonus.html#board">Voir les casinos partenaires</a>
+  </main>
+
+</body>
+</html>

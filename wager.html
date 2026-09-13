@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Qu'est-ce qu'un wager ? — NoCapBonus</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #0a1222;
+    --bg-panel: #101c30;
+    --line: #1e3350;
+    --green: #4ade80;
+    --green-deep: #1f7a4d;
+    --amber: #f2c14e;
+    --text: #e8f0ea;
+    --text-dim: #8ea69a;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height:1.6;
+  }
+  a{color:inherit;text-decoration:none;}
+
+  header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:22px 48px;
+    border-bottom:1px solid var(--line);
+  }
+  .logo{
+    font-family:'Montserrat', sans-serif;
+    font-size:21px;
+    font-weight:800;
+    display:flex;
+    align-items:baseline;
+    gap:2px;
+  }
+  .logo .cap{color:var(--green);}
+  .back-link{
+    font-size:14.5px;
+    color:var(--text-dim);
+    display:flex;
+    align-items:center;
+    gap:6px;
+  }
+  .back-link:hover{color:var(--green);}
+
+  main{
+    max-width:760px;
+    margin:0 auto;
+    padding:56px 24px 90px;
+  }
+  .eyebrow{
+    color:var(--green);
+    font-size:13px;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.6px;
+    margin-bottom:10px;
+  }
+  h1{
+    font-family:'Montserrat', sans-serif;
+    font-weight:800;
+    text-transform:uppercase;
+    font-size:clamp(26px, 4vw, 38px);
+    line-height:1.2;
+    margin:0 0 22px;
+  }
+  h2{
+    font-family:'Montserrat', sans-serif;
+    font-weight:800;
+    font-size:20px;
+    margin:40px 0 14px;
+    color:var(--text);
+  }
+  p{
+    color:var(--text-dim);
+    font-size:15.5px;
+    margin:0 0 16px;
+  }
+  .lead{
+    color:var(--text);
+    font-size:17px;
+  }
+  .card-box{
+    background:var(--bg-panel);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:26px 28px;
+    margin:18px 0;
+  }
+  .card-box h3{
+    font-family:'Montserrat', sans-serif;
+    font-size:15px;
+    margin:0 0 10px;
+    color:var(--green);
+  }
+  .formula{
+    font-family:monospace;
+    background:var(--bg);
+    border:1px solid var(--line);
+    border-radius:8px;
+    padding:12px 16px;
+    color:var(--amber);
+    font-size:14.5px;
+    display:inline-block;
+    margin:6px 0 0;
+  }
+  table{
+    width:100%;
+    border-collapse:collapse;
+    margin:18px 0;
+    font-size:14.5px;
+  }
+  th, td{
+    text-align:left;
+    padding:11px 14px;
+    border-bottom:1px solid var(--line);
+    color:var(--text-dim);
+  }
+  th{color:var(--text);font-weight:700;font-size:13px;text-transform:uppercase;}
+  td.highlight{color:var(--green);font-weight:600;}
+  .note{
+    border-left:3px solid var(--green);
+    background:var(--bg-panel);
+    padding:16px 20px;
+    border-radius:0 10px 10px 0;
+    margin:24px 0;
+  }
+  .note p{margin:0;color:var(--text);font-size:14.5px;}
+  .cta{
+    display:inline-block;
+    margin-top:30px;
+    background:var(--green);
+    color:#06140c;
+    font-weight:700;
+    padding:13px 26px;
+    border-radius:10px;
+    font-size:14.5px;
+  }
+  .cta:hover{background:#5eeb95;}
+</style>
+</head>
+<body>
+
+  <header>
+    <div class="logo" style="flex-direction:column;align-items:flex-start;gap:3px;"><a href="nocapbonus.html" style="display:flex;flex-direction:column;align-items:flex-start;gap:3px;">
+      <span style="display:block;width:20px;height:4px;background:#00e676;border-radius:0;"></span>
+      <span style="display:flex;align-items:baseline;gap:2px;color:var(--text);"><span style="color:#00e676">NoCap</span><span style="color:var(--text)">Bonus</span></span>
+    </a></div>
+    <a class="back-link" href="nocapbonus.html">← Retour à l'accueil</a>
+  </header>
+
+  <main>
+    <div class="eyebrow">Guide NoCapBonus</div>
+    <h1>Qu'est-ce qu'un wager ?</h1>
+
+    <p class="lead">Le wager (ou "exigence de mise") est une condition imposée par un casino en ligne avant de pouvoir retirer un bonus et les gains qui en découlent. C'est l'un des éléments les plus importants à comprendre avant d'accepter une offre.</p>
+
+    <h2>La définition simple</h2>
+    <p>Quand un casino t'offre un bonus (dépôt, free spins, cashback...), il peut demander que tu rejoues ce montant un certain nombre de fois avant de pouvoir le retirer. Ce multiplicateur s'appelle le wager, généralement exprimé en "x" (x20, x35, x40...).</p>
+
+    <div class="card-box">
+      <h3>La formule</h3>
+      <p style="margin-bottom:0;">Un bonus 100% Wager x30 pour un dépôt de 100€ = 200€ de start à miser 30 fois</p>
+      <div class="formula">200€ × Wager x30 = 6 000€ à miser avant retrait</div>
+    </div>
+
+    <h2>Exemple concret</h2>
+
+    <div class="card-box">
+      <h3>Simulateur de wager</h3>
+      <div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:18px;">
+        <div style="flex:1 1 160px;">
+          <label style="display:block;font-size:13px;color:var(--text-dim);margin-bottom:6px;">Montant total (dépôt + bonus) (€)</label>
+          <input type="number" id="wagerBonus" value="100" min="0" style="width:100%;background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:10px 12px;color:var(--text);font-size:15px;font-family:inherit;">
+        </div>
+        <div style="flex:1 1 160px;">
+          <label style="display:block;font-size:13px;color:var(--text-dim);margin-bottom:6px;">Wager exigé (x)</label>
+          <input type="number" id="wagerMultiplier" value="30" min="0" style="width:100%;background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:10px 12px;color:var(--text);font-size:15px;font-family:inherit;">
+        </div>
+      </div>
+      <div class="formula" id="wagerResult" style="display:block;width:100%;">100€ × Wager x30 = 3 000€ à miser avant retrait</div>
+    </div>
+
+    <p>Tant que tu n'as pas misé ce montant sur les jeux éligibles, tes gains restent bloqués. C'est pour cette raison que certaines offres, malgré un bonus élevé, sont en réalité peu intéressantes si le wager est trop haut.</p>
+
+    <script>
+      (function(){
+        const bonusInput = document.getElementById('wagerBonus');
+        const multInput = document.getElementById('wagerMultiplier');
+        const result = document.getElementById('wagerResult');
+        function formatEuro(n){
+          return n.toLocaleString('fr-FR', {maximumFractionDigits:0}) + '€';
+        }
+        function update(){
+          const bonus = parseFloat(bonusInput.value) || 0;
+          const mult = parseFloat(multInput.value) || 0;
+          const total = bonus * mult;
+          result.textContent = formatEuro(bonus) + ' × Wager x' + mult + ' = ' + formatEuro(total) + ' à miser avant retrait';
+        }
+        bonusInput.addEventListener('input', update);
+        multInput.addEventListener('input', update);
+        update();
+      })();
+    </script>
+
+    <h2>C'est quoi le "Wager Free" ?</h2>
+    <p>Une offre <strong>Wager Free</strong> (ou "sans wager") est une offre où le multiplicateur exigé avant retrait est tout simplement de <strong>x0</strong>. Ce que tu gagnes ou reçois est directement retirable, sans avoir à le remiser.</p>
+
+    <p>Attention cependant, le fonctionnement est un peu différent de ce qu'on pourrait croire : avec le Wager Free, tu ne peux pas retirer le montant du bonus en lui-même, seulement ce que tu as gagné en jouant avec.</p>
+
+    <div class="card-box">
+      <h3>Exemple concret</h3>
+      <p>Tu déposes 100€ avec un bonus 100% : tu obtiens 200€ de solde (100€ de dépôt + 100€ de bonus).</p>
+      <p style="margin-bottom:0;">Si tu fais monter ton solde à 500€ en jouant, tu pourras retirer le total moins les 100€ offerts par le casino, soit 400€.</p>
+      <div class="formula">500€ de solde − 100€ de bonus = 400€ retirables</div>
+    </div>
+
+    <p>C'est pour ça que les casinos affichant la pastille <strong>"Wager free"</strong> sur NoCapBonus sont particulièrement intéressants : pas de multiplicateur à atteindre, juste le montant du bonus lui-même qui reste non retirable.</p>
+
+    <h2>Et le cashback sans wager ?</h2>
+    <p>C'est justement ce qui rend le cashback différent d'un bonus classique : il est généralement versé <strong>sans condition de mise</strong>. L'argent reçu est directement disponible, sans multiplicateur à atteindre.</p>
+
+    <table>
+      <tr><th>Type d'offre</th><th>Wager typique</th><th>Retrait</th></tr>
+      <tr><td>Bonus de bienvenue classique</td><td>x20 à x50</td><td>Après avoir rejoué le montant</td></tr>
+      <tr><td>Free spins</td><td>x30 à x40 sur les gains</td><td>Après avoir rejoué les gains</td></tr>
+      <tr><td class="highlight">Cashback (nos partenaires)</td><td class="highlight">Aucun</td><td class="highlight">Immédiat</td></tr>
+    </table>
+
+    <div class="note">
+      <p>💡 C'est pour cette raison que NoCapBonus met en avant des plateformes avec du cashback sans wager plutôt que des bonus classiques : ce que tu reçois t'appartient réellement, sans conditions cachées.</p>
+    </div>
+
+    <a class="cta" href="nocapbonus.html#board">Voir les casinos partenaires</a>
+  </main>
+
+</body>
+</html>

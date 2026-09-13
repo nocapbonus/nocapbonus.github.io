@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Les jeux de casino expliqués — NoCapBonus</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #0a1222;
+    --bg-panel: #101c30;
+    --line: #1e3350;
+    --green: #4ade80;
+    --green-deep: #1f7a4d;
+    --amber: #f2c14e;
+    --text: #e8f0ea;
+    --text-dim: #8ea69a;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height:1.6;
+  }
+  a{color:inherit;text-decoration:none;}
+
+  header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:22px 48px;
+    border-bottom:1px solid var(--line);
+  }
+  .logo{
+    font-family:'Montserrat', sans-serif;
+    font-size:21px;
+    font-weight:800;
+    display:flex;
+    align-items:baseline;
+    gap:2px;
+  }
+  .logo .cap{color:var(--green);}
+  .back-link{
+    font-size:14.5px;
+    color:var(--text-dim);
+    display:flex;
+    align-items:center;
+    gap:6px;
+  }
+  .back-link:hover{color:var(--green);}
+
+  main{
+    max-width:760px;
+    margin:0 auto;
+    padding:56px 24px 90px;
+  }
+  .eyebrow{
+    color:var(--green);
+    font-size:13px;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.6px;
+    margin-bottom:10px;
+  }
+  h1{
+    font-family:'Montserrat', sans-serif;
+    font-weight:800;
+    text-transform:uppercase;
+    font-size:clamp(26px, 4vw, 38px);
+    line-height:1.2;
+    margin:0 0 22px;
+  }
+  h2{
+    font-family:'Montserrat', sans-serif;
+    font-weight:800;
+    font-size:20px;
+    margin:44px 0 14px;
+    color:var(--text);
+  }
+  p{
+    color:var(--text-dim);
+    font-size:15.5px;
+    margin:0 0 16px;
+  }
+  .lead{
+    color:var(--text);
+    font-size:17px;
+  }
+  .game-card{
+    background:var(--bg-panel);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:24px 26px;
+    margin:16px 0;
+  }
+  .game-card h3{
+    font-family:'Montserrat', sans-serif;
+    font-size:17px;
+    margin:0 0 10px;
+    color:var(--green);
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .game-card p{margin:0;font-size:14.5px;}
+  .note{
+    border-left:3px solid var(--green);
+    background:var(--bg-panel);
+    padding:16px 20px;
+    border-radius:0 10px 10px 0;
+    margin:24px 0;
+  }
+  .note p{margin:0;color:var(--text);font-size:14.5px;}
+
+  /* ---- tableau stratégie blackjack ---- */
+  .strategy-legend{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin:16px 0 24px;
+  }
+  .legend-item{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    font-size:13px;
+    color:var(--text-dim);
+  }
+  .legend-swatch{
+    width:20px;
+    height:20px;
+    border-radius:5px;
+    display:inline-block;
+  }
+  .strategy-wrap{overflow-x:auto;margin:14px 0 30px;}
+  .strategy-table{
+    border-collapse:collapse;
+    font-size:13px;
+    min-width:520px;
+    margin:0;
+    font-family:'Montserrat', sans-serif;
+  }
+  .strategy-table caption{
+    text-align:left;
+    color:var(--text);
+    font-weight:700;
+    font-size:14px;
+    margin-bottom:8px;
+    caption-side:top;
+  }
+  .strategy-table th, .strategy-table td{
+    border:1px solid var(--line);
+    padding:8px 6px;
+    text-align:center;
+    color:#fff;
+    font-weight:700;
+  }
+  .strategy-table thead th{
+    background:var(--bg-panel);
+    color:var(--text);
+    font-weight:700;
+  }
+  .strategy-table th.row-head{
+    background:var(--bg-panel);
+    color:var(--text);
+  }
+  .s-t{background:#4ade80;}
+  .s-d{background:#5b9bf2;}
+  .s-r{background:#e0524a;}
+  .s-p{background:#f2a13d;}
+  .cta{
+    display:inline-block;
+    margin-top:30px;
+    background:var(--green);
+    color:#06140c;
+    font-weight:700;
+    padding:13px 26px;
+    border-radius:10px;
+    font-size:14.5px;
+  }
+  .cta:hover{background:#5eeb95;}
+</style>
+</head>
+<body>
+
+  <header>
+    <div class="logo"><span class="cap">No</span>Cap<span style="color:#16a34a">Bonus</span></div>
+    <a class="back-link" href="nocapbonus.html">← Retour à l'accueil</a>
+  </header>
+
+  <main>
+    <div class="eyebrow">Guide NoCapBonus</div>
+    <h1>Les jeux de casino expliqués</h1>
+
+    <p class="lead">Avant de choisir une plateforme, ça aide de savoir à quoi ressemblent les jeux qu'on y trouve. Voici un tour rapide des classiques, et des jeux "crypto" propres aux casinos comme Stake, Rainbet ou Howl.</p>
+
+    <h2>Les classiques</h2>
+
+    <div class="game-card">
+      <h3>🎰 Slots (machines à sous)</h3>
+      <p>Le jeu le plus répandu sur les casinos en ligne. Tu mises, tu lances les rouleaux, et des combinaisons de symboles déclenchent des gains. Chaque machine a son propre thème, ses bonus (free spins, multiplicateurs...) et son propre taux de redistribution (RTP).</p>
+    </div>
+
+    <div class="game-card">
+      <h3>🃏 Blackjack</h3>
+      <p>Un jeu de cartes où l'objectif est de s'approcher le plus possible de 21 sans le dépasser, tout en battant la main du croupier. C'est l'un des jeux avec le meilleur taux de redistribution pour le joueur, à condition de connaître les bases de la stratégie.</p>
+    </div>
+
+    <h3 style="font-family:'Montserrat', sans-serif;font-size:16px;color:var(--text);margin:8px 0 4px;">Tableau de stratégie de base</h3>
+    <p>Ce tableau indique le coup optimal à jouer selon ta main et la carte visible du croupier.</p>
+
+    <div class="strategy-legend">
+      <div class="legend-item"><span class="legend-swatch s-t"></span>Tirer</div>
+      <div class="legend-item"><span class="legend-swatch s-d"></span>Doubler</div>
+      <div class="legend-item"><span class="legend-swatch s-r"></span>Rester</div>
+      <div class="legend-item"><span class="legend-swatch s-p"></span>Partager</div>
+    </div>
+
+    <div class="strategy-wrap">
+      <table class="strategy-table">
+        <caption>Totaux durs</caption>
+        <thead>
+          <tr><th class="row-head">Joueur</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th><th>A</th></tr>
+        </thead>
+        <tbody>
+          <tr><th class="row-head">17+</th><td class="s-r">R</td><td class="s-r">R</td><td class="s-r">R</td><td class="s-r">R</td><td class="s-r">R</td><td class="s-r">R</td><td class="s-r">R</td><td class="s-r">R</td><td class="s-r">R</td><td class="s-r">R</td></tr>
+          <tr><th class="row-head">16</th><td class="s-r">R</td><td class="s-r">R</td><td class="s-r">R</td><td class="s-r">R</td><td class="s-r">R</td><td class="s-t">T</td><td class="s-t">T</td><td class="s-t">T</td><td class="s-t">T</td><td class="s-t">T</td></tr>
+          <tr><th class="row-head">15</th><td class="s-r">R</td><td class="s-r">R</td><td class="s-r">R</td><td class="s-r">R</td><td class="s-r">R</td><td class="s-t">T</td><td class="s-t">T</td><td class="s-t">T</td><td class="s-t">T</td><td class="s-t">T</td></tr>
+          <tr><th class="row-head">14</th><td class="s-r">R</td><td class="s-r">R</td><td class="s-r">R</td><td class="s-r">R</td><td class="s-r">R</td><td class="s-t">T</td><td class="s-t">T</td><td class="s-t">T</td><td class="s-t">T</td><td class="s-t">T</td></tr>
+          <tr><th class="row-head">13</th><td class="s-r">R</td><td class="s-r">R</td><td class="s-r">R</td><td class="s-r">R</td><td class="s-r">R</td><td class="s-t">T</td><td class="s-t">T</td><td class="s-t">T</td><td class="s-t">T</td><td class="s-t">T</td></tr>
+          <tr><th class="row-head">12</th><td class="s-t">T</td><td class="s-t">T</td><td class="s-r">R</td><td class="s-r">R</td><td class="s-r">R</td><td class="s-t">T</td><td class="s-t">T</td><td class="s-t">T</td><td class="s-t">T</td><td class="s-t">T</td></tr>
+          <tr><th class="row-head">11</th><td class="s-d">D</td><td class="s-d">D</td><td class="s-d">D</td><td class="s-d">D</td><td class="s-d">D</td><td class="s-d">D</td><td class="s-d">D</td><td class="s-d">D</td><td class="s-t">T</td><td class="s-t">T</td></tr>
+          <tr><th class="row-head">10</th><td class="s-d">D</td><td class="s-d">D</td><td class="s-d">D</td><td class="s-d">D</td><td class="s-d">D</td><td class="s-d">D</td><td class="s-d">D</td><td class="s-d">D</td><td class="s-t">T</td><td class="s-t">T</td></tr>
+          <tr><th class="row-head">9</th><td class="s-t">T</td><td class="s-d">D</td><td class="s-d">D</td><td class="s-d">D</td><td class="s-d">D</td><td class="s-t">T</td><td class="s-t">T</td><td class="s-t">T</td><td class="s-t">T</td><td class="s-t">T</td></tr>
+          <tr><th class="row-head">8</th><td class="s-t">T</td><td class="s-t">T</td><td class="s-t">T</td><td class="s-t">T</td><td class="s-t">T</td><td class="s-t">T</td><td class="s-t">T</td><td class="s-t">T</td><td class="s-t">T</td><td class="s-t">T</td></tr>
+          <tr><th class="row-head">5-7</th><td class="s-t">T</td><td class="s-t">T</td><td class="s-t">T</td><td class="s-t">T</td><td class="s-t">T</td><td class="s-t">T</td><td class="s-t">T</td><td class="s-t">T</td><td class="s-t">T</td><td class="s-t">T</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="strategy-wrap">
+      <table class="strategy-table">
+        <caption>Paires</caption>
+        <thead>
+          <tr><th class="row-head">Joueur</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th><th>A</th></tr>
+        </thead>
+        <tbody>
+          <tr><th class="row-head">A-A</th><td class="s-p">P</td><td class="s-p">P</td><td class="s-p">P</td><td class="s-p">P</td><td class="s-p">P</td><td class="s-p">P</td><td class="s-p">P</td><td class="s-p">P</td><td class="s-p">P</td><td class="s-p">P</td></tr>
+          <tr><th class="row-head">10-10</th><td class="s-r">R</td><td class="s-r">R</td><td class="s-r">R</td><td class="s-r">R</td><td class="s-r">R</td><td class="s-r">R</td><td class="s-r">R</td><td class="s-r">R</td><td class="s-r">R</td><td class="s-r">R</td></tr>
+          <tr><th class="row-head">9-9</th><td class="s-p">P</td><td class="s-p">P</td><td class="s-p">P</td><td class="s-p">P</td><td class="s-p">P</td><td class="s-r">R</td><td class="s-p">P</td><td class="s-p">P</td><td class="s-r">R</td><td class="s-r">R</td></tr>
+          <tr><th class="row-head">8-8</th><td class="s-p">P</td><td class="s-p">P</td><td class="s-p">P</td><td class="s-p">P</td><td class="s-p">P</td><td class="s-p">P</td><td class="s-p">P</td><td class="s-p">P</td><td class="s-p">P</td><td class="s-p">P</td></tr>
+          <tr><th class="row-head">7-7</th><td class="s-p">P</td><td class="s-p">P</td><td class="s-p">P</td><td class="s-p">P</td><td class="s-p">P</td><td class="s-p">P</td><td class="s-t">T</td><td class="s-t">T</td><td class="s-t">T</td><td class="s-t">T</td></tr>
+          <tr><th class="row-head">6-6</th><td class="s-p">P</td><td class="s-p">P</td><td class="s-p">P</td><td class="s-p">P</td><td class="s-p">P</td><td class="s-t">T</td><td class="s-t">T</td><td class="s-t">T</td><td class="s-t">T</td><td class="s-t">T</td></tr>
+          <tr><th class="row-head">5-5</th><td class="s-d">D</td><td class="s-d">D</td><td class="s-d">D</td><td class="s-d">D</td><td class="s-d">D</td><td class="s-d">D</td><td class="s-d">D</td><td class="s-d">D</td><td class="s-t">T</td><td class="s-t">T</td></tr>
+          <tr><th class="row-head">4-4</th><td class="s-t">T</td><td class="s-t">T</td><td class="s-p">P</td><td class="s-p">P</td><td class="s-p">P</td><td class="s-t">T</td><td class="s-t">T</td><td class="s-t">T</td><td class="s-t">T</td><td class="s-t">T</td></tr>
+          <tr><th class="row-head">3-3</th><td class="s-p">P</td><td class="s-p">P</td><td class="s-p">P</td><td class="s-p">P</td><td class="s-p">P</td><td class="s-p">P</td><td class="s-t">T</td><td class="s-t">T</td><td class="s-t">T</td><td class="s-t">T</td></tr>
+          <tr><th class="row-head">2-2</th><td class="s-p">P</td><td class="s-p">P</td><td class="s-p">P</td><td class="s-p">P</td><td class="s-p">P</td><td class="s-p">P</td><td class="s-t">T</td><td class="s-t">T</td><td class="s-t">T</td><td class="s-t">T</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="strategy-wrap">
+      <table class="strategy-table">
+        <caption>Totaux souples (As-X)</caption>
+        <thead>
+          <tr><th class="row-head">Joueur</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th><th>A</th></tr>
+        </thead>
+        <tbody>
+          <tr><th class="row-head">A-9</th><td class="s-r">R</td><td class="s-r">R</td><td class="s-r">R</td><td class="s-r">R</td><td class="s-r">R</td><td class="s-r">R</td><td class="s-r">R</td><td class="s-r">R</td><td class="s-r">R</td><td class="s-r">R</td></tr>
+          <tr><th class="row-head">A-8</th><td class="s-r">R</td><td class="s-r">R</td><td class="s-r">R</td><td class="s-r">R</td><td class="s-r">R</td><td class="s-r">R</td><td class="s-r">R</td><td class="s-r">R</td><td class="s-r">R</td><td class="s-r">R</td></tr>
+          <tr><th class="row-head">A-7</th><td class="s-d">D</td><td class="s-d">D</td><td class="s-d">D</td><td class="s-d">D</td><td class="s-d">D</td><td class="s-r">R</td><td class="s-r">R</td><td class="s-t">T</td><td class="s-t">T</td><td class="s-t">T</td></tr>
+          <tr><th class="row-head">A-6</th><td class="s-t">T</td><td class="s-d">D</td><td class="s-d">D</td><td class="s-d">D</td><td class="s-d">D</td><td class="s-t">T</td><td class="s-t">T</td><td class="s-t">T</td><td class="s-t">T</td><td class="s-t">T</td></tr>
+          <tr><th class="row-head">A-5</th><td class="s-t">T</td><td class="s-t">T</td><td class="s-d">D</td><td class="s-d">D</td><td class="s-d">D</td><td class="s-t">T</td><td class="s-t">T</td><td class="s-t">T</td><td class="s-t">T</td><td class="s-t">T</td></tr>
+          <tr><th class="row-head">A-4</th><td class="s-t">T</td><td class="s-t">T</td><td class="s-t">T</td><td class="s-d">D</td><td class="s-d">D</td><td class="s-t">T</td><td class="s-t">T</td><td class="s-t">T</td><td class="s-t">T</td><td class="s-t">T</td></tr>
+          <tr><th class="row-head">A-3</th><td class="s-t">T</td><td class="s-t">T</td><td class="s-t">T</td><td class="s-d">D</td><td class="s-d">D</td><td class="s-t">T</td><td class="s-t">T</td><td class="s-t">T</td><td class="s-t">T</td><td class="s-t">T</td></tr>
+          <tr><th class="row-head">A-2</th><td class="s-t">T</td><td class="s-t">T</td><td class="s-t">T</td><td class="s-d">D</td><td class="s-d">D</td><td class="s-t">T</td><td class="s-t">T</td><td class="s-t">T</td><td class="s-t">T</td><td class="s-t">T</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="game-card">
+      <h3>🎡 Roulette</h3>
+      <p>Une bille est lancée sur une roue numérotée, et tu paries sur où elle va s'arrêter (un numéro précis, une couleur, pair/impair...). Simple à comprendre, avec différents types de mises possibles selon le risque que tu veux prendre.</p>
+    </div>
+
+    <h2>Les jeux "crypto"</h2>
+    <p>Popularisés par les casinos crypto, ces jeux misent sur des mécaniques simples et rapides, souvent avec un système "provably fair" qui permet de vérifier l'équité de chaque round.</p>
+
+    <div class="game-card">
+      <h3>🚀 Crash</h3>
+      <p>Une courbe de multiplicateur grimpe en continu, et tu dois retirer ta mise avant qu'elle ne "crash". Plus tu attends, plus le gain potentiel est élevé, mais plus le risque de tout perdre grandit aussi.</p>
+    </div>
+
+    <div class="game-card">
+      <h3>💣 Mines</h3>
+      <p>Une grille cachée contient des mines. Tu révèles des cases une par une : chaque case sûre augmente ton gain, mais tomber sur une mine fait tout perdre. Tu choisis de continuer ou d'encaisser à chaque étape.</p>
+    </div>
+
+    <div class="game-card">
+      <h3>🔺 Plinko</h3>
+      <p>Inspiré des jeux de bille à picots : tu lâches une bille en haut d'un plateau, elle rebondit, et atterrit dans une case correspondant à un multiplicateur. Simple, rapide, et très visuel.</p>
+    </div>
+
+    <div class="note">
+      <p>💡 Peu importe le jeu choisi, garde en tête que le hasard reste le facteur principal. Fixe-toi un budget avant de jouer et ne dépasse jamais ce que tu es prêt à perdre.</p>
+    </div>
+
+    <a class="cta" href="nocapbonus.html#board">Voir les casinos partenaires</a>
+  </main>
+
+</body>
+</html>

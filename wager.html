@@ -249,6 +249,34 @@
     }
   }
 </style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GWM3C3YN6W"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-GWM3C3YN6W', {
+    anonymize_ip: true,
+    send_page_view: true
+  });
+
+  document.addEventListener('DOMContentLoaded', function () {
+    document.body.addEventListener('click', function (event) {
+      var target = event.target.closest('a, button');
+      if (!target) return;
+
+      var label = (target.innerText || target.getAttribute('aria-label') || target.value || target.title || target.dataset.label || '').trim();
+      var href = target.href || target.getAttribute('data-href') || '';
+      var type = target.tagName.toLowerCase();
+
+      gtag('event', 'site_click', {
+        event_category: 'interaction',
+        event_label: label || 'click',
+        link_url: href || window.location.href,
+        link_type: type
+      });
+    });
+  });
+</script>
 </head>
 <body>
 

@@ -682,104 +682,6 @@
     .newsletter-banner-actions{justify-content:flex-start;flex-wrap:wrap;padding-left:0;}
   }
 
-  .card-vip {
-    background:rgba(12,22,38,0.95);
-    border:1px solid rgba(255,170,0,0.9);
-    border-radius:18px;
-    display:grid;
-    grid-template-columns:120px minmax(0,1fr);
-    align-items:center;
-    gap:22px;
-    padding:18px 22px;
-    box-shadow:0 0 0 1px rgba(255,170,0,0.12), 0 0 20px rgba(255,170,0,0.08);
-  }
-  .card-vip .vip-icon {
-    width:96px;
-    height:96px;
-    border-radius:14px;
-    background:linear-gradient(135deg,#1d8f57,#0d5a35);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    position:relative;
-    margin:0 auto;
-  }
-  .card-vip .vip-icon::before {
-    content:"";
-    position:absolute;
-    width:44px;
-    height:28px;
-    border:4px solid rgba(255,255,255,0.9);
-    border-radius:6px 6px 8px 8px;
-    top:22px;
-    left:50%;
-    transform:translateX(-50%);
-  }
-  .card-vip .vip-icon::after {
-    content:"";
-    position:absolute;
-    width:22px;
-    height:22px;
-    border-left:4px solid rgba(255,255,255,0.95);
-    border-bottom:4px solid rgba(255,255,255,0.95);
-    left:50%;
-    top:42px;
-    transform:translateX(-50%) rotate(-45deg);
-  }
-  .card-vip .vip-body {
-    min-width:0;
-  }
-  .card-vip h2 {
-    font-family:'Montserrat', sans-serif;
-    font-weight:800;
-    text-transform:uppercase;
-    font-size:clamp(25px, 3vw, 42px);
-    color:#f7b733;
-    margin:0 0 8px;
-    line-height:1.1;
-    letter-spacing:0.02em;
-  }
-  .card-vip p {
-    color:var(--text-dim);
-    font-size:14px;
-    margin:0 0 18px;
-  }
-  .card-vip .vip-form {
-    display:flex;
-    gap:12px;
-    align-items:center;
-    max-width:560px;
-  }
-  .card-vip .vip-form input {
-    flex:1;
-    min-width:0;
-    background:rgba(12,20,31,0.85);
-    border:1px solid rgba(255,255,255,0.12);
-    border-radius:10px;
-    padding:16px 18px;
-    color:var(--text);
-    font-size:15px;
-    min-height:52px;
-  }
-  .card-vip .vip-form input::placeholder { color:#8290b0; }
-  .card-vip .vip-form button {
-    background:linear-gradient(180deg,#3fe48f,#2ad279);
-    color:#081a10;
-    border:none;
-    border-radius:10px;
-    padding:0 28px;
-    min-height:52px;
-    font-weight:800;
-    font-size:15px;
-    cursor:pointer;
-    white-space:nowrap;
-    box-shadow:0 0 14px rgba(53,214,127,0.3);
-  }
-  @media (max-width:640px){
-    .card-vip{grid-template-columns:1fr; padding:20px 18px;}
-    .card-vip .vip-form{flex-direction:column;align-items:stretch;}
-    .card-vip .vip-form button{width:100%;}
-  }
 
   /* ---- newsletter flottante ---- */
   .newsletter{
@@ -1204,15 +1106,20 @@
       </div>
     </div>
 
-    <div class="card card-vip" data-name="vip-card">
-      <div class="vip-icon" aria-hidden="true"></div>
-      <div class="vip-body">
-        <h2>REJOIGNEZ NOTRE VIP</h2>
-        <p>Tenez-vous au courant de nos actualités et des nouveautés chaque semaine.</p>
-        <div class="vip-form">
-          <input type="email" name="EMAIL" id="vipCardEmail" placeholder="Ajoute ton email ici" required>
-          <button type="button">S'inscrire !</button>
-        </div>
+    <div class="card card-neon-orange" data-tags="vpn,crypto,cb,wager" data-name="celsius">
+      <div class="rank">5</div>
+      <div class="art"><div class="celsius-brand-mark"><span>°C</span></div></div>
+      <div class="info">
+        <span class="badge">🌍 VPN</span>
+        <span class="badge badge-red">Wager</span>
+        <span class="badge badge-red"><span style="color:#f7931a;">₿</span> Crypto</span>
+        <span class="badge badge-green" data-i18n="badgeCB">💳 CB</span>
+        <div class="bonus-line">Celsius</div>
+        <div class="sub" data-i18n="subGeneric">Offre boostée : 550% de bonus + 250 free spins</div>
+      </div>
+      <div class="cta-col">
+        <a class="btn" href="https://celsiuscasino.com/?referrer=Gryfazz" target="_blank" rel="noopener" data-i18n="btnActivate">Activer l'offre</a>
+        <button class="btn btn-outline" type="button" data-i18n="btnDetails" data-details="celsius">Voir les détails</button>
       </div>
     </div>
 

@@ -45,13 +45,23 @@
   }
   .logo .cap{color:var(--green);}
   .back-link{
-    font-size:14.5px;
-    color:var(--text-dim);
+    font-family:'Montserrat', sans-serif;
+    font-weight:700;
+    font-size:14px;
+    color:var(--text);
     display:flex;
     align-items:center;
     gap:6px;
   }
   .back-link:hover{color:var(--green);}
+  .header-right{display:flex;align-items:center;gap:16px;}
+  .lang-switcher{position:relative;}
+  .lang-btn{background:none;border:1px solid var(--line);color:var(--text);font-size:13px;padding:7px 12px;border-radius:8px;cursor:pointer;display:flex;align-items:center;gap:6px;font-family:inherit;}
+  .lang-btn:hover{border-color:var(--green-deep);}
+  .lang-menu{position:absolute;top:calc(100% + 8px);right:0;background:var(--bg-panel);border:1px solid var(--line);border-radius:10px;padding:6px;display:none;flex-direction:column;min-width:140px;z-index:20;}
+  .lang-switcher.open .lang-menu{display:flex;}
+  .lang-menu a{padding:8px 10px;border-radius:7px;font-size:13.5px;color:var(--text);display:flex;align-items:center;gap:8px;}
+  .lang-menu a:hover{background:#182420;}
 
   main{
     max-width:760px;
@@ -147,102 +157,346 @@
     font-size:14.5px;
   }
   .cta:hover{background:#5eeb95;}
+
+  /* ---- newsletter flottante ---- */
+  .newsletter{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    width:280px;
+    background:var(--bg-panel);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:18px 18px 16px;
+    box-shadow:0 12px 30px rgba(0,0,0,.45);
+    z-index:50;
+    transition:transform .2s ease, opacity .2s ease;
+  }
+  .newsletter.hidden{
+    transform:translateY(16px);
+    opacity:0;
+    pointer-events:none;
+  }
+  .newsletter-close{
+    position:absolute;
+    top:10px;
+    right:12px;
+    color:var(--text-dim);
+    font-size:16px;
+    line-height:1;
+    cursor:pointer;
+    background:none;
+    border:none;
+    padding:2px;
+  }
+  .newsletter-close:hover{color:var(--text);}
+  .newsletter h3{
+    font-family:'Montserrat', sans-serif;
+    font-weight:700;
+    font-size:16.5px;
+    margin:0 0 6px;
+    padding-right:16px;
+  }
+  .newsletter p{
+    font-size:12.5px;
+    color:var(--text-dim);
+    margin:0 0 12px;
+    line-height:1.5;
+  }
+  .newsletter form{
+    display:flex;
+    gap:8px;
+  }
+  .newsletter input[type="email"]{
+    flex:1;
+    min-width:0;
+    background:var(--bg);
+    border:1px solid var(--line);
+    border-radius:8px;
+    padding:9px 10px;
+    color:var(--text);
+    font-size:13px;
+  }
+  .newsletter input[type="email"]::placeholder{color:var(--text-dim);}
+  .newsletter input[type="email"]:focus{outline:none;border-color:var(--green-deep);}
+  .newsletter button[type="submit"]{
+    background:var(--green);
+    color:#06140c;
+    border:none;
+    border-radius:8px;
+    padding:0 14px;
+    font-weight:600;
+    font-size:13px;
+    cursor:pointer;
+    white-space:nowrap;
+    transition:background .12s ease;
+  }
+  .newsletter button[type="submit"]:hover{background:#33ffab;}
+  .newsletter .success{
+    font-size:12.5px;
+    color:var(--green);
+    display:none;
+  }
+  .newsletter.sent form{display:none;}
+  .newsletter.sent .success{display:block;}
+
+  @media (max-width:520px){
+    .newsletter{
+      left:16px;
+      right:16px;
+      width:auto;
+      bottom:16px;
+    }
+  }
 </style>
 </head>
 <body>
 
+
   <header>
-    <div class="logo" style="flex-direction:column;align-items:flex-start;gap:3px;"><a href="nocapbonus.html" style="display:flex;flex-direction:column;align-items:flex-start;gap:3px;">
+    <div class="logo" style="flex-direction:column;align-items:flex-start;gap:3px;"><a href="/" style="display:flex;flex-direction:column;align-items:flex-start;gap:3px;">
       <span style="display:block;width:20px;height:4px;background:#00e676;border-radius:0;"></span>
       <span style="display:flex;align-items:baseline;gap:2px;color:var(--text);"><span style="color:#00e676">NoCap</span><span style="color:var(--text)">Bonus</span></span>
     </a></div>
-    <a class="back-link" href="/">← Retour à l'accueil</a>
+    <div class="header-right">
+      <div class="lang-switcher" id="langSwitcher">
+        <button class="lang-btn" type="button" id="langBtn">🌐 <span id="langBtnLabel">FR</span> ▾</button>
+        <div class="lang-menu">
+          <a href="#" data-lang="fr"><svg width="20" height="14" viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg" style="vertical-align:middle;margin-right:8px;border-radius:2px;"><rect width="20" height="14" fill="#fff"/><rect width="5" height="14" fill="#d52b1e"/><rect x="15" width="5" height="14" fill="#d52b1e"/><path d="M10 3l1 2 2-1-1 2 2 1-2 1 1 2-2-1-1 2-1-2-2 1 1-2-2-1 2-1-1-2 2 1z" fill="#d52b1e"/></svg>Français</a>
+          <a href="#" data-lang="en"><svg width="20" height="14" viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg" style="vertical-align:middle;margin-right:8px;border-radius:2px;"><rect width="20" height="14" fill="#fff"/><g fill="#B22234"><rect y="0" width="20" height="1.08"/><rect y="2.15" width="20" height="1.08"/><rect y="4.31" width="20" height="1.08"/><rect y="6.46" width="20" height="1.08"/><rect y="8.62" width="20" height="1.08"/><rect y="10.77" width="20" height="1.08"/><rect y="12.92" width="20" height="1.08"/></g><rect width="8" height="7.5" fill="#3C3B6E"/></svg>English</a>
+        </div>
+      </div>
+      <a class="back-link" href="nocapbonus.html" data-i18n="backLink">← Retour à l'accueil</a>
+    </div>
   </header>
 
   <main>
-    <div class="eyebrow">Guide NoCapBonus</div>
-    <h1>Qu'est-ce qu'un wager ?</h1>
+    <div class="eyebrow" data-i18n="eyebrow">Guide NoCapBonus</div>
+    <h1 data-i18n="h1">Qu'est-ce qu'un wager ?</h1>
 
-    <p class="lead">Le wager (ou "exigence de mise") est une condition imposée par un casino en ligne avant de pouvoir retirer un bonus et les gains qui en découlent. C'est l'un des éléments les plus importants à comprendre avant d'accepter une offre.</p>
+    <p class="lead" data-i18n="lead">Le wager (ou "exigence de mise") est une condition imposée par un casino en ligne avant de pouvoir retirer un bonus et les gains qui en découlent. C'est l'un des éléments les plus importants à comprendre avant d'accepter une offre.</p>
 
-    <h2>La définition simple</h2>
-    <p>Quand un casino t'offre un bonus (dépôt, free spins, cashback...), il peut demander que tu rejoues ce montant un certain nombre de fois avant de pouvoir le retirer. Ce multiplicateur s'appelle le wager, généralement exprimé en "x" (x20, x35, x40...).</p>
+    <h2 data-i18n="h2_def">La définition simple</h2>
+    <p data-i18n="p_def">Quand un casino t'offre un bonus (dépôt, free spins, cashback...), il peut demander que tu rejoues ce montant un certain nombre de fois avant de pouvoir le retirer. Ce multiplicateur s'appelle le wager, généralement exprimé en "x" (x20, x35, x40...).</p>
 
     <div class="card-box">
-      <h3>La formule</h3>
-      <p style="margin-bottom:0;">Un bonus 100% Wager x30 pour un dépôt de 100€ = 200€ de start à miser 30 fois</p>
-      <div class="formula">200€ × Wager x30 = 6 000€ à miser avant retrait</div>
+      <h3 data-i18n="formulaTitle">La formule</h3>
+      <p style="margin-bottom:0;" data-i18n="formulaP">Un bonus 100% Wager x30 pour un dépôt de 100€ = 200€ de start à miser 30 fois</p>
+      <div class="formula" data-i18n="formulaBox">200€ × Wager x30 = 6 000€ à miser avant retrait</div>
     </div>
 
-    <h2>Exemple concret</h2>
+    <h2 data-i18n="h2_example">Exemple concret</h2>
 
     <div class="card-box">
-      <h3>Simulateur de wager</h3>
+      <h3 data-i18n="simTitle">Simulateur de wager</h3>
       <div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:18px;">
         <div style="flex:1 1 160px;">
-          <label style="display:block;font-size:13px;color:var(--text-dim);margin-bottom:6px;">Montant total (dépôt + bonus) (€)</label>
+          <label style="display:block;font-size:13px;color:var(--text-dim);margin-bottom:6px;" data-i18n="simLabelAmount">Montant total (dépôt + bonus) (€)</label>
           <input type="number" id="wagerBonus" value="100" min="0" style="width:100%;background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:10px 12px;color:var(--text);font-size:15px;font-family:inherit;">
         </div>
         <div style="flex:1 1 160px;">
-          <label style="display:block;font-size:13px;color:var(--text-dim);margin-bottom:6px;">Wager exigé (x)</label>
+          <label style="display:block;font-size:13px;color:var(--text-dim);margin-bottom:6px;" data-i18n="simLabelMultiplier">Wager exigé (x)</label>
           <input type="number" id="wagerMultiplier" value="30" min="0" style="width:100%;background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:10px 12px;color:var(--text);font-size:15px;font-family:inherit;">
         </div>
       </div>
       <div class="formula" id="wagerResult" style="display:block;width:100%;">100€ × Wager x30 = 3 000€ à miser avant retrait</div>
     </div>
 
-    <p>Tant que tu n'as pas misé ce montant sur les jeux éligibles, tes gains restent bloqués. C'est pour cette raison que certaines offres, malgré un bonus élevé, sont en réalité peu intéressantes si le wager est trop haut.</p>
+    <p data-i18n="p_afterSim">Tant que tu n'as pas misé ce montant sur les jeux éligibles, tes gains restent bloqués. C'est pour cette raison que certaines offres, malgré un bonus élevé, sont en réalité peu intéressantes si le wager est trop haut.</p>
 
-    <script>
-      (function(){
-        const bonusInput = document.getElementById('wagerBonus');
-        const multInput = document.getElementById('wagerMultiplier');
-        const result = document.getElementById('wagerResult');
-        function formatEuro(n){
-          return n.toLocaleString('fr-FR', {maximumFractionDigits:0}) + '€';
-        }
-        function update(){
-          const bonus = parseFloat(bonusInput.value) || 0;
-          const mult = parseFloat(multInput.value) || 0;
-          const total = bonus * mult;
-          result.textContent = formatEuro(bonus) + ' × Wager x' + mult + ' = ' + formatEuro(total) + ' à miser avant retrait';
-        }
-        bonusInput.addEventListener('input', update);
-        multInput.addEventListener('input', update);
-        update();
-      })();
-    </script>
+    <h2 data-i18n="h2_wagerfree">C'est quoi le "Wager Free" ?</h2>
+    <p data-i18n="p_wf1">Une offre <strong>Wager Free</strong> (ou "sans wager") est une offre où le multiplicateur exigé avant retrait est tout simplement de <strong>x0</strong>. Ce que tu gagnes ou reçois est directement retirable, sans avoir à le remiser.</p>
 
-    <h2>C'est quoi le "Wager Free" ?</h2>
-    <p>Une offre <strong>Wager Free</strong> (ou "sans wager") est une offre où le multiplicateur exigé avant retrait est tout simplement de <strong>x0</strong>. Ce que tu gagnes ou reçois est directement retirable, sans avoir à le remiser.</p>
-
-    <p>Attention cependant, le fonctionnement est un peu différent de ce qu'on pourrait croire : avec le Wager Free, tu ne peux pas retirer le montant du bonus en lui-même, seulement ce que tu as gagné en jouant avec.</p>
+    <p data-i18n="p_wf2">Attention cependant, le fonctionnement est un peu différent de ce qu'on pourrait croire : avec le Wager Free, tu ne peux pas retirer le montant du bonus en lui-même, seulement ce que tu as gagné en jouant avec.</p>
 
     <div class="card-box">
-      <h3>Exemple concret</h3>
-      <p>Tu déposes 100€ avec un bonus 100% : tu obtiens 200€ de solde (100€ de dépôt + 100€ de bonus).</p>
-      <p style="margin-bottom:0;">Si tu fais monter ton solde à 500€ en jouant, tu pourras retirer le total moins les 100€ offerts par le casino, soit 400€.</p>
-      <div class="formula">500€ de solde − 100€ de bonus = 400€ retirables</div>
+      <h3 data-i18n="wfExampleTitle">Exemple concret</h3>
+      <p data-i18n="wfP1">Tu déposes 100€ avec un bonus 100% : tu obtiens 200€ de solde (100€ de dépôt + 100€ de bonus).</p>
+      <p style="margin-bottom:0;" data-i18n="wfP2">Si tu fais monter ton solde à 500€ en jouant, tu pourras retirer le total moins les 100€ offerts par le casino, soit 400€.</p>
+      <div class="formula" data-i18n="wfFormula">500€ de solde − 100€ de bonus = 400€ retirables</div>
     </div>
 
-    <p>C'est pour ça que les casinos affichant la pastille <strong>"Wager free"</strong> sur NoCapBonus sont particulièrement intéressants : pas de multiplicateur à atteindre, juste le montant du bonus lui-même qui reste non retirable.</p>
+    <p data-i18n="p_afterWfExample">C'est pour ça que les casinos affichant la pastille <strong>"Wager free"</strong> sur NoCapBonus sont particulièrement intéressants : pas de multiplicateur à atteindre, juste le montant du bonus lui-même qui reste non retirable.</p>
 
-    <h2>Et le cashback sans wager ?</h2>
-    <p>C'est justement ce qui rend le cashback différent d'un bonus classique : il est généralement versé <strong>sans condition de mise</strong>. L'argent reçu est directement disponible, sans multiplicateur à atteindre.</p>
+    <h2 data-i18n="h2_cashback">Et le cashback sans wager ?</h2>
+    <p data-i18n="p_cashback">C'est justement ce qui rend le cashback différent d'un bonus classique : il est généralement versé <strong>sans condition de mise</strong>. L'argent reçu est directement disponible, sans multiplicateur à atteindre.</p>
 
     <table>
-      <tr><th>Type d'offre</th><th>Wager typique</th><th>Retrait</th></tr>
-      <tr><td>Bonus de bienvenue classique</td><td>x20 à x50</td><td>Après avoir rejoué le montant</td></tr>
-      <tr><td>Free spins</td><td>x30 à x40 sur les gains</td><td>Après avoir rejoué les gains</td></tr>
-      <tr><td class="highlight">Cashback (nos partenaires)</td><td class="highlight">Aucun</td><td class="highlight">Immédiat</td></tr>
+      <tr><th data-i18n="tableH1">Type d'offre</th><th data-i18n="tableH2">Wager typique</th><th data-i18n="tableH3">Retrait</th></tr>
+      <tr><td data-i18n="tr1c1">Bonus de bienvenue classique</td><td data-i18n="tr1c2">x20 à x50</td><td data-i18n="tr1c3">Après avoir rejoué le montant</td></tr>
+      <tr><td data-i18n="tr2c1">Free spins</td><td data-i18n="tr2c2">x30 à x40 sur les gains</td><td data-i18n="tr2c3">Après avoir rejoué les gains</td></tr>
+      <tr><td class="highlight" data-i18n="tr3c1">Cashback (nos partenaires)</td><td class="highlight" data-i18n="tr3c2">Aucun</td><td class="highlight" data-i18n="tr3c3">Immédiat</td></tr>
     </table>
 
     <div class="note">
-      <p>💡 C'est pour cette raison que NoCapBonus met en avant des plateformes avec du cashback sans wager plutôt que des bonus classiques : ce que tu reçois t'appartient réellement, sans conditions cachées.</p>
+      <p data-i18n="noteText">💡 C'est pour cette raison que NoCapBonus met en avant des plateformes avec du cashback sans wager plutôt que des bonus classiques : ce que tu reçois t'appartient réellement, sans conditions cachées.</p>
     </div>
 
-    <a class="cta" href="nocapbonus.html#board">Voir les casinos partenaires</a>
+    <a class="cta" href="nocapbonus.html#board" data-i18n="ctaText">Voir les casinos partenaires</a>
   </main>
+
+  <div class="newsletter" id="newsletter">
+    <button class="newsletter-close" id="newsletterClose" aria-label="Fermer">✕</button>
+    <h3 data-i18n="newsletterTitle">Newsletter</h3>
+    <p data-i18n="floatingNewsletterText">Des nouveautés disponibles chaque semaine dans ta boite mail.</p>
+    <form id="newsletterForm">
+      <input type="email" name="EMAIL" placeholder="ton@email.com" required data-i18n-placeholder="floatingEmailPlaceholder">
+      <input type="text" name="email_address_check" value="" style="display:none !important" tabindex="-1" autocomplete="off">
+      <input type="hidden" name="locale" value="fr">
+      <button type="submit" data-i18n="btnOk">OK</button>
+    </form>
+    <div class="success" data-i18n="newsletterSuccess">✓ Inscrit, à bientôt !</div>
+  </div>
+
+
+  <script>
+    const translations = {
+      fr: {
+        newsletterTitle: 'Newsletter',
+        floatingNewsletterText: 'Des nouveautés disponibles chaque semaine dans ta boite mail.',
+        floatingEmailPlaceholder: 'ton@email.com',
+        btnOk: 'OK',
+        newsletterSuccess: '✓ Inscrit, à bientôt !',
+        backLink: "← Retour à l'accueil",
+        eyebrow: 'Guide NoCapBonus',
+        h1: "Qu'est-ce qu'un wager ?",
+        lead: 'Le wager (ou "exigence de mise") est une condition imposée par un casino en ligne avant de pouvoir retirer un bonus et les gains qui en découlent. C\'est l\'un des éléments les plus importants à comprendre avant d\'accepter une offre.',
+        h2_def: 'La définition simple',
+        p_def: 'Quand un casino t\'offre un bonus (dépôt, free spins, cashback...), il peut demander que tu rejoues ce montant un certain nombre de fois avant de pouvoir le retirer. Ce multiplicateur s\'appelle le wager, généralement exprimé en "x" (x20, x35, x40...).',
+        formulaTitle: 'La formule',
+        formulaP: 'Un bonus 100% Wager x30 pour un dépôt de 100€ = 200€ de start à miser 30 fois',
+        formulaBox: '200€ × Wager x30 = 6 000€ à miser avant retrait',
+        h2_example: 'Exemple concret',
+        simTitle: 'Simulateur de wager',
+        simLabelAmount: 'Montant total (dépôt + bonus) (€)',
+        simLabelMultiplier: 'Wager exigé (x)',
+        p_afterSim: "Tant que tu n'as pas misé ce montant sur les jeux éligibles, tes gains restent bloqués. C'est pour cette raison que certaines offres, malgré un bonus élevé, sont en réalité peu intéressantes si le wager est trop haut.",
+        h2_wagerfree: 'C\'est quoi le "Wager Free" ?',
+        p_wf1: 'Une offre <strong>Wager Free</strong> (ou "sans wager") est une offre où le multiplicateur exigé avant retrait est tout simplement de <strong>x0</strong>. Ce que tu gagnes ou reçois est directement retirable, sans avoir à le remiser.',
+        p_wf2: "Attention cependant, le fonctionnement est un peu différent de ce qu'on pourrait croire : avec le Wager Free, tu ne peux pas retirer le montant du bonus en lui-même, seulement ce que tu as gagné en jouant avec.",
+        wfExampleTitle: 'Exemple concret',
+        wfP1: 'Tu déposes 100€ avec un bonus 100% : tu obtiens 200€ de solde (100€ de dépôt + 100€ de bonus).',
+        wfP2: 'Si tu fais monter ton solde à 500€ en jouant, tu pourras retirer le total moins les 100€ offerts par le casino, soit 400€.',
+        wfFormula: '500€ de solde − 100€ de bonus = 400€ retirables',
+        p_afterWfExample: 'C\'est pour ça que les casinos affichant la pastille <strong>"Wager free"</strong> sur NoCapBonus sont particulièrement intéressants : pas de multiplicateur à atteindre, juste le montant du bonus lui-même qui reste non retirable.',
+        h2_cashback: 'Et le cashback sans wager ?',
+        p_cashback: 'C\'est justement ce qui rend le cashback différent d\'un bonus classique : il est généralement versé <strong>sans condition de mise</strong>. L\'argent reçu est directement disponible, sans multiplicateur à atteindre.',
+        tableH1: "Type d'offre", tableH2: 'Wager typique', tableH3: 'Retrait',
+        tr1c1: 'Bonus de bienvenue classique', tr1c2: 'x20 à x50', tr1c3: 'Après avoir rejoué le montant',
+        tr2c1: 'Free spins', tr2c2: 'x30 à x40 sur les gains', tr2c3: 'Après avoir rejoué les gains',
+        tr3c1: 'Cashback (nos partenaires)', tr3c2: 'Aucun', tr3c3: 'Immédiat',
+        noteText: "💡 C'est pour cette raison que NoCapBonus met en avant des plateformes avec du cashback sans wager plutôt que des bonus classiques : ce que tu reçois t'appartient réellement, sans conditions cachées.",
+        ctaText: 'Voir les casinos partenaires',
+        simResultSuffix: 'à miser avant retrait',
+        wagerWord: 'Wager'
+      },
+      en: {
+        newsletterTitle: 'Newsletter',
+        floatingNewsletterText: 'New updates every week straight to your inbox.',
+        floatingEmailPlaceholder: 'your@email.com',
+        btnOk: 'OK',
+        newsletterSuccess: '✓ Subscribed, see you soon!',
+        backLink: '← Back to home',
+        eyebrow: 'NoCapBonus Guide',
+        h1: 'What is a wager?',
+        lead: 'The wager (or "betting requirement") is a condition set by an online casino before you can withdraw a bonus and the winnings from it. It\'s one of the most important things to understand before accepting an offer.',
+        h2_def: 'The simple definition',
+        p_def: 'When a casino offers you a bonus (deposit, free spins, cashback...), it may require you to re-bet that amount a certain number of times before you can withdraw it. This multiplier is called the wager, usually expressed as "x" (x20, x35, x40...).',
+        formulaTitle: 'The formula',
+        formulaP: 'A 100% bonus with a x30 wager on a €100 deposit = €200 starting balance to bet 30 times',
+        formulaBox: '€200 × Wager x30 = €6,000 to bet before withdrawal',
+        h2_example: 'Concrete example',
+        simTitle: 'Wager simulator',
+        simLabelAmount: 'Total amount (deposit + bonus) (€)',
+        simLabelMultiplier: 'Required wager (x)',
+        p_afterSim: 'As long as you haven\'t bet this amount on eligible games, your winnings remain locked. This is why some offers, despite a high bonus, are actually not very appealing if the wager is too high.',
+        h2_wagerfree: 'What is "Wager Free"?',
+        p_wf1: 'A <strong>Wager Free</strong> offer (or "no wager") is an offer where the multiplier required before withdrawal is simply <strong>x0</strong>. What you win or receive is directly withdrawable, with no re-betting needed.',
+        p_wf2: "Be careful though, it works a bit differently than you might think: with Wager Free, you can't withdraw the bonus amount itself, only what you won while playing with it.",
+        wfExampleTitle: 'Concrete example',
+        wfP1: 'You deposit €100 with a 100% bonus: you get a €200 balance (€100 deposit + €100 bonus).',
+        wfP2: 'If you grow your balance to €500 by playing, you can withdraw the total minus the €100 offered by the casino, i.e. €400.',
+        wfFormula: '€500 balance − €100 bonus = €400 withdrawable',
+        p_afterWfExample: 'This is why casinos showing the <strong>"Wager free"</strong> badge on NoCapBonus are particularly appealing: no multiplier to reach, only the bonus amount itself stays non-withdrawable.',
+        h2_cashback: 'What about cashback with no wager?',
+        p_cashback: 'This is exactly what makes cashback different from a classic bonus: it\'s usually paid <strong>with no betting condition</strong>. The money you receive is directly available, with no multiplier to reach.',
+        tableH1: 'Offer type', tableH2: 'Typical wager', tableH3: 'Withdrawal',
+        tr1c1: 'Classic welcome bonus', tr1c2: 'x20 to x50', tr1c3: 'After re-betting the amount',
+        tr2c1: 'Free spins', tr2c2: 'x30 to x40 on winnings', tr2c3: 'After re-betting the winnings',
+        tr3c1: 'Cashback (our partners)', tr3c2: 'None', tr3c3: 'Immediate',
+        noteText: "💡 This is why NoCapBonus highlights platforms with cashback and no wager rather than classic bonuses: what you receive truly belongs to you, with no hidden conditions.",
+        ctaText: 'See our partner casinos',
+        simResultSuffix: 'to bet before withdrawal',
+        wagerWord: 'Wager'
+      }
+    };
+
+    (function(){
+      const bonusInput = document.getElementById('wagerBonus');
+      const multInput = document.getElementById('wagerMultiplier');
+      const result = document.getElementById('wagerResult');
+      function currentDict(){
+        const lang = localStorage.getItem('nocapLang') || 'fr';
+        return translations[lang] || translations.fr;
+      }
+      function formatAmount(n){
+        const lang = localStorage.getItem('nocapLang') || 'fr';
+        const locale = lang === 'en' ? 'en-US' : 'fr-FR';
+        return n.toLocaleString(locale, {maximumFractionDigits:0}) + '€';
+      }
+      window.updateWagerSim = function(){
+        const bonus = parseFloat(bonusInput.value) || 0;
+        const mult = parseFloat(multInput.value) || 0;
+        const total = bonus * mult;
+        const dict = currentDict();
+        result.textContent = formatAmount(bonus) + ' × ' + dict.wagerWord + ' x' + mult + ' = ' + formatAmount(total) + ' ' + dict.simResultSuffix;
+      };
+      bonusInput.addEventListener('input', updateWagerSim);
+      multInput.addEventListener('input', updateWagerSim);
+      updateWagerSim();
+    })();
+
+    document.getElementById('langBtn').addEventListener('click', e=>{
+      e.stopPropagation();
+      document.getElementById('langSwitcher').classList.toggle('open');
+    });
+    document.addEventListener('click', ()=> document.getElementById('langSwitcher').classList.remove('open'));
+    document.querySelectorAll('[data-lang]').forEach(a=>{
+      a.addEventListener('click', e=>{
+        e.preventDefault();
+        applyLanguage(a.dataset.lang);
+        document.getElementById('langSwitcher').classList.remove('open');
+      });
+    });
+    function applyLanguage(lang){
+      if(!translations[lang]) lang='fr';
+      localStorage.setItem('nocapLang', lang);
+      document.documentElement.lang = lang;
+      document.getElementById('langBtnLabel').textContent = lang.toUpperCase();
+      const dict = translations[lang];
+      document.querySelectorAll('[data-i18n]').forEach(el=>{
+        const key = el.dataset.i18n;
+        if(dict[key]===undefined) return;
+        if(dict[key].indexOf('<')!==-1){ el.innerHTML = dict[key]; } else { el.textContent = dict[key]; }
+      });
+      if(window.updateWagerSim) window.updateWagerSim();
+    }
+    
+    const BREVO_FORM_URL = "https://689dffa5.sibforms.com/serve/MUIFADlIis0EgxRVamW0p9kkmiHQr0VPqU3v8gkr94QS4Z47qzPmV4lJqnJ_hDLD8Zr5wnfndX1Pdxg-Ma-b_Hza-OxNwd2QOMrOLSxVQ5SxYYsytponuJSWx2bKwanxHIJenoFVfvQ_aw5lV2x2sGMLNB4YthsMuEcCjKsThJuuYayfWKmCQMaDQh19arbn19kXjdfyjPNBlSiKlg==";
+    const nl = document.getElementById('newsletter');
+    document.getElementById('newsletterClose').addEventListener('click', () => {
+      nl.classList.add('hidden');
+    });
+    document.getElementById('newsletterForm').addEventListener('submit', e => {
+      e.preventDefault();
+      const data = new FormData(e.target);
+      fetch(BREVO_FORM_URL, { method: 'POST', mode: 'no-cors', body: data });
+      nl.classList.add('sent');
+      setTimeout(() => nl.classList.add('hidden'), 2200);
+    });
+
+    applyLanguage(localStorage.getItem('nocapLang') || 'fr');
+  </script>
 
 </body>
 </html>

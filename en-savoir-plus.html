@@ -45,13 +45,23 @@
   }
   .logo .cap{color:var(--green);}
   .back-link{
-    font-size:14.5px;
-    color:var(--text-dim);
+    font-family:'Montserrat', sans-serif;
+    font-weight:700;
+    font-size:14px;
+    color:var(--text);
     display:flex;
     align-items:center;
     gap:6px;
   }
   .back-link:hover{color:var(--green);}
+  .header-right{display:flex;align-items:center;gap:16px;}
+  .lang-switcher{position:relative;}
+  .lang-btn{background:none;border:1px solid var(--line);color:var(--text);font-size:13px;padding:7px 12px;border-radius:8px;cursor:pointer;display:flex;align-items:center;gap:6px;font-family:inherit;}
+  .lang-btn:hover{border-color:var(--green-deep);}
+  .lang-menu{position:absolute;top:calc(100% + 8px);right:0;background:var(--bg-panel);border:1px solid var(--line);border-radius:10px;padding:6px;display:none;flex-direction:column;min-width:140px;z-index:20;}
+  .lang-switcher.open .lang-menu{display:flex;}
+  .lang-menu a{padding:8px 10px;border-radius:7px;font-size:13.5px;color:var(--text);display:flex;align-items:center;gap:8px;}
+  .lang-menu a:hover{background:#182420;}
 
   main{
     max-width:760px;
@@ -183,48 +193,152 @@
     font-size:14.5px;
   }
   .cta:hover{background:#5eeb95;}
+
+  /* ---- newsletter flottante ---- */
+  .newsletter{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    width:280px;
+    background:var(--bg-panel);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:18px 18px 16px;
+    box-shadow:0 12px 30px rgba(0,0,0,.45);
+    z-index:50;
+    transition:transform .2s ease, opacity .2s ease;
+  }
+  .newsletter.hidden{
+    transform:translateY(16px);
+    opacity:0;
+    pointer-events:none;
+  }
+  .newsletter-close{
+    position:absolute;
+    top:10px;
+    right:12px;
+    color:var(--text-dim);
+    font-size:16px;
+    line-height:1;
+    cursor:pointer;
+    background:none;
+    border:none;
+    padding:2px;
+  }
+  .newsletter-close:hover{color:var(--text);}
+  .newsletter h3{
+    font-family:'Montserrat', sans-serif;
+    font-weight:700;
+    font-size:16.5px;
+    margin:0 0 6px;
+    padding-right:16px;
+  }
+  .newsletter p{
+    font-size:12.5px;
+    color:var(--text-dim);
+    margin:0 0 12px;
+    line-height:1.5;
+  }
+  .newsletter form{
+    display:flex;
+    gap:8px;
+  }
+  .newsletter input[type="email"]{
+    flex:1;
+    min-width:0;
+    background:var(--bg);
+    border:1px solid var(--line);
+    border-radius:8px;
+    padding:9px 10px;
+    color:var(--text);
+    font-size:13px;
+  }
+  .newsletter input[type="email"]::placeholder{color:var(--text-dim);}
+  .newsletter input[type="email"]:focus{outline:none;border-color:var(--green-deep);}
+  .newsletter button[type="submit"]{
+    background:var(--green);
+    color:#06140c;
+    border:none;
+    border-radius:8px;
+    padding:0 14px;
+    font-weight:600;
+    font-size:13px;
+    cursor:pointer;
+    white-space:nowrap;
+    transition:background .12s ease;
+  }
+  .newsletter button[type="submit"]:hover{background:#33ffab;}
+  .newsletter .success{
+    font-size:12.5px;
+    color:var(--green);
+    display:none;
+  }
+  .newsletter.sent form{display:none;}
+  .newsletter.sent .success{display:block;}
+
+  @media (max-width:520px){
+    .newsletter{
+      left:16px;
+      right:16px;
+      width:auto;
+      bottom:16px;
+    }
+  }
 </style>
 </head>
 <body>
 
+
   <header>
-    <div class="logo"><span class="cap">No</span>Cap<span style="color:#16a34a">Bonus</span></div>
-    <a class="back-link" href="/">← Retour à l'accueil</a>
+    <div class="logo" style="flex-direction:column;align-items:flex-start;gap:3px;"><a href="/" style="display:flex;flex-direction:column;align-items:flex-start;gap:3px;">
+      <span style="display:block;width:20px;height:4px;background:#00e676;border-radius:0;"></span>
+      <span style="display:flex;align-items:baseline;gap:2px;color:var(--text);"><span style="color:#00e676">NoCap</span><span style="color:var(--text)">Bonus</span></span>
+    </a></div>
+    <div class="header-right">
+      <div class="lang-switcher" id="langSwitcher">
+        <button class="lang-btn" type="button" id="langBtn">🌐 <span id="langBtnLabel">FR</span> ▾</button>
+        <div class="lang-menu">
+          <a href="#" data-lang="fr"><svg width="20" height="14" viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg" style="vertical-align:middle;margin-right:8px;border-radius:2px;"><rect width="20" height="14" fill="#fff"/><rect width="5" height="14" fill="#d52b1e"/><rect x="15" width="5" height="14" fill="#d52b1e"/><path d="M10 3l1 2 2-1-1 2 2 1-2 1 1 2-2-1-1 2-1-2-2 1 1-2-2-1 2-1-1-2 2 1z" fill="#d52b1e"/></svg>Français</a>
+          <a href="#" data-lang="en"><svg width="20" height="14" viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg" style="vertical-align:middle;margin-right:8px;border-radius:2px;"><rect width="20" height="14" fill="#fff"/><g fill="#B22234"><rect y="0" width="20" height="1.08"/><rect y="2.15" width="20" height="1.08"/><rect y="4.31" width="20" height="1.08"/><rect y="6.46" width="20" height="1.08"/><rect y="8.62" width="20" height="1.08"/><rect y="10.77" width="20" height="1.08"/><rect y="12.92" width="20" height="1.08"/></g><rect width="8" height="7.5" fill="#3C3B6E"/></svg>English</a>
+        </div>
+      </div>
+      <a class="back-link" href="nocapbonus.html" data-i18n="backLink">← Retour à l'accueil</a>
+    </div>
   </header>
 
   <main>
-    <div class="eyebrow">Guide NoCapBonus</div>
-    <h1>Les jeux de casino expliqués</h1>
+    <div class="eyebrow" data-i18n="eyebrow">Guide NoCapBonus</div>
+    <h1 data-i18n="h1">Les jeux de casino expliqués</h1>
 
-    <p class="lead">Avant de choisir une plateforme, ça aide de savoir à quoi ressemblent les jeux qu'on y trouve. Voici un tour rapide des classiques, et des jeux "crypto" propres aux casinos comme Stake, Rainbet ou Howl.</p>
+    <p class="lead" data-i18n="lead">Avant de choisir une plateforme, ça aide de savoir à quoi ressemblent les jeux qu'on y trouve. Voici un tour rapide des classiques, et des jeux "crypto" propres aux casinos comme Stake, Rainbet ou Howl.</p>
 
-    <h2>Les classiques</h2>
+    <h2 data-i18n="h2_classics">Les classiques</h2>
 
     <div class="game-card">
-      <h3>🎰 Slots (machines à sous)</h3>
-      <p>Le jeu le plus répandu sur les casinos en ligne. Tu mises, tu lances les rouleaux, et des combinaisons de symboles déclenchent des gains. Chaque machine a son propre thème, ses bonus (free spins, multiplicateurs...) et son propre taux de redistribution (RTP).</p>
+      <h3 data-i18n="slotsTitle">🎰 Slots (machines à sous)</h3>
+      <p data-i18n="slotsDesc">Le jeu le plus répandu sur les casinos en ligne. Tu mises, tu lances les rouleaux, et des combinaisons de symboles déclenchent des gains. Chaque machine a son propre thème, ses bonus (free spins, multiplicateurs...) et son propre taux de redistribution (RTP).</p>
     </div>
 
     <div class="game-card">
-      <h3>🃏 Blackjack</h3>
-      <p>Un jeu de cartes où l'objectif est de s'approcher le plus possible de 21 sans le dépasser, tout en battant la main du croupier. C'est l'un des jeux avec le meilleur taux de redistribution pour le joueur, à condition de connaître les bases de la stratégie.</p>
+      <h3 data-i18n="bjTitle">🃏 Blackjack</h3>
+      <p data-i18n="bjDesc">Un jeu de cartes où l'objectif est de s'approcher le plus possible de 21 sans le dépasser, tout en battant la main du croupier. C'est l'un des jeux avec le meilleur taux de redistribution pour le joueur, à condition de connaître les bases de la stratégie.</p>
     </div>
 
-    <h3 style="font-family:'Montserrat', sans-serif;font-size:16px;color:var(--text);margin:8px 0 4px;">Tableau de stratégie de base</h3>
-    <p>Ce tableau indique le coup optimal à jouer selon ta main et la carte visible du croupier.</p>
+    <h3 style="font-family:'Montserrat', sans-serif;font-size:16px;color:var(--text);margin:8px 0 4px;" data-i18n="strategyTitle">Tableau de stratégie de base</h3>
+    <p data-i18n="strategyDesc">Ce tableau indique le coup optimal à jouer selon ta main et la carte visible du croupier.</p>
 
     <div class="strategy-legend">
-      <div class="legend-item"><span class="legend-swatch s-t"></span>Tirer</div>
-      <div class="legend-item"><span class="legend-swatch s-d"></span>Doubler</div>
-      <div class="legend-item"><span class="legend-swatch s-r"></span>Rester</div>
-      <div class="legend-item"><span class="legend-swatch s-p"></span>Partager</div>
+      <div class="legend-item"><span class="legend-swatch s-t"></span><span data-i18n="legendHit">Tirer</span></div>
+      <div class="legend-item"><span class="legend-swatch s-d"></span><span data-i18n="legendDouble">Doubler</span></div>
+      <div class="legend-item"><span class="legend-swatch s-r"></span><span data-i18n="legendStand">Rester</span></div>
+      <div class="legend-item"><span class="legend-swatch s-p"></span><span data-i18n="legendSplit">Partager</span></div>
     </div>
 
     <div class="strategy-wrap">
       <table class="strategy-table">
-        <caption>Totaux durs</caption>
+        <caption data-i18n="captionHard">Totaux durs</caption>
         <thead>
-          <tr><th class="row-head">Joueur</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th><th>A</th></tr>
+          <tr><th class="row-head" data-i18n="playerHeader">Joueur</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th><th>A</th></tr>
         </thead>
         <tbody>
           <tr><th class="row-head">17+</th><td class="s-r">R</td><td class="s-r">R</td><td class="s-r">R</td><td class="s-r">R</td><td class="s-r">R</td><td class="s-r">R</td><td class="s-r">R</td><td class="s-r">R</td><td class="s-r">R</td><td class="s-r">R</td></tr>
@@ -244,9 +358,9 @@
 
     <div class="strategy-wrap">
       <table class="strategy-table">
-        <caption>Paires</caption>
+        <caption data-i18n="captionPairs">Paires</caption>
         <thead>
-          <tr><th class="row-head">Joueur</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th><th>A</th></tr>
+          <tr><th class="row-head" data-i18n="playerHeader">Joueur</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th><th>A</th></tr>
         </thead>
         <tbody>
           <tr><th class="row-head">A-A</th><td class="s-p">P</td><td class="s-p">P</td><td class="s-p">P</td><td class="s-p">P</td><td class="s-p">P</td><td class="s-p">P</td><td class="s-p">P</td><td class="s-p">P</td><td class="s-p">P</td><td class="s-p">P</td></tr>
@@ -265,9 +379,9 @@
 
     <div class="strategy-wrap">
       <table class="strategy-table">
-        <caption>Totaux souples (As-X)</caption>
+        <caption data-i18n="captionSoft">Totaux souples (As-X)</caption>
         <thead>
-          <tr><th class="row-head">Joueur</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th><th>A</th></tr>
+          <tr><th class="row-head" data-i18n="playerHeader">Joueur</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th><th>A</th></tr>
         </thead>
         <tbody>
           <tr><th class="row-head">A-9</th><td class="s-r">R</td><td class="s-r">R</td><td class="s-r">R</td><td class="s-r">R</td><td class="s-r">R</td><td class="s-r">R</td><td class="s-r">R</td><td class="s-r">R</td><td class="s-r">R</td><td class="s-r">R</td></tr>
@@ -283,34 +397,159 @@
     </div>
 
     <div class="game-card">
-      <h3>🎡 Roulette</h3>
-      <p>Une bille est lancée sur une roue numérotée, et tu paries sur où elle va s'arrêter (un numéro précis, une couleur, pair/impair...). Simple à comprendre, avec différents types de mises possibles selon le risque que tu veux prendre.</p>
+      <h3 data-i18n="rouletteTitle">🎡 Roulette</h3>
+      <p data-i18n="rouletteDesc">Une bille est lancée sur une roue numérotée, et tu paries sur où elle va s'arrêter (un numéro précis, une couleur, pair/impair...). Simple à comprendre, avec différents types de mises possibles selon le risque que tu veux prendre.</p>
     </div>
 
-    <h2>Les jeux "crypto"</h2>
-    <p>Popularisés par les casinos crypto, ces jeux misent sur des mécaniques simples et rapides, souvent avec un système "provably fair" qui permet de vérifier l'équité de chaque round.</p>
+    <h2 data-i18n="h2_crypto">Les jeux "crypto"</h2>
+    <p data-i18n="p_crypto">Popularisés par les casinos crypto, ces jeux misent sur des mécaniques simples et rapides, souvent avec un système "provably fair" qui permet de vérifier l'équité de chaque round.</p>
 
     <div class="game-card">
-      <h3>🚀 Crash</h3>
-      <p>Une courbe de multiplicateur grimpe en continu, et tu dois retirer ta mise avant qu'elle ne "crash". Plus tu attends, plus le gain potentiel est élevé, mais plus le risque de tout perdre grandit aussi.</p>
-    </div>
-
-    <div class="game-card">
-      <h3>💣 Mines</h3>
-      <p>Une grille cachée contient des mines. Tu révèles des cases une par une : chaque case sûre augmente ton gain, mais tomber sur une mine fait tout perdre. Tu choisis de continuer ou d'encaisser à chaque étape.</p>
+      <h3 data-i18n="crashTitle">🚀 Crash</h3>
+      <p data-i18n="crashDesc">Une courbe de multiplicateur grimpe en continu, et tu dois retirer ta mise avant qu'elle ne "crash". Plus tu attends, plus le gain potentiel est élevé, mais plus le risque de tout perdre grandit aussi.</p>
     </div>
 
     <div class="game-card">
-      <h3>🔺 Plinko</h3>
-      <p>Inspiré des jeux de bille à picots : tu lâches une bille en haut d'un plateau, elle rebondit, et atterrit dans une case correspondant à un multiplicateur. Simple, rapide, et très visuel.</p>
+      <h3 data-i18n="minesTitle">💣 Mines</h3>
+      <p data-i18n="minesDesc">Une grille cachée contient des mines. Tu révèles des cases une par une : chaque case sûre augmente ton gain, mais tomber sur une mine fait tout perdre. Tu choisis de continuer ou d'encaisser à chaque étape.</p>
+    </div>
+
+    <div class="game-card">
+      <h3 data-i18n="plinkoTitle">🔺 Plinko</h3>
+      <p data-i18n="plinkoDesc">Inspiré des jeux de bille à picots : tu lâches une bille en haut d'un plateau, elle rebondit, et atterrit dans une case correspondant à un multiplicateur. Simple, rapide, et très visuel.</p>
     </div>
 
     <div class="note">
-      <p>💡 Peu importe le jeu choisi, garde en tête que le hasard reste le facteur principal. Fixe-toi un budget avant de jouer et ne dépasse jamais ce que tu es prêt à perdre.</p>
+      <p data-i18n="noteText">💡 Peu importe le jeu choisi, garde en tête que le hasard reste le facteur principal. Fixe-toi un budget avant de jouer et ne dépasse jamais ce que tu es prêt à perdre.</p>
     </div>
 
-    <a class="cta" href="nocapbonus.html#board">Voir les casinos partenaires</a>
+    <a class="cta" href="nocapbonus.html#board" data-i18n="ctaText">Voir les casinos partenaires</a>
   </main>
+
+  <div class="newsletter" id="newsletter">
+    <button class="newsletter-close" id="newsletterClose" aria-label="Fermer">✕</button>
+    <h3 data-i18n="newsletterTitle">Newsletter</h3>
+    <p data-i18n="floatingNewsletterText">Des nouveautés disponibles chaque semaine dans ta boite mail.</p>
+    <form id="newsletterForm">
+      <input type="email" name="EMAIL" placeholder="ton@email.com" required data-i18n-placeholder="floatingEmailPlaceholder">
+      <input type="text" name="email_address_check" value="" style="display:none !important" tabindex="-1" autocomplete="off">
+      <input type="hidden" name="locale" value="fr">
+      <button type="submit" data-i18n="btnOk">OK</button>
+    </form>
+    <div class="success" data-i18n="newsletterSuccess">✓ Inscrit, à bientôt !</div>
+  </div>
+
+
+  <script>
+    const translations = {
+      fr: {
+        newsletterTitle: 'Newsletter',
+        floatingNewsletterText: 'Des nouveautés disponibles chaque semaine dans ta boite mail.',
+        floatingEmailPlaceholder: 'ton@email.com',
+        btnOk: 'OK',
+        newsletterSuccess: '✓ Inscrit, à bientôt !',
+        backLink: "← Retour à l'accueil",
+        eyebrow: 'Guide NoCapBonus',
+        h1: 'Les jeux de casino expliqués',
+        lead: 'Avant de choisir une plateforme, ça aide de savoir à quoi ressemblent les jeux qu\'on y trouve. Voici un tour rapide des classiques, et des jeux "crypto" propres aux casinos comme Stake, Rainbet ou Howl.',
+        h2_classics: 'Les classiques',
+        slotsTitle: '🎰 Slots (machines à sous)',
+        slotsDesc: 'Le jeu le plus répandu sur les casinos en ligne. Tu mises, tu lances les rouleaux, et des combinaisons de symboles déclenchent des gains. Chaque machine a son propre thème, ses bonus (free spins, multiplicateurs...) et son propre taux de redistribution (RTP).',
+        bjTitle: '🃏 Blackjack',
+        bjDesc: "Un jeu de cartes où l'objectif est de s'approcher le plus possible de 21 sans le dépasser, tout en battant la main du croupier. C'est l'un des jeux avec le meilleur taux de redistribution pour le joueur, à condition de connaître les bases de la stratégie.",
+        strategyTitle: 'Tableau de stratégie de base',
+        strategyDesc: 'Ce tableau indique le coup optimal à jouer selon ta main et la carte visible du croupier.',
+        legendHit: 'Tirer', legendDouble: 'Doubler', legendStand: 'Rester', legendSplit: 'Partager',
+        captionHard: 'Totaux durs', captionPairs: 'Paires', captionSoft: 'Totaux souples (As-X)',
+        playerHeader: 'Joueur',
+        rouletteTitle: '🎡 Roulette',
+        rouletteDesc: "Une bille est lancée sur une roue numérotée, et tu paries sur où elle va s'arrêter (un numéro précis, une couleur, pair/impair...). Simple à comprendre, avec différents types de mises possibles selon le risque que tu veux prendre.",
+        h2_crypto: 'Les jeux "crypto"',
+        p_crypto: 'Popularisés par les casinos crypto, ces jeux misent sur des mécaniques simples et rapides, souvent avec un système "provably fair" qui permet de vérifier l\'équité de chaque round.',
+        crashTitle: '🚀 Crash',
+        crashDesc: 'Une courbe de multiplicateur grimpe en continu, et tu dois retirer ta mise avant qu\'elle ne "crash". Plus tu attends, plus le gain potentiel est élevé, mais plus le risque de tout perdre grandit aussi.',
+        minesTitle: '💣 Mines',
+        minesDesc: "Une grille cachée contient des mines. Tu révèles des cases une par une : chaque case sûre augmente ton gain, mais tomber sur une mine fait tout perdre. Tu choisis de continuer ou d'encaisser à chaque étape.",
+        plinkoTitle: '🔺 Plinko',
+        plinkoDesc: "Inspiré des jeux de bille à picots : tu lâches une bille en haut d'un plateau, elle rebondit, et atterrit dans une case correspondant à un multiplicateur. Simple, rapide, et très visuel.",
+        noteText: "💡 Peu importe le jeu choisi, garde en tête que le hasard reste le facteur principal. Fixe-toi un budget avant de jouer et ne dépasse jamais ce que tu es prêt à perdre.",
+        ctaText: 'Voir les casinos partenaires'
+      },
+      en: {
+        newsletterTitle: 'Newsletter',
+        floatingNewsletterText: 'New updates every week straight to your inbox.',
+        floatingEmailPlaceholder: 'your@email.com',
+        btnOk: 'OK',
+        newsletterSuccess: '✓ Subscribed, see you soon!',
+        backLink: '← Back to home',
+        eyebrow: 'NoCapBonus Guide',
+        h1: 'Casino games explained',
+        lead: 'Before picking a platform, it helps to know what the games there look like. Here\'s a quick tour of the classics, and the "crypto" games specific to casinos like Stake, Rainbet or Howl.',
+        h2_classics: 'The classics',
+        slotsTitle: '🎰 Slots',
+        slotsDesc: 'The most widespread game on online casinos. You bet, spin the reels, and combinations of symbols trigger wins. Each machine has its own theme, bonuses (free spins, multipliers...) and its own payout rate (RTP).',
+        bjTitle: '🃏 Blackjack',
+        bjDesc: "A card game where the goal is to get as close to 21 as possible without going over, while beating the dealer's hand. It's one of the games with the best payout rate for the player, provided you know basic strategy.",
+        strategyTitle: 'Basic strategy chart',
+        strategyDesc: 'This chart shows the optimal move to play based on your hand and the dealer\'s visible card.',
+        legendHit: 'Hit', legendDouble: 'Double', legendStand: 'Stand', legendSplit: 'Split',
+        captionHard: 'Hard totals', captionPairs: 'Pairs', captionSoft: 'Soft totals (Ace-X)',
+        playerHeader: 'Player',
+        rouletteTitle: '🎡 Roulette',
+        rouletteDesc: 'A ball is spun on a numbered wheel, and you bet on where it will land (a specific number, a color, odd/even...). Easy to understand, with different bet types depending on the risk you want to take.',
+        h2_crypto: '"Crypto" games',
+        p_crypto: 'Popularized by crypto casinos, these games rely on simple, fast mechanics, often with a "provably fair" system that lets you verify the fairness of each round.',
+        crashTitle: '🚀 Crash',
+        crashDesc: 'A multiplier curve keeps climbing, and you must cash out your bet before it "crashes". The longer you wait, the higher the potential payout, but the higher the risk of losing it all too.',
+        minesTitle: '💣 Mines',
+        minesDesc: 'A hidden grid contains mines. You reveal tiles one by one: each safe tile increases your winnings, but hitting a mine loses everything. You choose whether to continue or cash out at each step.',
+        plinkoTitle: '🔺 Plinko',
+        plinkoDesc: 'Inspired by pin-and-ball games: you drop a ball from the top of a board, it bounces around, and lands in a slot corresponding to a multiplier. Simple, fast, and very visual.',
+        noteText: '💡 Whatever game you choose, keep in mind that chance remains the main factor. Set yourself a budget before playing and never exceed what you\'re willing to lose.',
+        ctaText: 'See our partner casinos'
+      }
+    };
+
+    document.getElementById('langBtn').addEventListener('click', e=>{
+      e.stopPropagation();
+      document.getElementById('langSwitcher').classList.toggle('open');
+    });
+    document.addEventListener('click', ()=> document.getElementById('langSwitcher').classList.remove('open'));
+    document.querySelectorAll('[data-lang]').forEach(a=>{
+      a.addEventListener('click', e=>{
+        e.preventDefault();
+        applyLanguage(a.dataset.lang);
+        document.getElementById('langSwitcher').classList.remove('open');
+      });
+    });
+    function applyLanguage(lang){
+      if(!translations[lang]) lang='fr';
+      localStorage.setItem('nocapLang', lang);
+      document.documentElement.lang = lang;
+      document.getElementById('langBtnLabel').textContent = lang.toUpperCase();
+      const dict = translations[lang];
+      document.querySelectorAll('[data-i18n]').forEach(el=>{
+        const key = el.dataset.i18n;
+        if(dict[key]===undefined) return;
+        if(dict[key].indexOf('<')!==-1){ el.innerHTML = dict[key]; } else { el.textContent = dict[key]; }
+      });
+    }
+    
+    const BREVO_FORM_URL = "https://689dffa5.sibforms.com/serve/MUIFADlIis0EgxRVamW0p9kkmiHQr0VPqU3v8gkr94QS4Z47qzPmV4lJqnJ_hDLD8Zr5wnfndX1Pdxg-Ma-b_Hza-OxNwd2QOMrOLSxVQ5SxYYsytponuJSWx2bKwanxHIJenoFVfvQ_aw5lV2x2sGMLNB4YthsMuEcCjKsThJuuYayfWKmCQMaDQh19arbn19kXjdfyjPNBlSiKlg==";
+    const nl = document.getElementById('newsletter');
+    document.getElementById('newsletterClose').addEventListener('click', () => {
+      nl.classList.add('hidden');
+    });
+    document.getElementById('newsletterForm').addEventListener('submit', e => {
+      e.preventDefault();
+      const data = new FormData(e.target);
+      fetch(BREVO_FORM_URL, { method: 'POST', mode: 'no-cors', body: data });
+      nl.classList.add('sent');
+      setTimeout(() => nl.classList.add('hidden'), 2200);
+    });
+
+    applyLanguage(localStorage.getItem('nocapLang') || 'fr');
+  </script>
 
 </body>
 </html>

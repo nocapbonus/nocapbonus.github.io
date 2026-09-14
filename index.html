@@ -588,89 +588,98 @@
   .newsletter-banner{
     max-width:1152px;
     margin:56px auto 0;
-    padding:36px 24px;
+    padding:0 24px;
+    background:transparent;
+    border:none;
+    display:block;
+  }
+  .newsletter-banner-inner{
     background:var(--bg-panel);
-    border:1px solid var(--line);
-    border-radius:16px;
-    display:flex;
+    border:1px solid rgba(255,170,0,0.9);
+    border-radius:18px;
+    display:grid;
+    grid-template-columns:220px minmax(0,1fr) auto;
     align-items:center;
-    gap:32px;
+    gap:20px;
+    padding:18px 20px 18px 18px;
+    box-shadow:0 0 0 1px rgba(255,170,0,0.12), 0 0 20px rgba(255,170,0,0.08);
   }
   .newsletter-banner-visual{
-    flex:0 0 auto;
-    width:120px;
-    height:120px;
+    width:160px;
+    height:160px;
     border-radius:50%;
     background:linear-gradient(135deg,#ff7d6a 0%, #ff6c60 30%, #f9634d 100%);
-    border:none;
+    box-shadow:0 0 20px rgba(249,99,77,0.35);
+    position:relative;
+    margin:0 auto;
+  }
+  .newsletter-banner-visual::before{
+    content:"°C";
+    position:absolute;
+    inset:0;
     display:flex;
     align-items:center;
     justify-content:center;
-    box-shadow:0 0 24px rgba(249,99,77,0.38);
-  }
-  .newsletter-banner-visual .celsius-banner-mini{
-    display:inline-block;
     font-family:'Montserrat', sans-serif;
     font-weight:800;
-    font-size:92px;
-    line-height:1;
+    font-size:110px;
     letter-spacing:-0.12em;
     color:#fff;
-    transform:translateY(-6px);
+    transform:translateY(-8px);
   }
-  .newsletter-banner-content{flex:1 1 auto;min-width:0;}
+  .newsletter-banner-content{min-width:0;}
+  .newsletter-banner .badge-row{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-bottom:8px;
+  }
+  .newsletter-banner .badge{ 
+    display:inline-block;
+    font-size:11px;
+    color:#a9b3bd;
+    border:1px solid rgba(255,255,255,0.35);
+    background:#141c19;
+    padding:3px 9px;
+    border-radius:20px;
+    margin-right:6px;
+    box-shadow:0 0 3px rgba(255,255,255,0.2);
+  }
   .newsletter-banner h2{
     font-family:'Montserrat', sans-serif;
     font-weight:800;
-    text-transform:uppercase;
-    font-size:clamp(20px, 3vw, 30px);
+    font-size:clamp(22px, 2.2vw, 34px);
     color:var(--text);
-    margin:0 0 4px;
-    line-height:1.05;
-    letter-spacing:0.04em;
+    margin:0 0 8px;
+    line-height:1.1;
   }
-  .newsletter-banner h2 .accent{color:var(--amber);}
-  .newsletter-banner form{
-    display:flex;
-    gap:10px;
-    max-width:520px;
-    margin-bottom:12px;
-  }
-  .newsletter-banner input[type="email"]{
-    flex:1;
-    min-width:0;
-    background:var(--bg);
-    border:1px solid var(--line);
-    border-radius:9px;
-    padding:13px 14px;
-    color:var(--text);
-    font-size:14.5px;
-  }
-  .newsletter-banner input[type="email"]::placeholder{color:var(--text-dim);}
-  .newsletter-banner input[type="email"]:focus{outline:none;border-color:var(--green-deep);}
-  .newsletter-banner button[type="submit"]{
-    background:var(--green);
-    color:#06140c;
-    border:none;
-    border-radius:9px;
-    padding:0 22px;
-    font-weight:700;
-    font-size:14.5px;
-    cursor:pointer;
-    white-space:nowrap;
-    transition:background .12s ease;
-  }
-  .newsletter-banner button[type="submit"]:hover{background:#33ffab;}
-  .newsletter-banner .legal-note{
-    font-size:12px;
+  .newsletter-banner p{
     color:var(--text-dim);
-    max-width:560px;
-    line-height:1.5;
+    font-size:15px;
+    margin:0;
+    line-height:1.4;
   }
-  .newsletter-banner .legal-note a{color:#8fa3d9;}
-  @media (max-width:640px){
-    .newsletter-banner{flex-direction:column;text-align:center;}
-    .newsletter-banner form{flex-direction:column;max-width:none;}
+  .newsletter-banner-actions{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    justify-content:flex-end;
+    padding-left:10px;
+  }
+  .newsletter-banner-actions .btn{
+    min-width:160px;
+    justify-content:center;
+  }
+  .newsletter-banner-actions .btn-outline{
+    background:transparent;
+    color:var(--text);
+    border:1px solid var(--line);
+  }
+  @media (max-width:760px){
+    .newsletter-banner-inner{grid-template-columns:1fr;}
+    .newsletter-banner-visual{width:120px;height:120px;}
+    .newsletter-banner-visual::before{font-size:76px;transform:translateY(-5px);} 
+    .newsletter-banner-actions{justify-content:flex-start;flex-wrap:wrap;padding-left:0;}
   }
 
   /* ---- newsletter flottante ---- */
@@ -1115,18 +1124,23 @@
 
   </section>
 
-  <div class="newsletter-banner">
-    <div class="newsletter-banner-visual"><span class="celsius-banner-mini">°C</span></div>
-    <div class="newsletter-banner-content">
-      <h2 id="vipBannerTitle">CELSIUS<br>CASINO</h2>
-      <p style="color:var(--text-dim);font-size:14px;margin:0 0 12px;" data-i18n="vipBannerText">Tenez-vous au courant de nos actualités et des nouveautés chaque semaine.</p>
-      <form id="newsletterBannerForm">
-        <input type="email" name="EMAIL" id="newsletterBannerEmail" placeholder="Ajoute ton email ici" required data-i18n-placeholder="emailPlaceholder">
-        <input type="text" name="email_address_check" value="" style="display:none !important" tabindex="-1" autocomplete="off">
-        <input type="hidden" name="locale" value="fr">
-        <button type="submit" data-i18n="btnSubscribe">S'inscrire !</button>
-      </form>
-      <div class="banner-success" id="newsletterBannerSuccess" style="display:none;color:var(--green);font-size:13px;margin-top:8px;" data-i18n="newsletterSuccess">✓ Inscrit, à bientôt !</div>
+  <div class="newsletter-banner" aria-label="Celsius Casino card">
+    <div class="newsletter-banner-inner">
+      <div class="newsletter-banner-visual" aria-hidden="true"></div>
+      <div class="newsletter-banner-content">
+        <div class="badge-row">
+          <span class="badge">🌍 VPN</span>
+          <span class="badge">Wager</span>
+          <span class="badge"><span style="color:#f7931a;">₿</span> Crypto</span>
+          <span class="badge">💳 CB</span>
+        </div>
+        <h2>Celsius</h2>
+        <p>Un casino crypto fiable, offrant un programme VIP particulièrement avantageux</p>
+      </div>
+      <div class="newsletter-banner-actions">
+        <a class="btn" href="https://celsiuscasino.com/?referrer=Gryfazz" target="_blank" rel="noopener">Activer l'offre</a>
+        <button class="btn btn-outline" type="button" data-i18n="btnDetails" data-details="celsius">Voir les détails</button>
+      </div>
     </div>
   </div>
 

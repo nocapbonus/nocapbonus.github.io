@@ -1258,7 +1258,6 @@
     function applyLanguage(lang){
       if(!translations[lang]) lang = 'fr';
       currentLang = lang;
-      localStorage.setItem('nocapLang', lang);
       document.documentElement.lang = lang;
       const dict = translations[lang];
 
@@ -1302,6 +1301,7 @@
     document.querySelectorAll('[data-lang]').forEach(a => {
       a.addEventListener('click', e => {
         e.preventDefault();
+        localStorage.setItem('nocapLang', a.dataset.lang);
         applyLanguage(a.dataset.lang);
         document.querySelectorAll('.nav-item.open').forEach(i => i.classList.remove('open'));
       });

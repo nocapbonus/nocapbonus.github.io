@@ -615,6 +615,7 @@
     document.querySelectorAll('[data-lang]').forEach(a => {
       a.addEventListener('click', e => {
         e.preventDefault();
+        localStorage.setItem('nocapLang', a.dataset.lang);
         applyLanguage(a.dataset.lang);
         document.querySelectorAll('.nav-item.open').forEach(i => i.classList.remove('open'));
       });
@@ -622,7 +623,6 @@
 
     function applyLanguage(lang){
       if(!translations[lang]) lang = 'fr';
-      localStorage.setItem('nocapLang', lang);
       document.documentElement.lang = lang;
       const btnLabel = document.getElementById('langBtnLabel');
       if(btnLabel) btnLabel.textContent = lang.toUpperCase();
@@ -656,6 +656,7 @@
     document.querySelectorAll('[data-lang]').forEach(a=>{
       a.addEventListener('click', e=>{
         e.preventDefault();
+        localStorage.setItem('nocapLang', a.dataset.lang);
         applyLanguage(a.dataset.lang);
         document.getElementById('langSwitcher').classList.remove('open');
       });

@@ -451,13 +451,13 @@
     document.querySelectorAll('[data-lang]').forEach(a=>{
       a.addEventListener('click', e=>{
         e.preventDefault();
+        localStorage.setItem('nocapLang', a.dataset.lang);
         applyLanguage(a.dataset.lang);
         document.getElementById('langSwitcher').classList.remove('open');
       });
     });
     function applyLanguage(lang){
       if(!translations[lang]) lang='fr';
-      localStorage.setItem('nocapLang', lang);
       document.documentElement.lang = lang;
       document.getElementById('langBtnLabel').textContent = lang.toUpperCase();
       const dict = translations[lang];

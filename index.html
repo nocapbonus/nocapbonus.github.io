@@ -93,7 +93,7 @@
         <button class="nav-trigger" type="button"><span data-i18n="navLanguesLabel">Langues</span> <span class="chev">▾</span></button>
         <div class="dropdown">
           <a href="#" data-lang="fr"><svg width="20" height="14" viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg" style="vertical-align:middle;margin-right:8px;border-radius:2px;"><rect width="20" height="14" fill="#fff"/><rect width="5" height="14" fill="#d52b1e"/><rect x="15" width="5" height="14" fill="#d52b1e"/><path d="M10 3l1 2 2-1-1 2 2 1-2 1 1 2-2-1-1 2-1-2-2 1 1-2-2-1 2-1-1-2 2 1z" fill="#d52b1e"/></svg>Français</a>
-          <a href="#" data-lang="en"><svg width="20" height="14" viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg" style="vertical-align:middle;margin-right:8px;border-radius:2px;"><rect width="20" height="14" fill="#fff"/><g fill="#B22234"><rect y="0" width="20" height="1.08"/><rect y="2.15" width="20" height="1.08"/><rect y="4.31" width="20" height="1.08"/><rect y="6.46" width="20" height="1.08"/><rect y="8.62" width="20" height="1.08"/><rect y="10.77" width="20" height="1.08"/><rect y="12.92" width="20" height="1.08"/></g><rect width="8" height="7.5" fill="#3C3B6E"/></svg>English</a>
+          <a href="#" data-lang="en"><svg width="20" height="14" viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg" style="vertical-align:middle;margin-right:8px;bordefr-radius:2px;"><rect width="20" height="14" fill="#fff"/><g fill="#B22234"><rect y="0" width="20" height="1.08"/><rect y="2.15" width="20" height="1.08"/><rect y="4.31" width="20" height="1.08"/><rect y="6.46" width="20" height="1.08"/><rect y="8.62" width="20" height="1.08"/><rect y="10.77" width="20" height="1.08"/><rect y="12.92" width="20" height="1.08"/></g><rect width="8" height="7.5" fill="#3C3B6E"/></svg>English</a>
         </div>
       </div>
     </nav>
@@ -106,7 +106,9 @@
 
   <section class="board" id="board">
 
-    <h2 class="section-title" id="topSectionTitle">T<span class="crown-t">o<span class="crown-emoji">👑</span></span>p 3 des casinos de la semaine</h2>
+    <h2 class="section-title" id="topSectionTitle" data-i18n="topSectionTitle">
+      T<span class="crown-t">o<span class="crown-emoji">👑</span></span>p 3 des casinos de la semaine
+    </h2>
 
     <div class="card card-neon-blue card-top3" data-tags="vpn,crypto,cb,wager-free" data-name="stake">
       <div class="rank">1</div>
@@ -211,7 +213,7 @@
   <div class="newsletter-banner">
     <div class="newsletter-banner-visual">📩</div>
     <div class="newsletter-banner-content">
-      <h2 id="vipBannerTitle">Rejoignez notre <span class="accent">VIP</span></h2>
+      <h2 id="vipBannerTitle" data-i18n="vipBannerTitle" >Rejoignez notre <span class="accent">VIP</span></h2>
       <p style="color:var(--text-dim);font-size:14px;margin:0 0 12px;" data-i18n="vipBannerText">Tenez-vous au courant de nos actualités et des nouveautés chaque semaine.</p>
       <form id="newsletterBannerForm">
         <input type="email" name="EMAIL" id="newsletterBannerEmail" placeholder="Ajoute ton email ici" required data-i18n-placeholder="emailPlaceholder">
@@ -253,7 +255,7 @@
 
   <footer>
     <div class="rg-badge"><span class="age">18+</span> <span data-i18n="rgBadge">Jeu responsable — ces offres s'adressent uniquement aux personnes majeures dans les juridictions où l'accès à ces plateformes est autorisé.</span></div>
-    <p><span data-i18n="footerDisclaimer">nocapbonus est un site indépendant à but informatif. Nous ne sommes ni un opérateur de jeu ni un conseiller financier. Jouer comporte des risques : ne misez que ce que vous pouvez vous permettre de perdre. Besoin d'aide ?</span> <a class="help" href="https://www.begambleaware.org/" target="_blank" rel="noopener">BeGambleAware</a> · <a class="help" href="https://www.jeuxresponsables.mcgill.ca/" target="_blank" rel="noopener" data-i18n="footerHelpLink">Jeu: Aide et Référence</a></p>
+    <p><span data-i18n="footerDisclaimer">NoCapBonus est un site indépendant à but informatif. Nous ne sommes ni un opérateur de jeu ni un conseiller financier. Jouer comporte des risques : ne misez que ce que vous pouvez vous permettre de perdre. Besoin d'aide ?</span> <a class="help" href="https://www.begambleaware.org/" target="_blank" rel="noopener">BeGambleAware</a> · <a class="help" href="https://www.jeuxresponsables.mcgill.ca/" target="_blank" rel="noopener" data-i18n="footerHelpLink">Jeu: Aide et Référence</a></p>
   </footer>
 
   <div class="newsletter" id="newsletter">
@@ -334,7 +336,7 @@
         btnOk: 'OK',
         newsletterSuccess: '✓ Inscrit, à bientôt !',
         modalInfoTitle: 'Informations',
-        topSectionTitle: 'T<span class="crown-t">o<span class="crown-emoji">👑</span></span>p 3 des casinos de la semaine'
+        topSectionTitle: 'T<span class="crown-t">o<span class="crown-emoji">👑</span></span>p 3 des casinos de la semaine',
       },
       en: {
         ticker: '🎁 Exclusive bonuses verified every week — <strong>up to 15% cashback</strong> on partner platforms',
@@ -378,7 +380,7 @@
         btnOk: 'OK',
         newsletterSuccess: '✓ Subscribed, see you soon!',
         modalInfoTitle: 'Information',
-        topSectionTitle: 'T<span class="crown-t">o<span class="crown-emoji">👑</span></span>p 3 casinos of the week'
+        topSectionTitle: 'T<span class="crown-t">o<span class="crown-emoji">👑</span></span>p 3 casinos of the week',
       }
     };
 

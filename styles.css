@@ -1059,7 +1059,7 @@ footer a.help{
 
 .newsletter-banner{
   width:calc(100% - 40px);
-  max-width:1152px;
+  max-width:440px;
   min-height:326px;
 
   margin:56px auto 0;

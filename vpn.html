@@ -154,51 +154,6 @@
       }
     };
 
-    document.getElementById('langBtn').addEventListener('click', e=>{
-      e.stopPropagation();
-      document.getElementById('langSwitcher').classList.toggle('open');
-    });
-    document.addEventListener('click', ()=> document.getElementById('langSwitcher').classList.remove('open'));
-    document.querySelectorAll('[data-lang]').forEach(a=>{
-      a.addEventListener('click', e=>{
-        e.preventDefault();
-        localStorage.setItem('nocapLang', a.dataset.lang);
-        applyLanguage(a.dataset.lang);
-        document.getElementById('langSwitcher').classList.remove('open');
-      });
-    });
-    function applyLanguage(lang){
-      if(!translations[lang]) lang='fr';
-      document.documentElement.lang = lang;
-      document.getElementById('langBtnLabel').textContent = lang.toUpperCase();
-      const dict = translations[lang];
-      document.querySelectorAll('[data-i18n]').forEach(el=>{
-        const key = el.dataset.i18n;
-        if(dict[key]===undefined) return;
-        if(dict[key].indexOf('<')!==-1){ el.innerHTML = dict[key]; } else { el.textContent = dict[key]; }
-      });
-    }
-    
-    const BREVO_FORM_URL = "https://689dffa5.sibforms.com/serve/MUIFADlIis0EgxRVamW0p9kkmiHQr0VPqU3v8gkr94QS4Z47qzPmV4lJqnJ_hDLD8Zr5wnfndX1Pdxg-Ma-b_Hza-OxNwd2QOMrOLSxVQ5SxYYsytponuJSWx2bKwanxHIJenoFVfvQ_aw5lV2x2sGMLNB4YthsMuEcCjKsThJuuYayfWKmCQMaDQh19arbn19kXjdfyjPNBlSiKlg==";
-    const nl = document.getElementById('newsletter');
-    document.getElementById('newsletterClose').addEventListener('click', () => {
-      nl.classList.add('hidden');
-    });
-    document.getElementById('newsletterForm').addEventListener('submit', e => {
-      e.preventDefault();
-      const data = new FormData(e.target);
-      fetch(BREVO_FORM_URL, { method: 'POST', mode: 'no-cors', body: data });
-      nl.classList.add('sent');
-      setTimeout(() => nl.classList.add('hidden'), 2200);
-    });
-
-    function detectInitialLang(){
-      const saved = localStorage.getItem('nocapLang');
-      if(saved) return saved;
-      const browserLang = (navigator.language || navigator.userLanguage || 'fr').toLowerCase();
-      return browserLang.startsWith('fr') ? 'fr' : 'en';
-    }
-    applyLanguage(detectInitialLang());
   </script>
 
 </body>

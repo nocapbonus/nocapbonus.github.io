@@ -205,23 +205,21 @@
         <button class="btn btn-outline" type="button" data-i18n="btnDetails" data-details="celsius">Voir les détails</button>
       </div>
     </div>
-
-  </section>
-
-  <div class="newsletter-banner">
-    <div class="newsletter-banner-visual">📩</div>
-    <div class="newsletter-banner-content">
-      <h2 id="vipBannerTitle" data-i18n="vipBannerTitle" >Rejoignez notre <span class="accent">VIP</span></h2>
-      <p style="color:var(--text-dim);font-size:14px;margin:0 0 12px;" data-i18n="vipBannerText">Tenez-vous au courant de nos actualités et des nouveautés chaque semaine.</p>
-      <form id="newsletterBannerForm">
-        <input type="email" name="EMAIL" id="newsletterBannerEmail" placeholder="Ajoute ton email ici" required data-i18n-placeholder="emailPlaceholder">
-        <input type="text" name="email_address_check" value="" style="display:none !important" tabindex="-1" autocomplete="off">
-        <input type="hidden" name="locale" value="fr">
-        <button type="submit" data-i18n="btnSubscribe">S'inscrire !</button>
-      </form>
-      <div class="banner-success" id="newsletterBannerSuccess" style="display:none;color:var(--green);font-size:13px;margin-top:8px;" data-i18n="newsletterSuccess">✓ Inscrit, à bientôt !</div>
+    <div class="newsletter-banner">
+      <div class="newsletter-banner-visual">📩</div>
+      <div class="newsletter-banner-content">
+        <h2 id="vipBannerTitle" data-i18n="vipBannerTitle" >Rejoignez notre <span class="accent">VIP</span></h2>
+        <p style="color:var(--text-dim);font-size:14px;margin:0 0 12px;" data-i18n="vipBannerText">Tenez-vous au courant de nos actualités et des nouveautés chaque semaine.</p>
+        <form id="newsletterBannerForm">
+          <input type="email" name="EMAIL" id="newsletterBannerEmail" placeholder="Ajoute ton email ici" required data-i18n-placeholder="emailPlaceholder">
+          <input type="text" name="email_address_check" value="" style="display:none !important" tabindex="-1" autocomplete="off">
+          <input type="hidden" name="locale" value="fr">
+          <button type="submit" data-i18n="btnSubscribe">S'inscrire !</button>
+        </form>
+        <div class="banner-success" id="newsletterBannerSuccess" style="display:none;color:var(--green);font-size:13px;margin-top:8px;" data-i18n="newsletterSuccess">✓ Inscrit, à bientôt !</div>
+      </div>
     </div>
-  </div>
+  </section>
 
   <div class="footer-links">
     <div class="footer-col">
@@ -422,8 +420,6 @@
         a.classList.toggle('lang-active', a.dataset.lang === lang);
       });
 
-      // Affiche/masque les cartes casino réservées à une langue précise
-      // (ajouter data-lang-only="fr" ou data-lang-only="en" sur une carte pour la limiter)
       document.querySelectorAll('.card[data-lang-only]').forEach(card => {
         card.classList.toggle('lang-hidden', card.dataset.langOnly !== lang);
       });

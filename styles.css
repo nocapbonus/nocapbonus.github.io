@@ -1058,31 +1058,29 @@ footer a.help{
    ========================================================= */
 
 .newsletter-banner{
-  width:calc(100% - 40px);
-  max-width:440px;
-  min-height:326px;
+  width:100%;
+  max-width:1200px;
+  min-height:0;
 
-  margin:56px auto 0;
-  padding:20px 20px;
+  margin:0 auto 40px;
+  padding:24px;
 
   background:var(--bg-panel);
   border:1px solid var(--line);
   border-radius:14px;
 
   display:flex;
-  flex-direction:column;
+  flex-direction:row;
   align-items:center;
-  justify-content:center;
-
-  gap:14px;
+  gap:24px;
 }
 
 /* Icône newsletter */
 .newsletter-banner-visual{
-  flex:0 0 auto;
+  flex:0 0 150px;
 
-  width:70px;
-  height:70px;
+  width:150px;
+  height:150px;
 
   border-radius:12px;
 
@@ -1093,14 +1091,14 @@ footer a.help{
   align-items:center;
   justify-content:center;
 
-  font-size:32px;
+  font-size:48px;
 }
 
 /* Contenu */
 .newsletter-banner-content{
-  width:100%;
+  flex:1;
   min-width:0;
-  text-align:center;
+  text-align:left;
 }
 
 .newsletter-banner h2{
@@ -1121,28 +1119,25 @@ footer a.help{
 
 .newsletter-banner p{
   margin:0 0 12px;
-
   font-size:13px;
   color:var(--text-dim);
-
   line-height:1.5;
 }
 
 /* Formulaire */
 .newsletter-banner form{
   display:flex;
-  flex-direction:column;
+  flex-direction:row;
 
   gap:10px;
 
   width:100%;
-  max-width:none;
-
   margin:0;
 }
 
 .newsletter-banner input[type="email"]{
-  width:100%;
+  flex:1;
+  width:auto;
   min-width:0;
   min-height:43px;
 
@@ -1165,10 +1160,10 @@ footer a.help{
   border-color:var(--green-deep);
 }
 
-/* Bouton inscription */
 .newsletter-banner button[type="submit"]{
-  width:100%;
-  min-height:48px;
+  width:auto;
+  min-width:130px;
+  min-height:43px;
 
   padding:12px 20px;
 
@@ -1191,6 +1186,7 @@ footer a.help{
   background:var(--green-hover);
 }
 
+
 /* Texte légal */
 .newsletter-banner .legal-note{
   font-size:11.5px;
@@ -1209,12 +1205,12 @@ footer a.help{
 @media (max-width:640px){
 
   .newsletter-banner{
-    width:calc(100% - 40px);
-    max-width:440px;
-    min-height:326px;
+    width:100%;
+    max-width:none;
+    min-height:0;
 
-    margin:40px auto 0;
-    padding:20px 20px;
+    margin:0 auto 40px;
+    padding:20px;
 
     flex-direction:column;
     text-align:center;
@@ -1223,8 +1219,12 @@ footer a.help{
   }
 
   .newsletter-banner-visual{
+    flex:0 0 auto;
+
     width:70px;
     height:70px;
+
+    font-size:32px;
   }
 
   .newsletter-banner-content{
@@ -1244,7 +1244,6 @@ footer a.help{
   .newsletter-banner form{
     flex-direction:column;
     width:100%;
-    max-width:none;
     gap:10px;
   }
 
@@ -1255,8 +1254,8 @@ footer a.help{
 
   .newsletter-banner button[type="submit"]{
     width:100%;
+    min-width:0;
     min-height:48px;
-    padding:12px 20px;
   }
 
   .newsletter-banner .legal-note{

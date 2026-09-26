@@ -12,6 +12,9 @@
 <style>
   /* L'image de la carte remplit toute la hauteur, même quand le texte passe sur 2 lignes */
   .card .art{align-self:stretch;height:auto;min-height:150px;overflow:hidden;}
+  .card .art > img{position:absolute;inset:0;}
+  .card-top3 .art{min-height:159px;}
+  .card-top3 .info{align-self:start;}
   @media (max-width:720px){ .card .art{height:110px;min-height:0;} }
 </style>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

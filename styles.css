@@ -121,6 +121,24 @@ nav a:hover{
   position:relative;
 }
 
+/* lien CS2 + badge "Nouveau" */
+.nav-cs2{
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+}
+
+.badge-new{
+  background:var(--green);
+  color:var(--on-green);
+  font-size:10px;
+  font-weight:800;
+  line-height:1;
+  padding:3px 7px;
+  border-radius:999px;
+  letter-spacing:.02em;
+}
+
 .nav-trigger{
   background:none;
   border:none;
@@ -341,6 +359,12 @@ nav a:hover{
 
   nav .nav-item{
     width:100%;
+  }
+
+  nav .nav-cs2{
+    width:100%;
+    padding:14px 0;
+    border-bottom:1px solid var(--line);
   }
 
   nav .nav-trigger{

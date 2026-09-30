@@ -24,6 +24,9 @@
   .cs2-board .btn{flex:1;justify-content:center;text-align:center;}
   /* carte Keydrop : seule sur sa ligne, bannière vidéo en entier */
   .cs2-board .card-wide .art video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;}
+  /* bouton "Copier le code" */
+  .btn-copy{cursor:pointer;font-family:inherit;line-height:inherit;}
+  .btn-copy.copied{background:var(--green);color:var(--on-green);}
   @media (max-width:720px){ .cs2-board{grid-template-columns:1fr;} }
   .cs2-guide{max-width:760px;margin:0 auto;padding:0 24px 90px;}
   .age-banner{display:flex;align-items:center;gap:14px;}
@@ -104,6 +107,21 @@
       </div>
     </div>
 
+    <div class="card card-neon-blue" data-name="csgoskins">
+      <div class="rank">4</div>
+      <div class="art"><img src="assets/csgoskins-banner.jpg" alt="CSGOSkins" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></div>
+      <div class="info">
+        <span class="badge">🎰 Case opening</span>
+        <span class="badge" data-i18n="badgeCsgoskinsGift">🎁 0,45 € offerts</span>
+        <div class="bonus-line">CSGOSkins</div>
+        <div class="sub" data-i18n="subCsgoskins">0,45 € offerts + 10 % de bonus sur chaque dépôt avec le code NOCAPBONUS.</div>
+      </div>
+      <div class="cta-col">
+        <button class="btn btn-outline btn-copy" type="button" data-copy="NOCAPBONUS"><span data-i18n="btnCopyCode">Copier le code</span></button>
+        <a class="btn" href="https://csgo-skins.com/" target="_blank" rel="noopener sponsored" data-i18n="btnVisitSite">Aller sur le site</a>
+      </div>
+    </div>
+
   </section>
 
   <section class="cs2-guide">
@@ -155,6 +173,11 @@
         badgeHellcaseGift: '🎁 0,70 $ offerts',
         subOpenstars: "0,50 $ offerts, plus 10 % de bonus supplémentaire et d'autres avantages sur OpenStars.",
         badgeOpenstarsGift: '🎁 0,50 $ offerts',
+        subCsgoskins: '0,45 € offerts + 10 % de bonus sur chaque dépôt avec le code NOCAPBONUS.',
+        badgeCsgoskinsGift: '🎁 0,45 € offerts',
+        btnCopyCode: 'Copier le code',
+        codeCopied: 'Code copié !',
+        btnVisitSite: 'Aller sur le site',
         btnActivate: "Activer l'offre",
         h2_how: 'Comment ça marche ?',
         skinsTitle: 'Déposer avec tes skins',
@@ -183,6 +206,11 @@
         badgeHellcaseGift: '🎁 $0.70 free',
         subOpenstars: '$0.50 free, plus a 10% extra bonus and other perks on OpenStars.',
         badgeOpenstarsGift: '🎁 $0.50 free',
+        subCsgoskins: '€0.45 free + 10% bonus on every deposit with code NOCAPBONUS.',
+        badgeCsgoskinsGift: '🎁 €0.45 free',
+        btnCopyCode: 'Copy code',
+        codeCopied: 'Code copied!',
+        btnVisitSite: 'Go to the site',
         btnActivate: 'Claim offer',
         h2_how: 'How does it work?',
         skinsTitle: 'Deposit with your skins',
@@ -199,6 +227,35 @@
         ctaText: 'Also see our partner casinos'
       }
     };
+  </script>
+
+  <script>
+    // Boutons "Copier le code" (cartes CS2 sans lien d'affiliation)
+    document.querySelectorAll('[data-copy]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var code = btn.dataset.copy;
+        var done = function () {
+          var label = btn.querySelector('[data-i18n="btnCopyCode"]');
+          var lang = document.documentElement.lang === 'en' ? 'en' : 'fr';
+          var original = translations[lang].btnCopyCode;
+          label.textContent = translations[lang].codeCopied;
+          btn.classList.add('copied');
+          setTimeout(function () { label.textContent = original; btn.classList.remove('copied'); }, 2000);
+        };
+        var fallback = function () {
+          var t = document.createElement('textarea');
+          t.value = code; t.style.position = 'fixed'; t.style.opacity = '0';
+          document.body.appendChild(t); t.select();
+          try { document.execCommand('copy'); done(); } catch (e) {}
+          document.body.removeChild(t);
+        };
+        if (navigator.clipboard && window.isSecureContext) {
+          navigator.clipboard.writeText(code).then(done, fallback);
+        } else {
+          fallback();
+        }
+      });
+    });
   </script>
 <script src="scripts.js" defer></script>
 </body>

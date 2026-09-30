@@ -16,11 +16,14 @@
   /* cartes CS2 : 2 par ligne, format vertical */
   .cs2-board{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;max-width:1000px;margin-top:28px;padding-bottom:40px;}
   .cs2-board .card{grid-template-columns:1fr;align-items:stretch;}
-  .cs2-board .art{height:130px;border-right:none;border-bottom:1px solid var(--line);}
+  .cs2-board .art{height:auto;aspect-ratio:800/250;border-right:none;border-bottom:1px solid var(--line);}
+  .cs2-board .art video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;}
   .cs2-board .info{padding:18px 22px 10px;}
   .cs2-board .info .bonus-line{font-size:20px;}
   .cs2-board .cta-col{align-items:stretch;padding:0 22px 22px;margin-top:auto;}
   .cs2-board .btn{flex:1;justify-content:center;text-align:center;}
+  /* carte Keydrop : seule sur sa ligne, bannière vidéo en entier */
+  .cs2-board .card-wide .art video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;}
   @media (max-width:720px){ .cs2-board{grid-template-columns:1fr;} }
   .cs2-guide{max-width:760px;margin:0 auto;padding:0 24px 90px;}
   .age-banner{display:flex;align-items:center;gap:14px;}
@@ -61,18 +64,17 @@
        (nom, description, badges, lien d'affiliation, image dans .art). -->
   <section class="board cs2-board" id="board">
 
-    <div class="card card-neon-orange" data-name="cs2-site-1">
+    <div class="card card-neon-green" data-name="keydrop">
       <div class="rank">1</div>
-      <div class="art"><span class="placeholder-name">Site CS2 #1</span></div>
+      <div class="art"><video src="assets/keydrop-banner.mp4" poster="assets/keydrop-banner-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Keydrop : 20% + 0,50 $ de bonus avec le code NOCAPBONUS"></video></div>
       <div class="info">
         <span class="badge">🎰 Case opening</span>
-        <span class="badge badge-red"><span style="color:#f7931a;">₿</span> Crypto</span>
         <span class="badge" data-i18n="badgeSkins">🔫 Dépôt en skins</span>
-        <div class="bonus-line">Site CS2 #1</div>
-        <div class="sub" data-i18n="subSite1">Description de l'offre à compléter.</div>
+        <div class="bonus-line">Keydrop</div>
+        <div class="sub" data-i18n="subKeydrop">20% + 0,50 $ de bonus sur chaque recharge, plus une caisse gratuite chaque jour avec le code NOCAPBONUS.</div>
       </div>
       <div class="cta-col">
-        <a class="btn" href="#" target="_blank" rel="noopener sponsored" data-i18n="btnActivate">Activer l'offre</a>
+        <a class="btn" href="https://kd.link/?code=NOCAPBONUS" target="_blank" rel="noopener sponsored" data-i18n="btnActivate">Activer l'offre</a>
       </div>
     </div>
 
@@ -152,7 +154,7 @@
         ageNote: "Ces sites sont strictement réservés aux personnes majeures. Vérifie aussi qu'ils sont disponibles dans ton pays avant de t'inscrire.",
         badgeSkins: '🔫 Dépôt en skins',
         badgeCB: '💳 CB',
-        subSite1: "Description de l'offre à compléter.",
+        subKeydrop: "20% + 0,50 $ de bonus sur chaque recharge, plus une caisse gratuite chaque jour avec le code NOCAPBONUS.",
         subSite2: "Description de l'offre à compléter.",
         subSite3: "Description de l'offre à compléter.",
         btnActivate: "Activer l'offre",
@@ -178,7 +180,7 @@
         ageNote: 'These sites are strictly for adults only. Also check that they are available in your country before signing up.',
         badgeSkins: '🔫 Skin deposits',
         badgeCB: '💳 Card',
-        subSite1: 'Offer description to be added.',
+        subKeydrop: '20% + $0.50 bonus on every top-up, plus a free daily case with the code NOCAPBONUS.',
         subSite2: 'Offer description to be added.',
         subSite3: 'Offer description to be added.',
         btnActivate: 'Claim offer',

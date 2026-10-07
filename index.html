@@ -25,6 +25,16 @@
   .card-top3 .art{min-height:159px;}
   .card-top3 .info{align-self:start;}
   @media (max-width:720px){ .card .art{height:110px;min-height:0;} }
+  /* couronne du H2 "Top 3", posée en CSS sur le "o" plutôt que dans le texte lu par Google */
+  .crown-t::after{
+    content: "👑";
+    position:absolute;
+    top:-.85em;
+    left:50%;
+    transform:translateX(-50%);
+    font-size:.55em;
+    filter:drop-shadow(0 0 4px rgba(255,215,0,.5));
+  }
 </style>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
@@ -116,14 +126,14 @@
   </header>
 
   <section class="hero">
-    <h1 data-i18n="heroTitle">Découvrez les meilleurs offres sélectionnées par nos soins.</h1>
+    <h1 data-i18n="heroTitle">Les meilleures offres de casinos crypto, sélectionnées et vérifiées</h1>
     <p data-i18n="heroSub">Une sélection premium de plateformes partenaires avec des offres vérifiées directement pour la communauté.</p>
   </section>
 
   <section class="board" id="board">
 
     <h2 class="section-title" id="topSectionTitle" data-i18n="topSectionTitle">
-      T<span class="crown-t">o<span class="crown-emoji">👑</span></span>p 3 des casinos de la semaine
+      T<span class="crown-t">o</span>p 3 des casinos de la semaine
     </h2>
 
     <div class="card card-neon-blue card-top3" data-tags="vpn,crypto,cb,wager-free" data-name="stake">
@@ -338,7 +348,7 @@
         navContactTwitterDesc: 'Suis-nous pour les dernières actus.',
         navLanguesLabel: 'Langues',
         navNewBadge: 'Nouveau',
-        heroTitle: 'Découvrez les meilleurs offres sélectionnées par nos soins.',
+        heroTitle: 'Les meilleures offres de casinos crypto, sélectionnées et vérifiées',
         heroSub: 'Une sélection premium de plateformes partenaires avec des offres vérifiées directement pour la communauté.',
         badgeCB: '💳 CB',
         subStake: 'Le casino crypto le plus fiable du marché avec le meilleur système VIP',
@@ -369,7 +379,7 @@
         btnOk: 'OK',
         newsletterSuccess: '✓ Inscrit, à bientôt !',
         modalInfoTitle: 'Informations',
-        topSectionTitle: 'T<span class="crown-t">o<span class="crown-emoji">👑</span></span>p 3 des casinos de la semaine',
+        topSectionTitle: 'T<span class="crown-t">o</span>p 3 des casinos de la semaine',
       },
       en: {
         ticker: '🎁 Exclusive bonuses verified every week — <strong>up to 15% cashback</strong> on partner platforms',
@@ -415,7 +425,7 @@
         btnOk: 'OK',
         newsletterSuccess: '✓ Subscribed, see you soon!',
         modalInfoTitle: 'Information',
-        topSectionTitle: 'T<span class="crown-t">o<span class="crown-emoji">👑</span></span>p 3 casinos of the week',
+        topSectionTitle: 'T<span class="crown-t">o</span>p 3 casinos of the week',
       }
     };
 

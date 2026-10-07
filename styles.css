@@ -70,6 +70,10 @@ header{
   gap:2px;
 }
 
+.logo img{
+  width:auto;
+}
+
 .logo .cap{
   color:var(--green);
 }

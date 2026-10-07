@@ -642,6 +642,62 @@ td.highlight{
   }
 }
 
+/* ---- bandeau de suggestion de langue (pages FR) ---- */
+.lang-banner{
+  position:fixed;
+  left:20px;
+  bottom:20px;
+  max-width:320px;
+  background:var(--bg-panel);
+  border:1px solid var(--line);
+  border-radius:14px;
+  padding:14px 16px;
+  box-shadow:0 12px 30px rgba(0,0,0,.45);
+  z-index:50;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  flex-wrap:wrap;
+  font-size:13.5px;
+  color:var(--text);
+  transform:translateY(16px);
+  opacity:0;
+  pointer-events:none;
+  transition:transform .2s ease,opacity .2s ease;
+}
+
+.lang-banner.visible{
+  transform:translateY(0);
+  opacity:1;
+  pointer-events:auto;
+}
+
+.lang-banner a{
+  color:var(--green);
+  font-weight:700;
+  text-decoration:underline;
+}
+
+.lang-banner button{
+  background:none;
+  border:none;
+  color:var(--text-dim);
+  font-size:15px;
+  cursor:pointer;
+  line-height:1;
+  padding:0;
+  margin-left:4px;
+}
+
+@media (max-width:520px){
+  .lang-banner{
+    left:16px;
+    right:16px;
+    max-width:none;
+    bottom:16px;
+  }
+}
+
 /* ---- footer ---- */
 footer{
   border-top:1px solid var(--line);

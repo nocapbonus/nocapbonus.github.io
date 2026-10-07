@@ -43,10 +43,21 @@
     </div>
   </header>
 
-  <div class="lang-banner" id="langBanner" data-en-url="/en/wager.html">
-    <span>🇬🇧 View this site in English?</span>
-    <a href="/en/wager.html" id="langBannerSwitch">Switch to English</a>
-    <button type="button" id="langBannerClose" aria-label="Close">✕</button>
+  <div class="lang-banner" id="langBanner" data-en-url="/en/wager.html" role="dialog" aria-label="Language">
+    <button class="lang-banner-close" type="button" id="langBannerClose" aria-label="Close">×</button>
+    <div class="lang-banner-head">
+      <span class="lang-banner-icon" aria-hidden="true">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+      </span>
+      <div>
+        <p class="lang-banner-title">Prefer English?</p>
+        <p class="lang-banner-text">This page is also available in English.</p>
+      </div>
+    </div>
+    <div class="lang-banner-actions">
+      <a class="lang-banner-btn lang-banner-btn-primary" id="langBannerSwitch" href="/en/wager.html">Switch to English</a>
+      <button class="lang-banner-btn lang-banner-btn-secondary" type="button" id="langBannerStay">Rester en français</button>
+    </div>
   </div>
 
   <main>

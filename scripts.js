@@ -49,14 +49,22 @@ document.addEventListener('DOMContentLoaded', () => {
   if (langBanner) {
     const enUrl = langBanner.dataset.enUrl;
     const saved = localStorage.getItem('nocapLang');
+    const floatingNewsletter = document.getElementById('newsletter');
     if (saved === 'en' && enUrl) {
       window.location.href = enUrl;
     } else if (saved !== 'fr') {
       const browserLang = (navigator.language || navigator.userLanguage || 'fr').toLowerCase();
       if (!browserLang.startsWith('fr')) {
         langBanner.classList.add('visible');
+        // évite le chevauchement avec la fenêtre Newsletter sur mobile (toutes deux en bas de l'écran)
+        if (floatingNewsletter) floatingNewsletter.classList.add('hidden');
       }
     }
+    const dismissBanner = () => {
+      localStorage.setItem('nocapLang', 'fr');
+      langBanner.classList.remove('visible');
+      if (floatingNewsletter) floatingNewsletter.classList.remove('hidden');
+    };
     const switchLink = document.getElementById('langBannerSwitch');
     if (switchLink) {
       switchLink.addEventListener('click', () => {
@@ -64,12 +72,9 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
     const closeBtn = document.getElementById('langBannerClose');
-    if (closeBtn) {
-      closeBtn.addEventListener('click', () => {
-        localStorage.setItem('nocapLang', 'fr');
-        langBanner.classList.remove('visible');
-      });
-    }
+    if (closeBtn) closeBtn.addEventListener('click', dismissBanner);
+    const stayBtn = document.getElementById('langBannerStay');
+    if (stayBtn) stayBtn.addEventListener('click', dismissBanner);
   }
 
   // --- newsletter flottante ---

@@ -403,26 +403,17 @@
       document.getElementById('mainNav').classList.remove('mobile-open');
     });
 
-    const nl = document.getElementById('newsletter');
-    document.getElementById('newsletterClose').addEventListener('click', () => {
-      nl.classList.add('hidden');
-    });
     const BREVO_FORM_URL = "https://689dffa5.sibforms.com/serve/MUIFADlIis0EgxRVamW0p9kkmiHQr0VPqU3v8gkr94QS4Z47qzPmV4lJqnJ_hDLD8Zr5wnfndX1Pdxg-Ma-b_Hza-OxNwd2QOMrOLSxVQ5SxYYsytponuJSWx2bKwanxHIJenoFVfvQ_aw5lV2x2sGMLNB4YthsMuEcCjKsThJuuYayfWKmCQMaDQh19arbn19kXjdfyjPNBlSiKlg==";
     function submitToBrevo(form){
       const data = new FormData(form);
       return fetch(BREVO_FORM_URL, { method: 'POST', mode: 'no-cors', body: data });
     }
-    document.getElementById('newsletterForm').addEventListener('submit', e => {
-      e.preventDefault();
-      submitToBrevo(e.target);
-      nl.classList.add('sent');
-      setTimeout(() => nl.classList.add('hidden'), 2200);
-    });
     const bannerForm = document.getElementById('newsletterBannerForm');
     if(bannerForm){
       bannerForm.addEventListener('submit', e => {
         e.preventDefault();
         submitToBrevo(e.target);
+        if (window.nlRemember) window.nlRemember('subscribed');
         bannerForm.style.display = 'none';
         document.getElementById('newsletterBannerSuccess').style.display = 'block';
       });

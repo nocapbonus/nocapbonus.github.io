@@ -77,16 +77,40 @@ document.addEventListener('DOMContentLoaded', () => {
     if (stayBtn) stayBtn.addEventListener('click', dismissBanner);
   }
 
-  // --- newsletter flottante ---
+  // --- newsletter flottante : mémorisation du choix (toutes pages FR/EN) ---
+  const NL_KEY = 'nocapNewsletter';
+  const NL_DAYS = 1;
+  function nlShouldShow(){
+    try {
+      const raw = localStorage.getItem(NL_KEY);
+      if (!raw) return true;
+      const data = JSON.parse(raw);
+      if (data.state === 'subscribed') return false;
+      if (data.state === 'closed') return (Date.now() - data.at) > NL_DAYS * 864e5;
+    } catch (e) {}
+    return true;
+  }
+  function nlRemember(state){
+    try { localStorage.setItem(NL_KEY, JSON.stringify({ state, at: Date.now() })); } catch (e) {}
+  }
+  window.nlRemember = nlRemember;
+
   const BREVO_FORM_URL = "https://689dffa5.sibforms.com/serve/MUIFADlIis0EgxRVamW0p9kkmiHQr0VPqU3v8gkr94QS4Z47qzPmV4lJqnJ_hDLD8Zr5wnfndX1Pdxg-Ma-b_Hza-OxNwd2QOMrOLSxVQ5SxYYsytponuJSWx2bKwanxHIJenoFVfvQ_aw5lV2x2sGMLNB4YthsMuEcCjKsThJuuYayfWKmCQMaDQh19arbn19kXjdfyjPNBlSiKlg==";
   const nl = document.getElementById('newsletter');
+  if (nl && !nlShouldShow()) nl.classList.add('hidden');
   const newsletterClose = document.getElementById('newsletterClose');
-  if (newsletterClose) newsletterClose.addEventListener('click', () => nl.classList.add('hidden'));
+  if (newsletterClose) {
+    newsletterClose.addEventListener('click', () => {
+      nlRemember('closed');
+      nl.classList.add('hidden');
+    });
+  }
   const newsletterForm = document.getElementById('newsletterForm');
   if (newsletterForm) {
     newsletterForm.addEventListener('submit', e => {
       e.preventDefault();
       fetch(BREVO_FORM_URL, { method: 'POST', mode: 'no-cors', body: new FormData(e.target) });
+      nlRemember('subscribed');
       nl.classList.add('sent');
       setTimeout(() => nl.classList.add('hidden'), 2200);
     });

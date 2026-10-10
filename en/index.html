@@ -589,6 +589,9 @@
       });
       document.getElementById('modalClaimBtn').href = d.claimUrl;
       modalOverlay.classList.add('open');
+      modalOverlay.scrollTop = 0;
+      const card = modalOverlay.querySelector('.modal-card');
+      if (card) card.scrollTop = 0;
       lockPageScroll();
     }
     document.querySelectorAll('[data-details]').forEach(btn => {

@@ -1427,10 +1427,11 @@ footer a.help{
   inset:0;
   background:rgba(0,0,0,.6);
   display:none;
-  align-items:center;
+  align-items:flex-start;
   justify-content:center;
-  padding:20px;
+  padding:16px 0;
   z-index:100;
+  overflow-y:auto;
   overscroll-behavior:contain;
 }
 
@@ -1448,11 +1449,9 @@ body.modal-open{
 
   width:100%;
   max-width:1152px;
-  max-height:calc(100dvh - 32px);
-  overflow-x:hidden;
-  overflow-y:auto;
-  -webkit-overflow-scrolling:touch;
-  overscroll-behavior:contain;
+  margin:auto;
+  max-height:none;
+  overflow:visible;
 
   border-radius:16px;
 

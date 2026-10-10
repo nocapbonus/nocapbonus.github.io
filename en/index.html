@@ -19,8 +19,9 @@
 <link rel="icon" href="/assets/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon-180.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="/styles.css">
+<link rel="preload" href="/assets/fonts/montserrat-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/montserrat-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
 <style>
   /* L'image de la carte remplit toute la hauteur, même quand le texte passe sur 2 lignes */
   .card .art{align-self:stretch;height:auto;min-height:150px;overflow:hidden;}
@@ -39,8 +40,6 @@
     filter:drop-shadow(0 0 4px rgba(255,215,0,.5));
   }
 </style>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-GWM3C3YN6W"></script>
 <script src="/scripts.js" defer></script>
 <script type="application/ld+json">
@@ -86,7 +85,7 @@
   <div class="ticker">🎁 Exclusive bonuses verified every week — <strong>up to 15% cashback</strong> on partner platforms</div>
 
   <header>
-    <div class="logo"><img src="/assets/logo.png" width="2200" height="493" alt="NoCapBonus" style="height:38px;display:block;"></div>
+    <div class="logo"><picture><source srcset="/assets/img/logo-header.webp" type="image/webp"><img src="/assets/img/logo-header.png" alt="NoCapBonus" style="height:38px;display:block;"></picture></div>
     <button class="hamburger-btn" type="button" id="hamburgerBtn" aria-label="Menu">☰</button>
     <nav id="mainNav">
       <a href="/en/cs2.html" class="nav-cs2">CS2 <span class="badge-new">New</span></a>
@@ -175,7 +174,7 @@
 
     <div class="card card-neon-blue card-top3" data-tags="vpn,crypto,cb,wager-free" data-name="stake">
       <div class="rank">1</div>
-      <div class="art"><img src="/assets/img/stake.gif" width="300" height="250" alt="Stake Casino" style="width:100%;height:100%;object-fit:cover;"></div>
+      <div class="art"><video autoplay muted loop playsinline preload="auto" poster="/assets/img/stake-poster.jpg" aria-label="Stake Casino" style="width:100%;height:100%;object-fit:cover;"><source src="/assets/img/stake.webm" type="video/webm"><source src="/assets/img/stake.mp4" type="video/mp4"></video></div>
       <div class="info">
         <span class="badge">🌍 VPN</span>
         <span class="badge badge-red"><span style="color:#f7931a;">₿</span> Crypto</span>

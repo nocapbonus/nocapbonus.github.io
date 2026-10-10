@@ -502,6 +502,24 @@
 
     const modalOverlay = document.getElementById('modalOverlay');
 
+    let savedScrollY = 0;
+    function lockPageScroll(){
+      savedScrollY = window.scrollY;
+      document.body.classList.add('modal-open');
+      document.body.style.position = 'fixed';
+      document.body.style.top = `-${savedScrollY}px`;
+      document.body.style.left = '0';
+      document.body.style.right = '0';
+    }
+    function unlockPageScroll(){
+      document.body.classList.remove('modal-open');
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.left = '';
+      document.body.style.right = '';
+      window.scrollTo(0, savedScrollY);
+    }
+
     // ---- filtres de casinos ----
     (function(){
       const pills = document.querySelectorAll('.filter-pill');
@@ -571,12 +589,13 @@
       });
       document.getElementById('modalClaimBtn').href = d.claimUrl;
       modalOverlay.classList.add('open');
+      lockPageScroll();
     }
     document.querySelectorAll('[data-details]').forEach(btn => {
       btn.addEventListener('click', () => openModal(btn.dataset.details));
     });
-    document.getElementById('modalClose').addEventListener('click', () => modalOverlay.classList.remove('open'));
-    modalOverlay.addEventListener('click', e => { if(e.target === modalOverlay) modalOverlay.classList.remove('open'); });
+    document.getElementById('modalClose').addEventListener('click', () => { modalOverlay.classList.remove('open'); unlockPageScroll(); });
+    modalOverlay.addEventListener('click', e => { if(e.target === modalOverlay){ modalOverlay.classList.remove('open'); unlockPageScroll(); } });
   </script>
 
 </body>

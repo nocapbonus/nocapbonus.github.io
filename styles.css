@@ -1431,6 +1431,11 @@ footer a.help{
   justify-content:center;
   padding:20px;
   z-index:100;
+  overscroll-behavior:contain;
+}
+
+body.modal-open{
+  overflow:hidden;
 }
 
 .modal-overlay.open{
@@ -1443,9 +1448,13 @@ footer a.help{
 
   width:100%;
   max-width:1152px;
+  max-height:calc(100dvh - 32px);
+  overflow-x:hidden;
+  overflow-y:auto;
+  -webkit-overflow-scrolling:touch;
+  overscroll-behavior:contain;
 
   border-radius:16px;
-  overflow:hidden;
 
   display:grid;
   grid-template-columns:1fr 1fr;
@@ -1607,8 +1616,6 @@ footer a.help{
 
   .modal-card{
     grid-template-columns:1fr;
-    max-height:88vh;
-    overflow-y:auto;
   }
 }
 

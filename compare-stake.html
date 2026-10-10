@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Comparaison Stake</title>
+<style>
+  body{background:#0a1222;color:#e8f0ea;font-family:sans-serif;padding:24px;}
+  .row{display:flex;gap:24px;flex-wrap:wrap;margin-bottom:40px;}
+  .item{width:280px;}
+  .item h3{font-size:14px;margin:0 0 8px;}
+  .box{width:280px;height:160px;overflow:hidden;position:relative;background:#101c30;border:1px solid #1e3350;}
+  .box img, .box video{width:100%;height:100%;object-fit:cover;display:block;}
+  .size{font-size:12px;color:#8ea69a;margin-top:6px;}
+</style>
+</head>
+<body>
+<h1>Comparaison GIF original vs vidéos</h1>
+<div class="row">
+  <div class="item">
+    <h3>GIF original (141 KB)</h3>
+    <div class="box"><img src="assets/img/stake.gif"></div>
+  </div>
+  <div class="item">
+    <h3>stake.mp4 (yuv420p, ~97 KB)</h3>
+    <div class="box">
+      <video autoplay muted loop playsinline poster="assets/img/stake-poster.jpg">
+        <source src="assets/img/stake.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+  <div class="item">
+    <h3>stake-hq.mp4 (yuv444p, ~99 KB)</h3>
+    <div class="box">
+      <video autoplay muted loop playsinline poster="assets/img/stake-poster.jpg">
+        <source src="assets/img/stake-hq.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+  <div class="item">
+    <h3>stake.webm (~94 KB)</h3>
+    <div class="box">
+      <video autoplay muted loop playsinline poster="assets/img/stake-poster.jpg">
+        <source src="assets/img/stake.webm" type="video/webm">
+      </video>
+    </div>
+  </div>
+</div>
+</body>
+</html>

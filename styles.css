@@ -1451,7 +1451,7 @@ body.modal-open{
   max-width:1152px;
   margin:auto;
   max-height:none;
-  overflow:visible;
+  overflow:hidden;
 
   border-radius:16px;
 

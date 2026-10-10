@@ -515,6 +515,17 @@ td.highlight{
   font-weight:600;
 }
 
+main ul{
+  color:var(--text-dim);
+  font-size:15.5px;
+  margin:0 0 16px;
+  padding-left:20px;
+}
+
+main li{
+  margin-bottom:8px;
+}
+
 /* ---- cartes génériques ---- */
 .panel{
   background:var(--bg-panel);

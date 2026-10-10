@@ -516,14 +516,19 @@ td.highlight{
 }
 
 main ul{
-  color:var(--text-dim);
-  font-size:15.5px;
   margin:0 0 16px;
   padding-left:20px;
 }
 
 main li{
+  color:var(--text-dim);
+  font-size:15.5px;
   margin-bottom:8px;
+}
+
+main li strong,
+main li b{
+  color:inherit;
 }
 
 /* ---- cartes génériques ---- */

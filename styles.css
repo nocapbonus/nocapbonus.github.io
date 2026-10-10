@@ -1429,7 +1429,7 @@ footer a.help{
   display:none;
   align-items:flex-start;
   justify-content:center;
-  padding:16px 0;
+  padding:20px;
   z-index:100;
   overflow-y:auto;
   overscroll-behavior:contain;
@@ -1449,7 +1449,8 @@ body.modal-open{
 
   width:100%;
   max-width:1152px;
-  margin:auto;
+  margin-top:auto;
+  margin-bottom:auto;
   max-height:none;
   overflow:hidden;
 

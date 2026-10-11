@@ -219,7 +219,7 @@
         <div class="sub">L'un des casinos crypto qui récompensent le plus leurs joueurs, avec un programme VIP de référence.</div>
       </div>
       <div class="cta-col">
-        <a class="btn" href="https://stake.bet/?c=nocapbonus" target="_blank" rel="sponsored nofollow noopener">Activer l'offre</a>
+        <a class="btn" href="https://stake.bet/?c=nocapbonus" target="_blank" rel="sponsored nofollow noopener" data-aff="stake" data-aff-pos="1" data-aff-place="card">Activer l'offre</a>
         <button class="btn btn-outline" type="button" data-details="stake">Voir les détails</button>
       </div>
     </div>
@@ -235,7 +235,7 @@
         <div class="sub">Un pack de bienvenue jusqu'à 500€ + 250 free spins, le tout sans wager.</div>
       </div>
       <div class="cta-col">
-        <a class="btn" href="https://record.simsinopartners.com/_0hqGoR1dQmVZSuvhn4yj1mNd7ZgqdRLk/1/" target="_blank" rel="sponsored nofollow noopener">Activer l'offre</a>
+        <a class="btn" href="https://record.simsinopartners.com/_0hqGoR1dQmVZSuvhn4yj1mNd7ZgqdRLk/1/" target="_blank" rel="sponsored nofollow noopener" data-aff="simsinos" data-aff-pos="2" data-aff-place="card">Activer l'offre</a>
         <button class="btn btn-outline" type="button" data-details="simsinos">Voir les détails</button>
       </div>
     </div>
@@ -251,7 +251,7 @@
         <div class="sub">Un casino crypto fiable, avec jusqu'à 500 free spins à gagner dès l'inscription.</div>
       </div>
       <div class="cta-col">
-        <a class="btn" href="https://howl.gg/r/nocapbonus" target="_blank" rel="sponsored nofollow noopener">Activer l'offre</a>
+        <a class="btn" href="https://howl.gg/r/nocapbonus" target="_blank" rel="sponsored nofollow noopener" data-aff="howl" data-aff-pos="3" data-aff-place="card">Activer l'offre</a>
         <button class="btn btn-outline" type="button" data-details="howl">Voir les détails</button>
       </div>
     </div>
@@ -284,7 +284,7 @@
         <div class="sub">Un casino crypto qui se distingue par ses battles de bonus, un format qu'on ne trouve presque nulle part ailleurs.</div>
       </div>
       <div class="cta-col">
-        <a class="btn" href="https://gamdom.com/r/nocapbonus" target="_blank" rel="sponsored nofollow noopener">Activer l'offre</a>
+        <a class="btn" href="https://gamdom.com/r/nocapbonus" target="_blank" rel="sponsored nofollow noopener" data-aff="gamdom" data-aff-pos="4" data-aff-place="card">Activer l'offre</a>
         <button class="btn btn-outline" type="button" data-details="gamdom">Voir les détails</button>
       </div>
     </div>
@@ -301,7 +301,7 @@
         <div class="sub">Une offre inédite : jusqu'à 550% de bonus et 250 free spins, à découvrir directement sur le casino.</div>
       </div>
       <div class="cta-col">
-        <a class="btn" href="https://celsiuscasino.com/?referrer=Gryfazz" target="_blank" rel="sponsored nofollow noopener" data-casino="celsius">Activer l'offre</a>
+        <a class="btn" href="https://celsiuscasino.com/?referrer=Gryfazz" target="_blank" rel="sponsored nofollow noopener" data-casino="celsius" data-aff="celsius" data-aff-pos="5" data-aff-place="card">Activer l'offre</a>
         <button class="btn btn-outline" type="button" data-details="celsius">Voir les détails</button>
       </div>
     </div>
@@ -317,7 +317,7 @@
         <div class="sub">Un casino crypto avec des offres régulières sur les paris sportifs, en plus du casino.</div>
       </div>
       <div class="cta-col">
-        <a class="btn" href="https://rainbet.com/?r=nocapbonus" target="_blank" rel="sponsored nofollow noopener">Activer l'offre</a>
+        <a class="btn" href="https://rainbet.com/?r=nocapbonus" target="_blank" rel="sponsored nofollow noopener" data-aff="rainbet" data-aff-pos="6" data-aff-place="card">Activer l'offre</a>
         <button class="btn btn-outline" type="button" data-details="rainbet">Voir les détails</button>
       </div>
     </div>
@@ -402,7 +402,7 @@
         <h3>Informations</h3>
         <ul class="modal-info-list" id="modalInfoList"></ul>
         <div class="modal-actions">
-          <a class="modal-btn modal-btn-green" id="modalClaimBtn" href="#" target="_blank" rel="sponsored nofollow noopener">Activer l'offre</a>
+          <a class="modal-btn modal-btn-green" id="modalClaimBtn" href="#" target="_blank" rel="sponsored nofollow noopener" data-aff-place="modal">Activer l'offre</a>
         </div>
       </div>
     </div>
@@ -679,6 +679,7 @@
 
       searchInput.addEventListener('input', applyFilters);
     })();
+    const affPositions = { stake:1, simsinos:2, howl:3, gamdom:4, celsius:5, rainbet:6 };
     function openModal(key){
       const d = casinoData[key];
       if(!d) return;
@@ -712,7 +713,10 @@
         li.innerHTML = `<span>${k}</span><span>${v}</span>`;
         list.appendChild(li);
       });
-      document.getElementById('modalClaimBtn').href = d.claimUrl;
+      const modalClaimBtn = document.getElementById('modalClaimBtn');
+      modalClaimBtn.href = d.claimUrl;
+      modalClaimBtn.dataset.aff = key;
+      modalClaimBtn.dataset.affPos = affPositions[key] || 0;
       modalOverlay.classList.add('open');
       modalOverlay.scrollTop = 0;
       const card = modalOverlay.querySelector('.modal-card');

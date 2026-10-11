@@ -25,6 +25,18 @@
     });
   });
 
+  document.addEventListener('click', function (e) {
+    var el = e.target.closest('[data-aff]');
+    if (!el || typeof gtag !== 'function') return;
+    gtag('event', 'affiliate_click', {
+      casino: el.dataset.aff,
+      position: Number(el.dataset.affPos) || 0,
+      placement: el.dataset.affPlace || 'card',
+      page_lang: document.documentElement.lang || 'fr',
+      page_type: location.pathname.indexOf('cs2') !== -1 ? 'cs2' : (location.pathname.replace(/^\/en/, '') === '/' || /index\.html$/.test(location.pathname) ? 'home' : 'other')
+    });
+  }, true);
+
 document.addEventListener('DOMContentLoaded', () => {
   // --- sélecteur de langue : liens réels vers l'autre version, on retient juste le choix ---
   document.querySelectorAll('[data-lang]').forEach(a => {

@@ -78,6 +78,23 @@
   ]
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "NoCapBonus top crypto casinos",
+  "itemListOrder": "https://schema.org/ItemListOrderAscending",
+  "numberOfItems": 6,
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Stake" },
+    { "@type": "ListItem", "position": 2, "name": "Simsinos" },
+    { "@type": "ListItem", "position": 3, "name": "Howl" },
+    { "@type": "ListItem", "position": 4, "name": "Gamdom" },
+    { "@type": "ListItem", "position": 5, "name": "Celsius" },
+    { "@type": "ListItem", "position": 6, "name": "Rainbet" }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -292,6 +309,7 @@
         <h2 id="vipBannerTitle" >Join our <span class="accent">VIP</span></h2>
         <p style="color:var(--text-dim);font-size:14px;margin:0 0 12px;">Stay up to date with our news and updates every week.</p>
         <form id="newsletterBannerForm">
+          <label for="newsletterBannerEmail" class="sr-only">Email address</label>
           <input type="email" name="EMAIL" id="newsletterBannerEmail" placeholder="Add your email here" required>
           <input type="text" name="email_address_check" value="" style="display:none !important" tabindex="-1" autocomplete="off">
           <input type="hidden" name="locale" value="en">
@@ -338,11 +356,12 @@
   </footer>
 
   <div class="newsletter" id="newsletter">
-    <button class="newsletter-close" id="newsletterClose" aria-label="Fermer">✕</button>
+    <button class="newsletter-close" id="newsletterClose" aria-label="Close">✕</button>
     <h3>Newsletter</h3>
     <p>New updates every week straight to your inbox.</p>
     <form id="newsletterForm">
-      <input type="email" name="EMAIL" placeholder="your@email.com" required>
+      <label for="newsletterEmail" class="sr-only">Email address</label>
+      <input type="email" name="EMAIL" id="newsletterEmail" placeholder="your@email.com" required>
       <input type="text" name="email_address_check" value="" style="display:none !important" tabindex="-1" autocomplete="off">
       <input type="hidden" name="locale" value="en">
       <button type="submit">OK</button>

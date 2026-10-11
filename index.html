@@ -78,6 +78,23 @@
   ]
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Top casinos crypto NoCapBonus",
+  "itemListOrder": "https://schema.org/ItemListOrderAscending",
+  "numberOfItems": 6,
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Stake" },
+    { "@type": "ListItem", "position": 2, "name": "Simsinos" },
+    { "@type": "ListItem", "position": 3, "name": "Howl" },
+    { "@type": "ListItem", "position": 4, "name": "Gamdom" },
+    { "@type": "ListItem", "position": 5, "name": "Celsius" },
+    { "@type": "ListItem", "position": 6, "name": "Rainbet" }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -311,6 +328,7 @@
         <h2 id="vipBannerTitle" >Rejoignez notre <span class="accent">VIP</span></h2>
         <p style="color:var(--text-dim);font-size:14px;margin:0 0 12px;">Tenez-vous au courant de nos actualités et des nouveautés chaque semaine.</p>
         <form id="newsletterBannerForm">
+          <label for="newsletterBannerEmail" class="sr-only">Adresse e-mail</label>
           <input type="email" name="EMAIL" id="newsletterBannerEmail" placeholder="Ajoute ton email ici" required>
           <input type="text" name="email_address_check" value="" style="display:none !important" tabindex="-1" autocomplete="off">
           <input type="hidden" name="locale" value="fr">
@@ -361,7 +379,8 @@
     <h3>Newsletter</h3>
     <p>Des nouveautés disponibles chaque semaine dans ta boite mail.</p>
     <form id="newsletterForm">
-      <input type="email" name="EMAIL" placeholder="ton@email.com" required>
+      <label for="newsletterEmail" class="sr-only">Adresse e-mail</label>
+      <input type="email" name="EMAIL" id="newsletterEmail" placeholder="ton@email.com" required>
       <input type="text" name="email_address_check" value="" style="display:none !important" tabindex="-1" autocomplete="off">
       <input type="hidden" name="locale" value="fr">
       <button type="submit">OK</button>

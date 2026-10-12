@@ -1563,6 +1563,8 @@ body.modal-open{
 .modal-left{
   background:#f3f4f6;
   padding:32px 28px;
+  display:flex;
+  flex-direction:column;
 }
 
 .modal-right{
@@ -1627,6 +1629,24 @@ body.modal-open{
   font-size:13.5px;
   line-height:1.6;
   color:#333;
+  margin-bottom:10px;
+}
+
+.modal-license{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  font-size:12px;
+  color:#999;
+  text-align:left;
+  margin-top:auto;
+  padding-top:12px;
+  padding-bottom:16px;
+  border-top:1px solid #eee;
+}
+
+.modal-license-icon{
+  flex:none;
 }
 
 .modal-right h3{

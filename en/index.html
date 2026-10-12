@@ -378,6 +378,10 @@
         <div class="modal-desc" id="modalDesc"></div>
         <div class="modal-highlight" id="modalHighlight"></div>
         <div class="modal-wager-note" id="modalWagerNote"></div>
+        <div class="modal-license" id="modalLicense">
+          <svg class="modal-license-icon" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"></path></svg>
+          <span id="modalLicenseText"></span>
+        </div>
       </div>
       <div class="modal-right">
         <h3>Information</h3>
@@ -433,6 +437,7 @@
       stake: {
         logo: 'ST',
         name: 'Stake',
+        license: "Curaçao",
         desc: "<b>Stake</b> is one of the platforms that gives back the most to its players: cashback, regular bonuses and VIP tiers that grow with your activity. Cashback activates automatically when you sign up through our link, and you can also enter the code <b>nocapbonus</b> to confirm the link.",
         highlight: "Some of the most generous rewards on the market",
         wagerNote: "The more you play, the higher your VIP level and cashback go.",
@@ -449,6 +454,7 @@
       rainbet: {
         logo: 'RB',
         name: 'Rainbet',
+        license: "Anjouan",
         desc: "<b>Rainbet</b> stands out with frequent <b>sports betting</b> offers, ideal if you switch between casino and sports. Your cashback applies from signup through our link; the code <b>nocapbonus</b> lets you check that your account is properly linked.",
         highlight: "Regular sports betting offers + cashback",
         wagerNote: "Cashback is paid with no wagering requirement and its rate depends on your play volume.",
@@ -465,6 +471,7 @@
       howl: {
         logo: 'HW',
         name: 'Howl',
+        license: "Curaçao",
         desc: "<b>Howl</b> gets you off to a strong start with <b>up to 500 free spins</b> to win on signup, plus cashback activated automatically through our link. You can enter the code <b>nocapbonus</b> to make sure your account is properly linked.",
         highlight: "Great cashback + up to 500 free spins on signup",
         wagerNote: "Remember to connect your VPN to Canada or Finland to access the site. The cashback rate depends on your play volume.",
@@ -481,6 +488,7 @@
       gamdom: {
         logo: 'GD',
         name: 'Gamdom',
+        license: "Anjouan",
         desc: "<b>Gamdom</b>'s big strength is its <b>bonus battles</b>: a unique feature to go head to head on bonuses, a real change from the classic casino experience. Signing up through our link activates your cashback automatically, and the code <b>nocapbonus</b> confirms the link.",
         highlight: "Bonus battles + cashback",
         wagerNote: "Direct cashback, no wager: its rate grows with your activity on Gamdom.",
@@ -497,6 +505,7 @@
       celsius: {
         logo: 'CE',
         name: 'Celsius',
+        license: "Anjouan",
         desc: "<b>Celsius's welcome offer</b> rolls out across your first 4 deposits: <b>100% + 150 free spins</b> on the 1st, <b>100% + 50 free spins</b> on the 2nd, <b>200% + 50 free spins</b> on the 3rd, then <b>150% up to €1000</b> on the 4th.",
         highlight: "Up to 550% bonus + 250 free spins over 4 deposits",
         wagerNote: "A x35 wager applies to the bonuses, with a €20 minimum deposit at each stage. Maximum bet allowed while playing with the bonus: €5.",
@@ -513,6 +522,7 @@
       simsinos: {
         logo: 'SI',
         name: 'Simsinos',
+        license: "Kahnawake",
         desc: "<b>Simsinos's welcome pack</b> rolls out across your first 2 deposits: <b>100% up to €250 + 110 free spins</b> credited instantly on the 1st, then <b>100% up to €250 + 140 free spins</b> spread over 7 days on the 2nd. All bonuses are <b>wager free</b>.",
         highlight: "Up to €500 + 250 free spins, all wager free",
         wagerNote: "No wager on the bonuses, with a €20 minimum deposit at each stage. Maximum bet allowed while playing with the bonus: €5. Note: using a VPN is not allowed on this casino.",
@@ -609,6 +619,14 @@
       document.getElementById('modalDesc').innerHTML = localized.desc;
       document.getElementById('modalHighlight').textContent = localized.highlight;
       document.getElementById('modalWagerNote').textContent = localized.wagerNote;
+      const modalLicense = document.getElementById('modalLicense');
+      if (d.license) {
+        document.getElementById('modalLicenseText').textContent = 'License: ' + d.license;
+        modalLicense.style.display = '';
+      } else {
+        document.getElementById('modalLicenseText').textContent = '';
+        modalLicense.style.display = 'none';
+      }
       const list = document.getElementById('modalInfoList');
       list.innerHTML = '';
       Object.entries(localized.info).forEach(([k,v]) => {

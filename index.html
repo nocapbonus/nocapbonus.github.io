@@ -397,6 +397,10 @@
         <div class="modal-desc" id="modalDesc"></div>
         <div class="modal-highlight" id="modalHighlight"></div>
         <div class="modal-wager-note" id="modalWagerNote"></div>
+        <div class="modal-license" id="modalLicense">
+          <svg class="modal-license-icon" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"></path></svg>
+          <span id="modalLicenseText"></span>
+        </div>
       </div>
       <div class="modal-right">
         <h3>Informations</h3>
@@ -452,6 +456,7 @@
       stake: {
         logo: 'ST',
         name: 'Stake',
+        license: "Curaçao",
         desc: "<b>Stake</b> fait partie des plateformes qui redistribuent le plus à leurs joueurs : cashback, bonus réguliers et paliers VIP qui montent avec ton activité. Le cashback s'active automatiquement en t'inscrivant via notre lien, et tu peux aussi renseigner le code <b>nocapbonus</b> pour confirmer le rattachement.",
         highlight: "Des récompenses parmi les plus généreuses du marché",
         wagerNote: "Plus tu joues, plus ton niveau VIP et ton cashback augmentent.",
@@ -481,6 +486,7 @@
       rainbet: {
         logo: 'RB',
         name: 'Rainbet',
+        license: "Anjouan",
         desc: "<b>Rainbet</b> se démarque par ses offres fréquentes sur les <b>paris sportifs</b>, idéales si tu alternes entre casino et sport. Ton cashback s'applique dès l'inscription via notre lien ; le code <b>nocapbonus</b> permet de vérifier que ton compte est bien rattaché.",
         highlight: "Offres régulières sur les paris sportifs + cashback",
         wagerNote: "Le cashback est versé sans condition de mise et son taux dépend de ton volume de jeu.",
@@ -510,6 +516,7 @@
       howl: {
         logo: 'HW',
         name: 'Howl',
+        license: "Curaçao",
         desc: "<b>Howl</b> te fait démarrer fort avec <b>jusqu'à 500 free spins</b> à gagner dès l'inscription, en plus d'un cashback activé automatiquement via notre lien. Tu peux renseigner le code <b>nocapbonus</b> pour t'assurer que ton compte est bien rattaché.",
         highlight: "Cashback avantageux + jusqu'à 500 free spins à l'inscription",
         wagerNote: "Pense à connecter ton VPN sur le Canada ou la Finlande pour accéder au site. Le taux de cashback dépend de ton volume de jeu.",
@@ -539,6 +546,7 @@
       gamdom: {
         logo: 'GD',
         name: 'Gamdom',
+        license: "Anjouan",
         desc: "Le gros point fort de <b>Gamdom</b>, ce sont ses <b>battles de bonus</b> : une fonctionnalité unique pour s'affronter sur des bonus, qui change complètement de l'expérience casino classique. L'inscription via notre lien active ton cashback automatiquement, et le code <b>nocapbonus</b> sert à confirmer le rattachement.",
         highlight: "Battles de bonus + cashback",
         wagerNote: "Cashback direct, sans wager : son taux évolue avec ton activité sur Gamdom.",
@@ -568,6 +576,7 @@
       celsius: {
         logo: 'CE',
         name: 'Celsius',
+        license: "Anjouan",
         desc: "<b>L'offre de bienvenue Celsius</b> se déploie sur tes 4 premiers dépôts : <b>100% + 150 free spins</b> au 1er, <b>100% + 50 free spins</b> au 2e, <b>200% + 50 free spins</b> au 3e, puis <b>150% jusqu'à 1000€</b> au 4e.",
         highlight: "Jusqu'à 550% de bonus + 250 free spins sur 4 dépôts",
         wagerNote: "Un wager de x35 s'applique sur les bonus, avec un dépôt minimum de 20€ à chaque palier. Mise maximale autorisée en jouant avec le bonus : 5€.",
@@ -597,6 +606,7 @@
       simsinos: {
         logo: 'SI',
         name: 'Simsinos',
+        license: "Kahnawake",
         desc: "<b>Le pack de bienvenue Simsinos</b> se déploie sur tes 2 premiers dépôts : <b>100% jusqu'à 250€ + 110 free spins</b> crédités instantanément au 1er, puis <b>100% jusqu'à 250€ + 140 free spins</b> répartis sur 7 jours au 2e. Tous les bonus sont <b>wager free</b>.",
         highlight: "Jusqu'à 500€ + 250 free spins, le tout wager free",
         wagerNote: "Aucun wager sur les bonus, avec un dépôt minimum de 20€ à chaque palier. Mise maximale autorisée en jouant avec le bonus : 5€. Attention : l'utilisation d'un VPN n'est pas autorisée sur ce casino.",
@@ -706,6 +716,14 @@
       document.getElementById('modalDesc').innerHTML = localized.desc;
       document.getElementById('modalHighlight').textContent = localized.highlight;
       document.getElementById('modalWagerNote').textContent = localized.wagerNote;
+      const modalLicense = document.getElementById('modalLicense');
+      if (d.license) {
+        document.getElementById('modalLicenseText').textContent = 'Licence : ' + d.license;
+        modalLicense.style.display = '';
+      } else {
+        document.getElementById('modalLicenseText').textContent = '';
+        modalLicense.style.display = 'none';
+      }
       const list = document.getElementById('modalInfoList');
       list.innerHTML = '';
       Object.entries(localized.info).forEach(([k,v]) => {

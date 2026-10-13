@@ -3,6 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0a1222">
+<link rel="preconnect" href="https://www.googletagmanager.com">
 <title>Casino wagering requirements explained — NoCapBonus</title>
 <meta name="description" content="What is the wagering requirement on a casino bonus? Simple definition, calculation example and how to spot wager-free offers.">
 <link rel="canonical" href="https://nocapbonus.com/en/wager.html">
@@ -46,13 +48,14 @@
 </script>
 </head>
 <body>
+<a class="skip-link" href="#contenu">Skip to content</a>
 
 
   <header>
-    <div class="logo"><a href="/en/" style="display:flex;align-items:center;"><picture><source srcset="/assets/img/logo-header.webp" type="image/webp"><img src="/assets/img/logo-header.png" alt="NoCapBonus" style="height:36px;display:block;"></picture></a></div>
+    <div class="logo"><a href="/en/" style="display:flex;align-items:center;"><picture><source srcset="/assets/img/logo-header.webp" type="image/webp"><img src="/assets/img/logo-header.png" alt="NoCapBonus" width="1020" height="229" style="height:36px;display:block;"></picture></a></div>
     <div class="header-right">
       <div class="lang-switcher" id="langSwitcher">
-        <button class="lang-btn" type="button" id="langBtn">🌐 <span id="langBtnLabel">FR</span> ▾</button>
+        <button class="lang-btn" type="button" id="langBtn" aria-expanded="false">🌐 <span id="langBtnLabel">EN</span> ▾</button>
         <div class="lang-menu">
           <a href="/wager.html" data-lang="fr"><svg width="20" height="14" viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg" style="vertical-align:middle;margin-right:8px;border-radius:2px;"><rect width="20" height="14" fill="#fff"/><rect width="5" height="14" fill="#d52b1e"/><rect x="15" width="5" height="14" fill="#d52b1e"/><path d="M10 3l1 2 2-1-1 2 2 1-2 1 1 2-2-1-1 2-1-2-2 1 1-2-2-1 2-1-1-2 2 1z" fill="#d52b1e"/></svg>Français</a>
           <a href="/en/wager.html" data-lang="en"><svg width="20" height="14" viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg" style="vertical-align:middle;margin-right:8px;border-radius:2px;"><rect width="20" height="14" fill="#fff"/><g fill="#B22234"><rect y="0" width="20" height="1.08"/><rect y="2.15" width="20" height="1.08"/><rect y="4.31" width="20" height="1.08"/><rect y="6.46" width="20" height="1.08"/><rect y="8.62" width="20" height="1.08"/><rect y="10.77" width="20" height="1.08"/><rect y="12.92" width="20" height="1.08"/></g><rect width="8" height="7.5" fill="#3C3B6E"/></svg>English</a>
@@ -62,7 +65,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="contenu">
     <div class="eyebrow">NoCapBonus Guide</div>
     <h1>What is a wager?</h1>
 
@@ -83,15 +86,15 @@
       <h3>Wager simulator</h3>
       <div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:18px;">
         <div style="flex:1 1 160px;">
-          <label style="display:block;font-size:13px;color:var(--text-dim);margin-bottom:6px;">Total amount (deposit + bonus) (€)</label>
+          <label for="wagerBonus" style="display:block;font-size:13px;color:var(--text-dim);margin-bottom:6px;">Total amount (deposit + bonus) (€)</label>
           <input type="number" id="wagerBonus" value="200" min="0" style="width:100%;background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:10px 12px;color:var(--text);font-size:15px;font-family:inherit;">
         </div>
         <div style="flex:1 1 160px;">
-          <label style="display:block;font-size:13px;color:var(--text-dim);margin-bottom:6px;">Required wager (x)</label>
+          <label for="wagerMultiplier" style="display:block;font-size:13px;color:var(--text-dim);margin-bottom:6px;">Required wager (x)</label>
           <input type="number" id="wagerMultiplier" value="30" min="0" style="width:100%;background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:10px 12px;color:var(--text);font-size:15px;font-family:inherit;">
         </div>
       </div>
-      <div class="formula" id="wagerResult" style="display:block;width:100%;">200€ × Wager x30 = 6 000€ à miser avant retrait</div>
+      <div class="formula" id="wagerResult" aria-live="polite" style="display:block;width:100%;">200€ × Wager x30 = 6 000€ à miser avant retrait</div>
     </div>
 
     <p>As long as you haven't bet this amount on eligible games, your winnings remain locked. This is why some offers, despite a high bonus, are actually not very appealing if the wager is too high.</p>

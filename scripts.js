@@ -11,8 +11,9 @@
     document.body.addEventListener('click', function (event) {
       var target = event.target.closest('a, button');
       if (!target) return;
+      if (target.closest('[data-aff]')) return;
 
-      var label = (target.innerText || target.getAttribute('aria-label') || target.value || target.title || target.dataset.label || '').trim();
+      var label = (target.textContent || target.getAttribute('aria-label') || target.value || target.title || target.dataset.label || '').trim();
       var href = target.href || target.getAttribute('data-href') || '';
       var type = target.tagName.toLowerCase();
 
@@ -47,13 +48,21 @@ document.addEventListener('DOMContentLoaded', () => {
   const langBtn = document.getElementById('langBtn');
   const langSwitcher = document.getElementById('langSwitcher');
   if (langBtn && langSwitcher) {
+    langBtn.setAttribute('aria-expanded', 'false');
     langBtn.addEventListener('click', e => {
       e.stopPropagation();
-      langSwitcher.classList.toggle('open');
+      const isOpen = langSwitcher.classList.toggle('open');
+      langBtn.setAttribute('aria-expanded', String(isOpen));
     });
   }
   document.addEventListener('click', () => {
     if (langSwitcher) langSwitcher.classList.remove('open');
+    if (langBtn) langBtn.setAttribute('aria-expanded', 'false');
+  });
+  document.addEventListener('keydown', e => {
+    if (e.key !== 'Escape') return;
+    if (langSwitcher) langSwitcher.classList.remove('open');
+    if (langBtn) langBtn.setAttribute('aria-expanded', 'false');
   });
 
   // --- bandeau "View this site in English?" (pages françaises uniquement) ---
@@ -118,13 +127,20 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
   const newsletterForm = document.getElementById('newsletterForm');
+  const newsletterError = document.getElementById('newsletterError');
   if (newsletterForm) {
     newsletterForm.addEventListener('submit', e => {
       e.preventDefault();
-      fetch(BREVO_FORM_URL, { method: 'POST', mode: 'no-cors', body: new FormData(e.target) });
-      nlRemember('subscribed');
-      nl.classList.add('sent');
-      setTimeout(() => nl.classList.add('hidden'), 2200);
+      if (newsletterError) newsletterError.style.display = 'none';
+      fetch(BREVO_FORM_URL, { method: 'POST', mode: 'no-cors', body: new FormData(e.target) })
+        .then(() => {
+          nlRemember('subscribed');
+          nl.classList.add('sent');
+          setTimeout(() => nl.classList.add('hidden'), 2200);
+        })
+        .catch(() => {
+          if (newsletterError) newsletterError.style.display = 'block';
+        });
     });
   }
 });

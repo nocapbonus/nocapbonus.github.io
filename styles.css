@@ -28,6 +28,7 @@
 }
 
 :root{
+  color-scheme:dark;
   --bg:#0a1222;
   --bg-panel:#101c30;
   --line:#1e3350;
@@ -42,6 +43,37 @@
 
 *{
   box-sizing:border-box;
+}
+
+:where(a, button, input, select, textarea, [tabindex]):focus-visible{
+  outline:2px solid var(--green);
+  outline-offset:2px;
+}
+
+.skip-link{
+  position:absolute;
+  top:0;
+  left:-9999px;
+  z-index:1000;
+  background:var(--green);
+  color:var(--on-green);
+  padding:10px 16px;
+  font-weight:600;
+  font-size:14px;
+  border-radius:0 0 8px 0;
+}
+
+.skip-link:focus{
+  left:0;
+}
+
+@media (prefers-reduced-motion: reduce){
+  *, *::before, *::after{
+    animation-duration:0.01ms !important;
+    animation-iteration-count:1 !important;
+    transition-duration:0.01ms !important;
+    scroll-behavior:auto !important;
+  }
 }
 
 .sr-only{
@@ -68,7 +100,7 @@ body{
 body{
   background:var(--bg);
   color:var(--text);
-  font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+  font-family:-apple-system,BlinkMacSystemFont,sans-serif;
   line-height:1.6;
 }
 
@@ -449,6 +481,13 @@ main{
   padding:56px 24px 90px;
 }
 
+/* accueil : .hero et .board ont déjà leur propre largeur/marge/padding complets */
+main.home-content{
+  max-width:none;
+  margin:0;
+  padding:0;
+}
+
 .eyebrow{
   color:var(--green);
   font-size:13px;
@@ -544,7 +583,10 @@ main li b{
 }
 
 /* ---- cartes génériques ---- */
-.panel{
+.panel,
+.card-box,
+.method-card,
+.game-card{
   background:var(--bg-panel);
   border:1px solid var(--line);
   border-radius:14px;
@@ -864,7 +906,7 @@ footer{
 }
 
 footer p{
-  color:#5c7268;
+  color:var(--text-dim);
   font-size:12px;
   max-width:640px;
   margin:6px auto 0;
@@ -1265,7 +1307,7 @@ footer a.help{
   padding:8px 16px;
   border-radius:999px;
   cursor:pointer;
-  transition:all .15s ease;
+  transition:background-color .15s ease, border-color .15s ease, color .15s ease, box-shadow .15s ease;
 }
 
 .filter-pill:hover{
@@ -1637,7 +1679,7 @@ body.modal-open{
   align-items:center;
   gap:6px;
   font-size:12px;
-  color:#999;
+  color:#555;
   text-align:left;
   margin-top:auto;
   padding-top:12px;

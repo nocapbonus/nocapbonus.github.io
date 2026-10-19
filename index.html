@@ -456,9 +456,12 @@
     });
     document.addEventListener('keydown', e => {
       if (e.key !== 'Escape') return;
+      const openItem = document.querySelector('.nav-item.open');
+      const openTrigger = openItem ? openItem.querySelector('.nav-trigger') : null;
       closeAllNavItems();
       document.getElementById('mainNav').classList.remove('mobile-open');
       hamburgerBtn.setAttribute('aria-expanded', 'false');
+      if (openTrigger) openTrigger.focus();
     });
 
     const BREVO_FORM_URL = "https://689dffa5.sibforms.com/serve/MUIFADlIis0EgxRVamW0p9kkmiHQr0VPqU3v8gkr94QS4Z47qzPmV4lJqnJ_hDLD8Zr5wnfndX1Pdxg-Ma-b_Hza-OxNwd2QOMrOLSxVQ5SxYYsytponuJSWx2bKwanxHIJenoFVfvQ_aw5lV2x2sGMLNB4YthsMuEcCjKsThJuuYayfWKmCQMaDQh19arbn19kXjdfyjPNBlSiKlg==";

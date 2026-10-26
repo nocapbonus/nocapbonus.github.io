@@ -1069,6 +1069,10 @@ footer a.help{
   border:2px solid rgba(240,90,60,.9);
 }
 
+.card-neon-pink{
+  border:2px solid rgba(255,79,216,.9);
+}
+
 .rank{
   position:absolute;
   top:14px;
@@ -1690,6 +1694,27 @@ body.modal-open{
 
 .modal-highlight::before{
   content:"•";
+}
+
+.modal-highlight.has-list{
+  display:block;
+}
+
+.modal-highlight.has-list::before{
+  content:none;
+}
+
+.modal-highlight.has-list ul{
+  margin:0;
+  padding-left:18px;
+}
+
+.modal-highlight.has-list li{
+  margin-bottom:4px;
+}
+
+.modal-highlight.has-list li:last-child{
+  margin-bottom:0;
 }
 
 .modal-wager-note{

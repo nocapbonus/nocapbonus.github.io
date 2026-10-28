@@ -65,17 +65,38 @@ document.addEventListener('DOMContentLoaded', () => {
     if (langBtn) langBtn.setAttribute('aria-expanded', 'false');
   });
 
-  // --- bandeau "View this site in English?" (pages françaises uniquement) ---
+  // --- bandeau "View this site in English?" / Deutsch / Polski (pages françaises uniquement) ---
   const langBanner = document.getElementById('langBanner');
   if (langBanner) {
-    const enUrl = langBanner.dataset.enUrl;
+    const urlsByLang = {
+      en: langBanner.dataset.enUrl,
+      de: langBanner.dataset.deUrl,
+      pl: langBanner.dataset.plUrl
+    };
+    const copyByLang = {
+      en: { title: 'Prefer English?', text: 'This page is also available in English.', btn: 'Switch to English' },
+      de: { title: 'Lieber auf Deutsch?', text: 'Diese Seite ist auch auf Deutsch verfügbar.', btn: 'Zu Deutsch wechseln' },
+      pl: { title: 'Wolisz polski?', text: 'Ta strona jest dostępna również w języku polskim.', btn: 'Przejdź na polski' }
+    };
     const saved = localStorage.getItem('nocapLang');
     const floatingNewsletter = document.getElementById('newsletter');
-    if (saved === 'en' && enUrl) {
-      window.location.href = enUrl;
+    if (saved && saved !== 'fr' && urlsByLang[saved]) {
+      window.location.href = urlsByLang[saved];
     } else if (saved !== 'fr') {
       const browserLang = (navigator.language || navigator.userLanguage || 'fr').toLowerCase();
-      if (!browserLang.startsWith('fr')) {
+      const target = browserLang.startsWith('de') ? 'de' : (browserLang.startsWith('pl') ? 'pl' : (browserLang.startsWith('fr') ? null : 'en'));
+      if (target && urlsByLang[target]) {
+        const copy = copyByLang[target];
+        const titleEl = document.getElementById('langBannerTitle');
+        const textEl = document.getElementById('langBannerText');
+        const switchEl = document.getElementById('langBannerSwitch');
+        if (titleEl) titleEl.textContent = copy.title;
+        if (textEl) textEl.textContent = copy.text;
+        if (switchEl) {
+          switchEl.textContent = copy.btn;
+          switchEl.href = urlsByLang[target];
+          switchEl.dataset.targetLang = target;
+        }
         langBanner.classList.add('visible');
         // évite le chevauchement avec la fenêtre Newsletter sur mobile (toutes deux en bas de l'écran)
         if (floatingNewsletter) floatingNewsletter.classList.add('hidden');
@@ -89,7 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const switchLink = document.getElementById('langBannerSwitch');
     if (switchLink) {
       switchLink.addEventListener('click', () => {
-        localStorage.setItem('nocapLang', 'en');
+        localStorage.setItem('nocapLang', switchLink.dataset.targetLang || 'en');
       });
     }
     const closeBtn = document.getElementById('langBannerClose');

@@ -1,67 +1,291 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://nocapbonus.com/</loc>
     <lastmod>2026-10-10</lastmod>
-  </url>
-  <url>
-    <loc>https://nocapbonus.com/cs2.html</loc>
-    <lastmod>2026-10-07</lastmod>
-  </url>
-  <url>
-    <loc>https://nocapbonus.com/en-savoir-plus.html</loc>
-    <lastmod>2026-10-07</lastmod>
-  </url>
-  <url>
-    <loc>https://nocapbonus.com/vpn.html</loc>
-    <lastmod>2026-10-10</lastmod>
-  </url>
-  <url>
-    <loc>https://nocapbonus.com/wager.html</loc>
-    <lastmod>2026-10-10</lastmod>
-  </url>
-  <url>
-    <loc>https://nocapbonus.com/crypto.html</loc>
-    <lastmod>2026-10-10</lastmod>
-  </url>
-  <url>
-    <loc>https://nocapbonus.com/cgu.html</loc>
-    <lastmod>2026-10-07</lastmod>
-  </url>
-  <url>
-    <loc>https://nocapbonus.com/confidentialite.html</loc>
-    <lastmod>2026-10-07</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nocapbonus.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nocapbonus.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nocapbonus.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://nocapbonus.com/pl/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nocapbonus.com/"/>
   </url>
   <url>
     <loc>https://nocapbonus.com/en/</loc>
     <lastmod>2026-10-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nocapbonus.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nocapbonus.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nocapbonus.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://nocapbonus.com/pl/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nocapbonus.com/"/>
+  </url>
+  <url>
+    <loc>https://nocapbonus.com/de/</loc>
+    <lastmod>2026-10-28</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nocapbonus.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nocapbonus.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nocapbonus.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://nocapbonus.com/pl/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nocapbonus.com/"/>
+  </url>
+  <url>
+    <loc>https://nocapbonus.com/pl/</loc>
+    <lastmod>2026-10-28</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nocapbonus.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nocapbonus.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nocapbonus.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://nocapbonus.com/pl/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nocapbonus.com/"/>
+  </url>
+  <url>
+    <loc>https://nocapbonus.com/cs2.html</loc>
+    <lastmod>2026-10-07</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nocapbonus.com/cs2.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nocapbonus.com/en/cs2.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nocapbonus.com/de/cs2.html"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://nocapbonus.com/pl/cs2.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nocapbonus.com/cs2.html"/>
   </url>
   <url>
     <loc>https://nocapbonus.com/en/cs2.html</loc>
     <lastmod>2026-10-07</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nocapbonus.com/cs2.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nocapbonus.com/en/cs2.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nocapbonus.com/de/cs2.html"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://nocapbonus.com/pl/cs2.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nocapbonus.com/cs2.html"/>
+  </url>
+  <url>
+    <loc>https://nocapbonus.com/de/cs2.html</loc>
+    <lastmod>2026-10-28</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nocapbonus.com/cs2.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nocapbonus.com/en/cs2.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nocapbonus.com/de/cs2.html"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://nocapbonus.com/pl/cs2.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nocapbonus.com/cs2.html"/>
+  </url>
+  <url>
+    <loc>https://nocapbonus.com/pl/cs2.html</loc>
+    <lastmod>2026-10-28</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nocapbonus.com/cs2.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nocapbonus.com/en/cs2.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nocapbonus.com/de/cs2.html"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://nocapbonus.com/pl/cs2.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nocapbonus.com/cs2.html"/>
+  </url>
+  <url>
+    <loc>https://nocapbonus.com/en-savoir-plus.html</loc>
+    <lastmod>2026-10-07</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nocapbonus.com/en-savoir-plus.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nocapbonus.com/en/learn-more.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nocapbonus.com/de/learn-more.html"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://nocapbonus.com/pl/learn-more.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nocapbonus.com/en-savoir-plus.html"/>
   </url>
   <url>
     <loc>https://nocapbonus.com/en/learn-more.html</loc>
     <lastmod>2026-10-07</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nocapbonus.com/en-savoir-plus.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nocapbonus.com/en/learn-more.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nocapbonus.com/de/learn-more.html"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://nocapbonus.com/pl/learn-more.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nocapbonus.com/en-savoir-plus.html"/>
+  </url>
+  <url>
+    <loc>https://nocapbonus.com/de/learn-more.html</loc>
+    <lastmod>2026-10-28</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nocapbonus.com/en-savoir-plus.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nocapbonus.com/en/learn-more.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nocapbonus.com/de/learn-more.html"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://nocapbonus.com/pl/learn-more.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nocapbonus.com/en-savoir-plus.html"/>
+  </url>
+  <url>
+    <loc>https://nocapbonus.com/pl/learn-more.html</loc>
+    <lastmod>2026-10-28</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nocapbonus.com/en-savoir-plus.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nocapbonus.com/en/learn-more.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nocapbonus.com/de/learn-more.html"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://nocapbonus.com/pl/learn-more.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nocapbonus.com/en-savoir-plus.html"/>
+  </url>
+  <url>
+    <loc>https://nocapbonus.com/vpn.html</loc>
+    <lastmod>2026-10-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nocapbonus.com/vpn.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nocapbonus.com/en/vpn.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nocapbonus.com/de/vpn.html"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://nocapbonus.com/pl/vpn.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nocapbonus.com/vpn.html"/>
   </url>
   <url>
     <loc>https://nocapbonus.com/en/vpn.html</loc>
     <lastmod>2026-10-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nocapbonus.com/vpn.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nocapbonus.com/en/vpn.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nocapbonus.com/de/vpn.html"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://nocapbonus.com/pl/vpn.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nocapbonus.com/vpn.html"/>
+  </url>
+  <url>
+    <loc>https://nocapbonus.com/de/vpn.html</loc>
+    <lastmod>2026-10-28</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nocapbonus.com/vpn.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nocapbonus.com/en/vpn.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nocapbonus.com/de/vpn.html"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://nocapbonus.com/pl/vpn.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nocapbonus.com/vpn.html"/>
+  </url>
+  <url>
+    <loc>https://nocapbonus.com/pl/vpn.html</loc>
+    <lastmod>2026-10-28</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nocapbonus.com/vpn.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nocapbonus.com/en/vpn.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nocapbonus.com/de/vpn.html"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://nocapbonus.com/pl/vpn.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nocapbonus.com/vpn.html"/>
+  </url>
+  <url>
+    <loc>https://nocapbonus.com/wager.html</loc>
+    <lastmod>2026-10-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nocapbonus.com/wager.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nocapbonus.com/en/wager.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nocapbonus.com/de/wager.html"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://nocapbonus.com/pl/wager.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nocapbonus.com/wager.html"/>
   </url>
   <url>
     <loc>https://nocapbonus.com/en/wager.html</loc>
     <lastmod>2026-10-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nocapbonus.com/wager.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nocapbonus.com/en/wager.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nocapbonus.com/de/wager.html"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://nocapbonus.com/pl/wager.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nocapbonus.com/wager.html"/>
+  </url>
+  <url>
+    <loc>https://nocapbonus.com/de/wager.html</loc>
+    <lastmod>2026-10-28</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nocapbonus.com/wager.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nocapbonus.com/en/wager.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nocapbonus.com/de/wager.html"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://nocapbonus.com/pl/wager.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nocapbonus.com/wager.html"/>
+  </url>
+  <url>
+    <loc>https://nocapbonus.com/pl/wager.html</loc>
+    <lastmod>2026-10-28</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nocapbonus.com/wager.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nocapbonus.com/en/wager.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nocapbonus.com/de/wager.html"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://nocapbonus.com/pl/wager.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nocapbonus.com/wager.html"/>
+  </url>
+  <url>
+    <loc>https://nocapbonus.com/crypto.html</loc>
+    <lastmod>2026-10-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nocapbonus.com/crypto.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nocapbonus.com/en/crypto.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nocapbonus.com/de/crypto.html"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://nocapbonus.com/pl/crypto.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nocapbonus.com/crypto.html"/>
   </url>
   <url>
     <loc>https://nocapbonus.com/en/crypto.html</loc>
     <lastmod>2026-10-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nocapbonus.com/crypto.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nocapbonus.com/en/crypto.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nocapbonus.com/de/crypto.html"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://nocapbonus.com/pl/crypto.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nocapbonus.com/crypto.html"/>
+  </url>
+  <url>
+    <loc>https://nocapbonus.com/de/crypto.html</loc>
+    <lastmod>2026-10-28</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nocapbonus.com/crypto.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nocapbonus.com/en/crypto.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nocapbonus.com/de/crypto.html"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://nocapbonus.com/pl/crypto.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nocapbonus.com/crypto.html"/>
+  </url>
+  <url>
+    <loc>https://nocapbonus.com/pl/crypto.html</loc>
+    <lastmod>2026-10-28</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nocapbonus.com/crypto.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nocapbonus.com/en/crypto.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nocapbonus.com/de/crypto.html"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://nocapbonus.com/pl/crypto.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nocapbonus.com/crypto.html"/>
+  </url>
+  <url>
+    <loc>https://nocapbonus.com/cgu.html</loc>
+    <lastmod>2026-10-07</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nocapbonus.com/cgu.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nocapbonus.com/en/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nocapbonus.com/de/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://nocapbonus.com/pl/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nocapbonus.com/cgu.html"/>
   </url>
   <url>
     <loc>https://nocapbonus.com/en/terms.html</loc>
     <lastmod>2026-10-07</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nocapbonus.com/cgu.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nocapbonus.com/en/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nocapbonus.com/de/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://nocapbonus.com/pl/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nocapbonus.com/cgu.html"/>
+  </url>
+  <url>
+    <loc>https://nocapbonus.com/de/terms.html</loc>
+    <lastmod>2026-10-28</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nocapbonus.com/cgu.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nocapbonus.com/en/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nocapbonus.com/de/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://nocapbonus.com/pl/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nocapbonus.com/cgu.html"/>
+  </url>
+  <url>
+    <loc>https://nocapbonus.com/pl/terms.html</loc>
+    <lastmod>2026-10-28</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nocapbonus.com/cgu.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nocapbonus.com/en/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nocapbonus.com/de/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://nocapbonus.com/pl/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nocapbonus.com/cgu.html"/>
+  </url>
+  <url>
+    <loc>https://nocapbonus.com/confidentialite.html</loc>
+    <lastmod>2026-10-07</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nocapbonus.com/confidentialite.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nocapbonus.com/en/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nocapbonus.com/de/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://nocapbonus.com/pl/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nocapbonus.com/confidentialite.html"/>
   </url>
   <url>
     <loc>https://nocapbonus.com/en/privacy.html</loc>
     <lastmod>2026-10-07</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nocapbonus.com/confidentialite.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nocapbonus.com/en/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nocapbonus.com/de/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://nocapbonus.com/pl/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nocapbonus.com/confidentialite.html"/>
+  </url>
+  <url>
+    <loc>https://nocapbonus.com/de/privacy.html</loc>
+    <lastmod>2026-10-28</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nocapbonus.com/confidentialite.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nocapbonus.com/en/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nocapbonus.com/de/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://nocapbonus.com/pl/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nocapbonus.com/confidentialite.html"/>
+  </url>
+  <url>
+    <loc>https://nocapbonus.com/pl/privacy.html</loc>
+    <lastmod>2026-10-28</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nocapbonus.com/confidentialite.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nocapbonus.com/en/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nocapbonus.com/de/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://nocapbonus.com/pl/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nocapbonus.com/confidentialite.html"/>
   </url>
 </urlset>

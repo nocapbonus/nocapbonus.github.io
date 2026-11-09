@@ -164,4 +164,22 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
   }
+
+  // --- FAQ : afficher seulement les 6 premières questions, bouton "voir plus / voir moins" ---
+  const faqToggle = document.getElementById('faqToggle');
+  const faqList = document.querySelector('.faq-list');
+  if (faqToggle && faqList) {
+    const faqToggleLabel = faqToggle.querySelector('.faq-toggle-label');
+    faqToggle.addEventListener('click', () => {
+      const expanded = faqList.classList.toggle('faq-expanded');
+      faqToggle.setAttribute('aria-expanded', String(expanded));
+      if (faqToggleLabel) {
+        faqToggleLabel.textContent = expanded ? faqToggle.dataset.labelLess : faqToggle.dataset.labelMore;
+      }
+      if (!expanded) {
+        const faqSection = document.getElementById('faq');
+        if (faqSection) faqSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  }
 });
